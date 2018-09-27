@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Android">
+      <Configuration>Debug</Configuration>
+      <Platform>Android</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|iOS">
+      <Configuration>Debug</Configuration>
+      <Platform>iOS</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Windows-x64">
+      <Configuration>Debug</Configuration>
+      <Platform>Windows-x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Windows-x86">
+      <Configuration>Debug</Configuration>
+      <Platform>Windows-x86</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Windows-ARM">
+      <Configuration>Debug</Configuration>
+      <Platform>Windows-ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Android">
+      <Configuration>Release</Configuration>
+      <Platform>Android</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|iOS">
+      <Configuration>Release</Configuration>
+      <Platform>iOS</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Windows-x64">
+      <Configuration>Release</Configuration>
+      <Platform>Windows-x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Windows-x86">
+      <Configuration>Release</Configuration>
+      <Platform>Windows-x86</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Windows-ARM">
+      <Configuration>Release</Configuration>
+      <Platform>Windows-ARM</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>3b4c8f34-6e26-4956-b196-64e9db26a19b</ProjectGuid>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectCapability Include="UseFileGlobs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup Condition="'$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '15.0'">
+    <VisualStudioVersion>15.0</VisualStudioVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TypeScriptCompileOnSaveEnabled>false</TypeScriptCompileOnSaveEnabled>
+    <TypeScriptToolsVersion>2.3</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\ApacheCordovaTools\vs-mda-targets\Microsoft.TypeScript.MDA.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\ApacheCordovaTools\vs-mda-targets\Microsoft.MDA.FileMirroring.targets" />
+  <PropertyGroup>
+    <ProjectUISubcaption>Tools for Apache Cordova</ProjectUISubcaption>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetPlatformIdentifier>MDD</TargetPlatformIdentifier>
+  </PropertyGroup>
+  <Target Name="EnsureBuildPrerequisites">
+    <!-- These errors will trigger if building from inside Visual Studio and requirements could not be determined -->
+    <Error Condition="$(MDAPropertiesEvaluated) == 'true' And $(NodeJsDir) == ''" Text="Path to NodeJs could not be determined. Please check that NodeJs has been installed." />
+    <!-- These errors will trigger if building from outside Visual Studio (e.g. command line) and environment variables have not been set -->
+    <Error Condition="$(MDAPropertiesEvaluated) == '' And $(NodeJsDir) == ''" Text="Path to NodeJs has not been specified. Please check that NodeJs has been installed and set the NodeJsDir environment variable before building." />
+    <!-- Sanity check that things exist in the specified places. These are more likely to fail if building outside Visual Studio and the required environment variables have not been set, or set incorrectly. -->
+    <Error Condition="!Exists('$(NodeJsDir)') Or !Exists('$(NodeJsDir)\node.exe')" Text="The specified NodeJs directory $(NodeJsDir) either does not exist, or does not contain node.exe. Please check that NodeJs has been installed, and set the NodeJsDir variable to the correct directory." />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties />
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <!-- Customize which folders are not shown by default -->
+    <ExcludedItems>bin;bld;platforms;node_modules;simulation;plugins</ExcludedItems>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="**\**" Exclude="**\platforms\**;**\bin\**;**\bld\**;**\node_modules\**;**\simulation\**;**\plugins\**;.gitignore;sampleApp.*" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="main\src\assets\apps\img\**" />
+    <Content Remove="main\src\assets\global\plugins\**" />
+    <Content Remove="main\src\assets\apps\img\**" />
+    <Content Remove="main\src\assets\global\plugins\**" />
+    <Content Remove="main\src\assets\global\plugins\amcharts\ammap\plugins\export\libs\FileSaver.js\**" />
+    <Content Remove="main\src\assets\global\plugins\amcharts\ammap\plugins\export\libs\jszip\**" />
+    <Content Remove="main\src\assets\global\plugins\amcharts\ammap\plugins\export\libs\pdfmake\**" />
+    <Content Remove="main\src\assets\global\plugins\amcharts\ammap\plugins\export\libs\xlsx\**" />
+    <Content Remove="main\src\assets\global\plugins\amcharts\ammap\plugins\export\shapes\**" />
+    <Content Remove="main\src\assets\global\plugins\amcharts\ammap\plugins\responsive\**" />
+    <Content Remove="main\src\assets\global\plugins\amcharts\ammap\themes\**" />
+    <Content Remove="main\src\assets\global\plugins\amcharts\amstockcharts\**" />
+    <Content Remove="main\src\assets\global\plugins\angularjs\**" />
+    <Content Remove="main\src\assets\global\plugins\animate\**" />
+    <Content Remove="main\src\assets\global\plugins\autosize\**" />
+    <Content Remove="main\src\assets\global\plugins\backstretch\**" />
+    <Content Remove="main\src\assets\global\plugins\bootbox\**" />
+    <Content Remove="main\src\assets\global\plugins\bootstrap-colorpicker\**" />
+    <Content Remove="main\src\assets\global\plugins\bootstrap-confirmation\**" />
+    <Content Remove="main\src\assets\global\plugins\bootstrap-contextmenu\**" />
+    <Content Remove="main\src\assets\global\plugins\bootstrap-datepaginator\**" />
+    <Content Remove="main\src\assets\global\plugins\bootstrap-datepicker\**" />
+    <Content Remove="main\src\assets\global\plugins\bootstrap-daterangepicker\**" />
+    <Content Remove="main\src\assets\global\plugins\bootstrap-datetimepicker\**" />
+    <Content Remove="main\src\assets\global\plugins\bootstrap-editable\**" />
+    <Content Remove="main\src\assets\global\plugins\bootstrap-fileinput\**" />
+    <Content Remove="main\src\assets\global\plugins\bootstrap-growl\**" />
+    <Content Remove="main\src\assets\global\plugins\bootstrap-hover-dropdown\**" />
+    <Content Remove="main\src\assets\global\plugins\bootstrap-markdown\**" />
+    <Content Remove="main\src\assets\global\plugins\bootstrap-maxlength\**" />
+    <Content Remove="main\src\assets\global\plugins\bootstrap-modal\**" />
+    <Content Remove="main\src\assets\global\plugins\bootstrap-multiselect\**" />
+    <Content Remove="main\src\assets\global\plugins\bootstrap-pwstrength\**" />
+    <Content Remove="main\src\assets\global\plugins\bootstrap-selectsplitter\**" />
+    <Content Remove="main\src\assets\global\plugins\bootstrap-select\**" />
+    <Content Remove="main\src\assets\global\plugins\bootstrap-sessiontimeout\**" />
+    <Content Remove="main\src\assets\global\plugins\bootstrap-summernote\**" />
+    <Content Remove="main\src\assets\global\plugins\bootstrap-sweetalert\**" />
+    <Content Remove="main\src\assets\global\plugins\bootstrap-switch\**" />
+    <Content Remove="main\src\assets\global\plugins\bootstrap-tabdrop\**" />
+    <Content Remove="main\src\assets\global\plugins\bootstrap-table\**" />
+    <Content Remove="main\src\assets\global\plugins\bootstrap-tagsinput\**" />
+    <Content Remove="main\src\assets\global\plugins\bootstrap-timepicker\**" />
+    <Content Remove="main\src\assets\global\plugins\bootstrap-toastr\**" />
+    <Content Remove="main\src\assets\global\plugins\bootstrap-touchspin\**" />
+    <Content Remove="main\src\assets\global\plugins\bootstrap-typeahead\**" />
+    <Content Remove="main\src\assets\global\plugins\bootstrap-wizard\**" />
+    <Content Remove="main\src\assets\global\plugins\bootstrap-wysihtml5\**" />
+    <Content Remove="main\src\assets\global\plugins\bootstrap\**" />
+    <Content Remove="main\src\assets\global\plugins\ckeditor\**" />
+    <Content Remove="main\src\assets\global\plugins\clipboardjs\**" />
+    <Content Remove="main\src\assets\global\plugins\clockface\**" />
+    <Content Remove="main\src\assets\global\plugins\codemirror\**" />
+    <Content Remove="main\src\assets\global\plugins\countdown\**" />
+    <Content Remove="main\src\assets\global\plugins\counterup\**" />
+    <Content Remove="main\src\assets\global\plugins\cubeportfolio\**" />
+    <Content Remove="main\src\assets\global\plugins\datatables\**" />
+    <Content Remove="main\src\assets\global\plugins\dropzone\**" />
+    <Content Remove="main\src\assets\global\plugins\echarts\**" />
+    <Content Remove="main\src\assets\global\plugins\fancybox\**" />
+    <Content Remove="main\src\assets\global\plugins\flot\**" />
+    <Content Remove="main\src\assets\global\plugins\flowchart\**" />
+    <Content Remove="main\src\assets\global\plugins\font-awesome\**" />
+    <Content Remove="main\src\assets\global\plugins\fuelux\**" />
+    <Content Remove="main\src\assets\global\plugins\fullcalendar\**" />
+    <Content Remove="main\src\assets\global\plugins\gmaps\**" />
+    <Content Remove="main\src\assets\global\plugins\highcharts\**" />
+    <Content Remove="main\src\assets\global\plugins\highmaps\**" />
+    <Content Remove="main\src\assets\global\plugins\highstock\**" />
+    <Content Remove="main\src\assets\global\plugins\horizontal-timeline\**" />
+    <Content Remove="main\src\assets\global\plugins\icheck\**" />
+    <Content Remove="main\src\assets\global\plugins\ion.rangeslider\**" />
+    <Content Remove="main\src\assets\global\plugins\jcrop\**" />
+    <Content Remove="main\src\assets\global\plugins\jquery-bootpag\**" />
+    <Content Remove="main\src\assets\global\plugins\jquery-cookiebar\**" />
+    <Content Remove="main\src\assets\global\plugins\jquery-easypiechart\**" />
+    <Content Remove="main\src\assets\global\plugins\jquery-file-upload\**" />
+    <Content Remove="main\src\assets\global\plugins\jquery-gantt\**" />
+    <Content Remove="main\src\assets\global\plugins\jquery-idle-timeout\**" />
+    <Content Remove="main\src\assets\global\plugins\jquery-inputmask\**" />
+    <Content Remove="main\src\assets\global\plugins\jquery-knob\**" />
+    <Content Remove="main\src\assets\global\plugins\jquery-minicolors\**" />
+    <Content Remove="main\src\assets\global\plugins\jquery-mixitup\**" />
+    <Content Remove="main\src\assets\global\plugins\jquery-multi-select\**" />
+    <Content Remove="main\src\assets\global\plugins\jquery-nestable\**" />
+    <Content Remove="main\src\assets\global\plugins\jquery-notific8\**" />
+    <Content Remove="main\src\assets\global\plugins\jquery-repeater\**" />
+    <Content Remove="main\src\assets\global\plugins\jquery-slimscroll\**" />
+    <Content Remove="main\src\assets\global\plugins\jquery-ui-touch-punch\**" />
+    <Content Remove="main\src\assets\global\plugins\jquery-ui\**" />
+    <Content Remove="main\src\assets\global\plugins\jquery-validation\**" />
+    <Content Remove="main\src\assets\global\plugins\jqvmap\**" />
+    <Content Remove="main\src\assets\global\plugins\jstree\**" />
+    <Content Remove="main\src\assets\global\plugins\ladda\**" />
+    <Content Remove="main\src\assets\global\plugins\mapplic\**" />
+    <Content Remove="main\src\assets\global\plugins\morris\**" />
+    <Content Remove="main\src\assets\global\plugins\nouislider\**" />
+    <Content Remove="main\src\assets\global\plugins\owl-carousel\**" />
+    <Content Remove="main\src\assets\global\plugins\pace\**" />
+    <Content Remove="main\src\assets\global\plugins\plupload\**" />
+    <Content Remove="main\src\assets\global\plugins\prism\**" />
+    <Content Remove="main\src\assets\global\plugins\select2\**" />
+    <Content Remove="main\src\assets\global\plugins\simple-line-icons\**" />
+    <Content Remove="main\src\assets\global\plugins\socicon\**" />
+    <Content Remove="main\src\assets\global\plugins\tabdrop\**" />
+    <Content Remove="main\src\assets\global\plugins\typeahead\**" />
+    <Content Remove="main\src\assets\global\plugins\wysihtml\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Update="config.xml">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+</Project>
