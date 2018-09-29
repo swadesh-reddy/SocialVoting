@@ -12,14 +12,16 @@ router.post('/register', (req, res, next) => {
     let newUser = new User({
         username: req.body.username,
         password: req.body.password,
-        email: req.body.email
+        email: req.body.email,
+        dob: req.body.dob,
+        contact:req.body.contact
     })
 
     User.addUser(newUser, (err, user) => {
 
-        if (err) { res.send("Registartion failed") }
+        if (err) { res.json("Registartion failed") }
         else {
-            res.send("Registration Successfull");
+            res.json({ "success": "Registration Successfull" });
         }
     })
 })
@@ -33,7 +35,7 @@ router.post('/login', (req, res, next) => {
     User.getUserByUserName(authenicate, (err, user) => {
 
         if (err) { throw err }
-        if (!user) { res.send("user not found"); }
+        if (!user) { res.json({ "message": "user not found" }); }
         else {
           var users = {user};
             const token = jwt.sign(users, config.secret,
@@ -56,17 +58,14 @@ router.post('/login', (req, res, next) => {
 })
 
 router.get('/profile', verifyToken, (req, res, next) => {
-    jwt.verify(req.token, config.secret, (err, authData) => {
-        console.log(req.body);
-        if (err) {
+    jwt.verify(req.token, config.secret, (err, data) => {
+            if (err) {
             console.log(req.token);
             res.sendStatus(403);
         }
         else {
-            console.log(authData);
-            res.json({
-                authData
-            })
+                console.log(data);
+            res.send(data);
         }
     })
        

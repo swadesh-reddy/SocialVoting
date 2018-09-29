@@ -8,34 +8,32 @@ import { User } from './user';
 export class AuthenicateService {
   authToken: any;
   user: any;
-   
-  constructor(private http: HttpClient) {
 
-   
+  private _headers = new HttpHeaders().set('Content-Type', 'application/json');
+
+  constructor(private http: HttpClient) {   
   }
- 
+
   registerData(data)
   {
-    let headers = new HttpHeaders();
-    headers.append('Content-Type', 'application/json');
+      const headers = this._headers;
    return this.http.post<User>('http://localhost:3000/users/register', data);
   }
   Login(data)
   {
-    let headers = new HttpHeaders();
-    headers.append('Content-Type', 'application/json');
+      const headers = this._headers;
     return this.http.post<User>('http://localhost:3000/users/login', data, { headers: headers });
   }
     
 
 
   getProfile() {
-    let headers = new HttpHeaders();
-    headers.set('Content-Type', 'application/json');
     this.loadToken();
-    console.log(this.authToken);
-    headers.append('Authorization', 'Bearer '+ this.authToken);
-    return this.http.get("http://localhost:3000/users/profile",  {headers: headers});
+    //console.log(this.authToken);
+    const headers= this._headers.append('Authorization', 'Bearer '+ this.authToken);
+    headers.append("cache-control", 'no-cache');
+    console.log({ headers: headers });
+    return this.http.get<User>("http://localhost:3000/users/profile",  {headers: headers});
 
   }
    

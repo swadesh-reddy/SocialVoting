@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
         this.auth.storageUserData(data.token, data.user);
         this.router.navigate(['/user/usermainpage']);
       }
-      else { this.router.navigate(['/register'])}
+      else { this.router.navigate(['/login'])}
     })
   }
 }

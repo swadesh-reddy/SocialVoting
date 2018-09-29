@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthenicateService } from '../authenicate.service';
 
 @Component({
   selector: 'app-userprofile',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserprofileComponent implements OnInit {
 
-  constructor() { }
+    public user: any
+    public image:any    
+    constructor(private auth: AuthenicateService) { }
 
-  ngOnInit() {
+    ngOnInit() {
+        this.loadProfile();
   }
-
+  loadProfile() {
+      this.auth.getProfile().subscribe(data => {
+          console.log(data.user);
+          this.user = data.user;
+      })
+  }
 }

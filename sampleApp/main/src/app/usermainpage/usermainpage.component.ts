@@ -12,9 +12,6 @@ export class UsermainpageComponent implements OnInit {
   constructor(private auth: AuthenicateService) { }
 
   ngOnInit() {
-    this.loadProfile();
   }
-  loadProfile() {
-    this.auth.getProfile().subscribe(data => { console.log(data) })
-  }
+  
 }

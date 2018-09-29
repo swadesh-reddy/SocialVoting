@@ -1,8 +1,9 @@
 
-h2 {
-  font-family: monospace;
-  text-transform: uppercase;
-  font-weight: bolder;
+ h1 {
+    font-family: monospace;
+    text-transform: uppercase;
+    font-weight: bolder;
+       letter-spacing: 1px;
 }
 .form-control {
 border-radius:0px;

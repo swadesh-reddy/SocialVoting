@@ -11,5 +11,14 @@ export class UserComponent implements OnInit {
 
   ngOnInit() {
   }
+  openNav() {
+    document.getElementById("mySidenav").style.width = "320px";
+    document.getElementById("openbtn").style.opacity = "0";
+}
 
+closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("openbtn").style.opacity = "1";
+
+}
 }

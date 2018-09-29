@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { RouterModule, Router } from '@angular/router';
 import { AuthenicateService } from "../authenicate.service";
 import { User } from '../user';
 @Component({
@@ -9,13 +10,18 @@ import { User } from '../user';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor(private auth:AuthenicateService) { }
-  user:User;
+    constructor(private auth: AuthenicateService, private router: Router) { }
+
   ngOnInit() {
   }
-  onRegister(data)
+  onRegister(userdata)
   {
-    console.log(data);
-    this.auth.registerData(data).subscribe(data => { this.user = data; console.log(data); });
+      console.log(userdata);
+    this.auth.registerData(userdata).subscribe(data => {
+        console.log(data);
+        if (data) {
+            this.router.navigate(['/login'])
+        }
+    });
   }
 }
