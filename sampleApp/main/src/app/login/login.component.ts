@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
       this.data = data;
       console.log(data);
       if (this.data.success = true) {
-        this.auth.storageUserData(data.token, data.user);
+        this.auth.storageUserData(data);
         this.router.navigate(['/user/usermainpage']);
       }
       else { this.router.navigate(['/login'])}

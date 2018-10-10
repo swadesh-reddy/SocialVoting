@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthenicateService } from '../authenicate.service';
+import { RouterModule, Router } from '@angular/router';
 
 @Component({
   selector: 'app-user',
@@ -7,18 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserComponent implements OnInit {
 
-  constructor() { }
+    constructor(private auth: AuthenicateService, private router: Router) { }
 
   ngOnInit() {
   }
-  openNav() {
-    document.getElementById("mySidenav").style.width = "320px";
-    document.getElementById("openbtn").style.opacity = "0";
-}
-
-closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-    document.getElementById("openbtn").style.opacity = "1";
+    logout() {
+        this.auth.logout();
+        this.router.navigate(['/login']);
 
 }
 }

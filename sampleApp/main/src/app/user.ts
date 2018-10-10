@@ -3,6 +3,7 @@ export interface User{
     password: String,
     email: String,
     token: String,
+    contact: Number,    
     success: Boolean,
-    user: Object
+    propic: String
 }

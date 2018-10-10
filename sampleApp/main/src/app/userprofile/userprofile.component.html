@@ -1,16 +1,23 @@
 <div class="col-md-8 wow fadeInRight col-xs-12 col-sm-12" data-wow-delay=".25s" data-wow-delay=".25s" id="content" style="float:right;">
-  <h2>User Profile</h2>
-  <div class="panel panel-default">
-    <div class="panel-body pnl-body">
-      <div class="col-md-4" style="float:left;border-right:3px solid #f5f5f5;width:300px;height:250px">
-          <i class=" col-md-3 fa-li fa fa-user-circle-o" aria-hidden="true" for="user"></i>
-          <input type="file" id="userpic" name="userpic" style="display:none"/>
-        <img *ngIf="image" [src]="image" class="img-circle" width="300" height="250">
-      </div>
-      <div class="right col-md-3 col-xs-6"> Username</div> <div class="left col-md-3 col-xs-6">{{user.username}}</div>
-      <div class="right col-md-3 col-xs-6"> Email</div> <div class="left col-md-3 col-xs-6">{{user.email}}</div>
-      <div class="right col-md-3 col-xs-6"> Mobile</div> <div class="left col-md-3 col-xs-6">{{user.contact}}</div>
-      <div class="right col-md-3 col-xs-6"> Date Of Birth</div>  <div class="left col-md-3 col-xs-6"> {{user.dob}}</div>
-    </div>
-  </div>
+    <h2>User Profile</h2>
+    <div class="panel panel-default">
+        <div class="panel-body pnl-body">
+            <div class="col-md-4" style="float:left;border-right:3px solid #f5f5f5;">
+                <form (ngSubmit)="onImageChange(ImageChange.value)" #ImageChange="ngForm">
+                    <div class="user-pic col-md-12">
+                        <img *ngIf="image" [src]="image"  class="img-thumbnail" width="300" height="350">
+                    </div>
+                    <div class="col-md-12">
+                        <label class="upload-btn" for="userpic">Upload Image</label>
+                        <input type="file" id="userpic" name="userpic" #userpic="ngModel" (ngModel)="userpic" style="display:none" />
+                      </div>
+                </form>
+              </div>
+            <div class="right col-md-3 col-xs-6"> Username</div> <div class="left col-md-3 col-xs-6">{{user.username}}</div>
+            <div class="right col-md-3 col-xs-6"> Email</div> <div class="left col-md-3 col-xs-6">{{user.email}}</div>
+            <div class="right col-md-3 col-xs-6"> Mobile</div> <div class="left col-md-3 col-xs-6">{{user.contact}}</div>
+             </div>
+    </div> 
+
+
 </div>

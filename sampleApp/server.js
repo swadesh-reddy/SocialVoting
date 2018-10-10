@@ -16,8 +16,9 @@ mongoose.connect(url, config.parser);
 mongoose.connection.on('connected', () => { console.log("connected") })
 
 mongoose.connection.on('error', () => { console.log("error") });
+app.use('/images', express.static('images'))
 
-app.use(bodyParser.json());  
+app.use(bodyParser.json());
 
 app.get('/', function (req, res) {
     res.send("this is home page");

@@ -1,3 +1,43 @@
-<p>
-  searchforfriend works!
-</p>
+<div class="col-md-8 col-xs-12 col-sm-12" id="content" style="float:right;">
+    <div class="col-md-8">
+        <h2 class="sideheading">Search Friends</h2>
+        <form (ngSubmit)="onSearchFriend(searchForm.value)" #searchForm="ngForm">
+            <div class="input-group">
+                <input list="post" class="form-control" name="email" id="email" #email="ngModel" (ngModel)="user.searchFriend" required>
+                <datalist id="post"><option *ngFor="let u of users" [value]="u.email">{{u.email}}</option></datalist>
+                <div class="input-group-btn">
+                    <button class="btn btn-default" type="submit">
+                        <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                </div>
+            </div>
+        </form> <br /><br /><br />
+        <div *ngIf="userdetails" class="panel panel-default">
+            <div class="panel-body pnl-body">
+                <div class="col-md-4"> <img [src]="userdetails.propic" class="img-circle" width="70" height="70" style="float:left;"></div>
+                <div class="col-md-8">
+                    <div class="right col-md-6 col-xs-6"> Username</div> <div class="left col-md-6">{{userdetails.username}}</div>
+                    <div class="right col-md-6">status</div>
+                    <div class="left col-md-6 col-xs-6"> <button id="btn-info" style="color:#fff;" class="btn btn-info" (click)="onRequest();">{{requestStatus}}</button></div>
+                </div></div>
+        </div>
+
+    </div>
+    <div class="col-md-4">
+        <h2 class="sideheading">Friend Request</h2>
+        <div *ngIf="userdetails" class="panel panel-default">
+            <div class="panel-body pnl-body">
+                <div class="col-md-4"> <img [src]="userdetails.propic" class="img-circle" width="70" height="70" style="float:left;"></div>
+                <div class="col-md-8">
+                    <div class="right col-md-6 col-xs-6"> Username</div> <div class="left col-md-6">{{userdetails.username}}</div>
+                </div>
+                <div class="right col-md-6">
+                <button id="accept-btn" class="btn btn-primary" onclick="accept();" style="color:#fff;"> Accept<</button></div>
+                <div class="left col-md-6 col-xs-6">
+                <button class="btn btn-danger" style="color:#fff;">decline</button></div>
+
+            </div>
+        </div>
+
+    </div>
+</div>

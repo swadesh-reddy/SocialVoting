@@ -1,24 +1,31 @@
-﻿var mongoose = require('mongoose');
-var config = require('../config');
+﻿var express = require("express");
+var mongoose = require("mongoose");
+
 
 var UserSchema = mongoose.Schema({
 
     username: String,
     password: String,
     email: String,
-    dob: Date,
-    contact: Number
+    contact:Number,
+    propic: String 
 })
+var user = mongoose.model('user', UserSchema);
 
-var user = module.exports = mongoose.model('user', UserSchema);
-
-module.exports.getUserByUserName = function (authenicate, callback) {
-
-    console.log(authenicate);
-    user.findOne(authenicate, callback);
+module.exports = user;
+module.exports.getUserByUserName = function (authenication, callback) {
+    console.log(authenication);
+    user.findOne(authenication, callback);
 }
-
-module.exports.addUser = function(newUser, callback){
+module.exports.getAllProfiles = function (callback) {
+    user.find({}, callback);
+}
+module.exports.getUserByEmail = function (email, callback) {
+    console.log(email);
+    user.findOne(email, callback);
+}
+module.exports.addUser = function (newUser, callback) { 
 
     newUser.save(callback)
 }
+ 

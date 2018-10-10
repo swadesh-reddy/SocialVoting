@@ -14,21 +14,22 @@ import { SearchforfriendComponent } from '../searchforfriend/searchforfriend.com
 import { UserInterestComponent } from '../user-interest/user-interest.component';
 import { ViewAllMyFriendsComponent } from '../view-all-my-friends/view-all-my-friends.component';
 import { UserComponent } from '../user/user.component';
+
 const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   {
     path: 'user', component: UserComponent,
     children: [
-      { path: 'usermainpage', component: UsermainpageComponent },
-    { path: 'userprofile', component: UserprofileComponent },
-    { path: 'userinterest', component: UserInterestComponent },
-    { path: 'viewallmyfriends', component: ViewAllMyFriendsComponent },
-    { path: 'recommend', component: RecommendationComponent },
-    { path: 'searchforfriend', component: ViewAllMyFriendsComponent },
-    { path: 'tophitkrate', component: TophitkrateComponent },
-   { path: 'mysearchhistory', component: TophitkrateComponent },
-   { path: 'searchforpost', component: SearchforpostComponent }]
+        { path: 'usermainpage', component: UsermainpageComponent, canActivate: [AuthGuard] },
+    { path: 'userprofile', component: UserprofileComponent,canActivate: [AuthGuard] },
+    { path: 'userinterest', component: UserInterestComponent,canActivate: [AuthGuard] },
+    { path: 'viewallmyfriends', component: ViewAllMyFriendsComponent, canActivate: [AuthGuard] },
+    { path: 'recommend', component: RecommendationComponent, canActivate: [AuthGuard] },
+    { path: 'searchforfriend', component: SearchforfriendComponent, canActivate: [AuthGuard] },
+    { path: 'tophitkrate', component: TophitkrateComponent, canActivate: [AuthGuard] },
+    { path: 'mysearchhistory', component: MysearchhistoryComponent, canActivate: [AuthGuard] },
+    { path: 'searchforpost', component: SearchforpostComponent, canActivate: [AuthGuard] }]
   },
   { path: 'login', component: LoginComponent }]
 @NgModule({
@@ -36,6 +37,7 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forRoot(routes)
   ],
-  declarations: []
+  declarations: [],
+  providers: [AuthGuard]
 })
 export class ApprouteModule { }

@@ -27,22 +27,21 @@
                         <input type="Number" class="form-control input-md" name="contact" #contact="ngModel" (ngModel)="user.contact" minlength="4" required>
                         <div *ngIf="contact.invalid && (contact.dirty || contact.touched)" class="text text-danger">Contact is required</div>
                     </div>
-                    <div class="form-group">
-                        <label for="dob">DOB:</label>
-                        <input type="date" class="form-control input-md" name="dob" #dob="ngModel" (ngModel)="user.dob" minlength="4" required>
-                        <div *ngIf="contact.invalid && (dob.dirty || dob.touched)" class="text text-danger">Date of Birth is required</div>
-                    </div>
 
                     <div class="form-group">
                         <label for="pwd">Password:</label>
                         <input type="password" class="form-control input-md" name="password" #password="ngModel" (ngModel)="user.password" minlength="4" required>
                         <div *ngIf="password.invalid && (password.dirty || password.touched)" class="text text-danger">Password is required</div>
                     </div>
+                    <div class="form-group">
+                        <label for="propic">Image:</label>
+                        <input type="file" class="form-control input-md" (change)="onFileChange($event)" id="propic" name="propic" required>
+                    </div>
                     <!--<label class="container">
-                      Remember me
-                      <input type="checkbox" checked="checked">
-                      <span class="checkmark"></span>
-                    </label>-->
+          Remember me
+          <input type="checkbox" checked="checked">
+          <span class="checkmark"></span>
+        </label>-->
                     <button type="submit" [disabled]="!registerForm.form.valid" class="btn btn-primary btn-lg">Submit</button>
                 </form>
             </div>

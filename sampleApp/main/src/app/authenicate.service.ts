@@ -2,65 +2,97 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { User } from './user';
 
+
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class AuthenicateService {
-  authToken: any;
-  user: any;
+    authToken: any;
+    user: any;
 
-  private _headers = new HttpHeaders().set('Content-Type', 'application/json');
+    private _headers = new HttpHeaders();
 
-  constructor(private http: HttpClient) {   
-  }
-
-  registerData(data)
-  {
-      const headers = this._headers;
-   return this.http.post<User>('http://localhost:3000/users/register', data);
-  }
-  Login(data)
-  {
-      const headers = this._headers;
-    return this.http.post<User>('http://localhost:3000/users/login', data, { headers: headers });
-  }
-    
+    constructor(private http: HttpClient) {
+    }
 
 
-  getProfile() {
-    this.loadToken();
-    //console.log(this.authToken);
-    const headers= this._headers.append('Authorization', 'Bearer '+ this.authToken);
-    headers.append("cache-control", 'no-cache');
-    console.log({ headers: headers });
-    return this.http.get<User>("http://localhost:3000/users/profile",  {headers: headers});
+    registerData(data) {
 
-  }
-   
-  loadToken() {
-    const token = localStorage.getItem('token');
-    this.authToken = token;
-  }
-
+        console.log(data);
+        const headers = this._headers;
+        headers.append("cache-control", 'no-cache');
+        headers.set('Content-Type', 'multipart/form-data');
+        return this.http.post<User>('http://localhost:3000/users/register', data, { headers: headers });
+    }
+    Login(data) {
+        const headers = this._headers;
+        headers.set('Content-Type', 'application/json');
+        return this.http.post<User>('http://localhost:3000/users/login', data, { headers: headers });
+    }
 
 
-  storageUserData(token, user) {
-    localStorage.setItem('token', token);
-    localStorage.setItem('user', JSON.stringify(user));
-    this.authToken = token;
-    this.user = user;
+    getProfile() {
+        this.loadToken();
+        //console.log(this.authToken);
+        const headers = this._headers.append('Authorization', 'Bearer ' + this.authToken);
+        headers.append("cache-control", 'no-cache');
+        return this.http.get<User>("http://localhost:3000/users/profile", { headers: headers });
 
-  }
-  logout() {
-    this.authToken = '';
-    this.user = '';
-    localStorage.clear();
-  }
+    }
+    getProfileById(email:any)
+    {
+        this.loadToken();   
+        //console.log(this.authToken);
+        const headers = this._headers.append('Authorization', 'Bearer ' + this.authToken);
+        headers.append("cache-control", 'no-cache');
+        return this.http.post<User>("http://localhost:3000/users/profileById", email, { headers: headers });
 
-  loggedIn() {
-    const token = localStorage.getItem('token');
-    if (localStorage.getItem('token')) { return true } else { return false };
-  }
+    }
+    getAllProfiles() {
+        this.loadToken();
+        //console.log(this.authToken);
+        const headers = this._headers.append('Authorization', 'Bearer ' + this.authToken);
+        headers.append("cache-control", 'no-cache');
+        return this.http.get<User>("http://localhost:3000/users/allprofiles", { headers: headers });
+
+    }
+    loggedIn() {
+        this.loadToken();
+        if (localStorage.getItem('token')) { return true } else { return false };
+    }
+    loadToken() {
+        const token = localStorage.getItem('token');
+        this.authToken = token;
+    }
+
+    sendRequest(friendName: any)
+    {
+        this.loadToken();
+        console.log(friendName);
+        const headers = this._headers.append('Authorization', 'Bearer ' + this.authToken);
+        headers.append("cache-control", 'no-cache');
+        return this.http.post<User>("http://localhost:3000/users/friendrequest", friendName, { headers: headers });
+
+    }
+
+    storageUserData(data) {
+        localStorage.setItem('token', data.token);
+        localStorage.setItem('user', JSON.stringify(data.user));
+        this.authToken = data.token;
+        this.user = data.user;
+
+    }
+    logout() {
+
+        this.authToken = '';
+        this.user = '';
+        window.localStorage.removeItem("token");
+        window.localStorage.removeItem("user");
+        localStorage.clear();
+
+    }
+
+
 
 }
 
