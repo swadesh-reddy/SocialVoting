@@ -5,7 +5,7 @@
             <div class="col-md-4" style="float:left;border-right:3px solid #f5f5f5;">
                 <form (ngSubmit)="onImageChange(ImageChange.value)" #ImageChange="ngForm">
                     <div class="user-pic col-md-12">
-                        <img *ngIf="image" [src]="image"  class="img-thumbnail" width="300" height="350">
+                        <img  [src]="user.propic"  class="img-thumbnail" width="300" height="350">
                     </div>
                     <div class="col-md-12">
                         <label class="upload-btn" for="userpic">Upload Image</label>

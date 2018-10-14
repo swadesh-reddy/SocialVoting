@@ -10,17 +10,16 @@ export class AuthenicateService {
     authToken: any;
     user: any;
 
-    private _headers = new HttpHeaders();
+    private _headers = new HttpHeaders({ "cache-control":'no-cache'});
 
     constructor(private http: HttpClient) {
     }
 
 
-    registerData(data) {
+    public registerData(data) {
 
         console.log(data);
         const headers = this._headers;
-        headers.append("cache-control", 'no-cache');
         headers.set('Content-Type', 'multipart/form-data');
         return this.http.post<User>('http://localhost:3000/users/register', data, { headers: headers });
     }
@@ -32,30 +31,26 @@ export class AuthenicateService {
 
 
     getProfile() {
-        this.loadToken();
-        //console.log(this.authToken);
-        const headers = this._headers.append('Authorization', 'Bearer ' + this.authToken);
-        headers.append("cache-control", 'no-cache');
-        return this.http.get<User>("http://localhost:3000/users/profile", { headers: headers });
+        var userString = localStorage.getItem('user');
+        userString = JSON.parse(userString)
+        this.user = { 'user': userString };
+        console.log(this.user);
+        return this.user;
 
     }
-    getProfileById(email:any)
+    getProfileById(username:any)
     {
         this.loadToken();   
-        //console.log(this.authToken);
         const headers = this._headers.append('Authorization', 'Bearer ' + this.authToken);
-        headers.append("cache-control", 'no-cache');
-        return this.http.post<User>("http://localhost:3000/users/profileById", email, { headers: headers });
+        return this.http.post<User>("http://localhost:3000/users/profileById", username, { headers: headers });
 
     }
     getAllProfiles() {
         this.loadToken();
-        //console.log(this.authToken);
         const headers = this._headers.append('Authorization', 'Bearer ' + this.authToken);
-        headers.append("cache-control", 'no-cache');
         return this.http.get<User>("http://localhost:3000/users/allprofiles", { headers: headers });
-
     }
+
     loggedIn() {
         this.loadToken();
         if (localStorage.getItem('token')) { return true } else { return false };
@@ -63,6 +58,7 @@ export class AuthenicateService {
     loadToken() {
         const token = localStorage.getItem('token');
         this.authToken = token;
+        return token;
     }
 
     sendRequest(friendName: any)
@@ -79,13 +75,11 @@ export class AuthenicateService {
         localStorage.setItem('token', data.token);
         localStorage.setItem('user', JSON.stringify(data.user));
         this.authToken = data.token;
-        this.user = data.user;
-
+       
     }
     logout() {
 
         this.authToken = '';
-        this.user = '';
         window.localStorage.removeItem("token");
         window.localStorage.removeItem("user");
         localStorage.clear();

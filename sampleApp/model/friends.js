@@ -16,5 +16,9 @@ module.exports.addFriend = function (newFriend, callback) {
 }
 module.exports.getFriendByUsername = function (newFriend, callback) {
 
-    user.findOne(newFriend, callback);
+    friend.findOne(newFriend, callback);
+}
+module.exports.getFriendByStatus = function (newFriend, callback) {
+
+    friend.find(newFriend, callback);
 }

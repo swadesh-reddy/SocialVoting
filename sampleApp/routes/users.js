@@ -73,29 +73,6 @@ router.post('/login', (req, res, next) => {
     })
 })
 
-router.get('/profile', verifyToken, (req, res, next) => {
-    jwt.verify(req.token, config.secret, (err, data) => {
-        if (err) {
-            console.log(req.token);
-            res.sendStatus(403);
-        }
-        else {
-            var decoded = jwt_decode(req.token);
-            console.log(decoded);
-            var email = { email: decoded.user.email}
-            User.getUserByEmail(email, (err, user) => {
-                if (err) { throw err }
-                if (!user) { res.json({ "message": "user not found" }); }
-                else {
-                    console.log(decoded);
-                     res.send(user);
-                }
-            })
-
-        }
-    })
-
-})
 router.post('/profileById', verifyToken, (req, res, next) => {
     jwt.verify(req.token, config.secret, (err, data) => {
         if (err) {
@@ -103,8 +80,8 @@ router.post('/profileById', verifyToken, (req, res, next) => {
             res.sendStatus(403);
         }
         else {
-              var email = { email: req.body.email}
-            User.getUserByEmail(email, (err, user) => {
+            var username = { username: req.body.username}
+            User.getUserByUserName(username, (err, user) => {
                 if (err) { throw err }
                 if (!user) { res.json({ "message": "user not found" }); }
                 else {
@@ -133,6 +110,31 @@ router.get('/allprofiles', verifyToken, (req, res, next) => {
                     console.log(decoded);
                      res.json(user);
                 }
+            })
+
+        }
+    })
+
+})
+router.get('/getFriendRequests', verifyToken, (req, res, next) => {
+    jwt.verify(req.token, config.secret, (err, data) => {
+        if (err) {
+
+            console.log(req.token);
+            res.sendStatus(403);
+        }
+        else {
+            var decoded = jwt_decode(req.token);
+            console.log(decoded);
+            var friendRequests = {
+                friend: decoded.user.username,
+                status:false
+            }
+            Friend.getFriendByStatus(friendRequests, (err, users) => {
+                if (err) { throw err }
+                else {
+                    res.json(users);
+                   }
             })
 
         }

@@ -9,7 +9,7 @@ import { User } from '../user';
 })
 export class UserprofileComponent implements OnInit {
 
-    public user: User;
+    user: User;
     image: any;
     constructor(private auth: AuthenicateService) { }
 
@@ -17,12 +17,10 @@ export class UserprofileComponent implements OnInit {
         this.loadProfile();
     }
     loadProfile() {
-        this.auth.getProfile().subscribe(data => {
-            console.log(data);
-            this.user = data;
-            this.image = 'http://localhost:3000/' + this.user.propic;
-            console.log(this.image);
-        })
+        var data = this.auth.getProfile();
+        this.user = data.user;
+          this.user.propic = 'http://localhost:3000/' + this.user.propic;
+          console.log(this.user);
 
     }
 }
