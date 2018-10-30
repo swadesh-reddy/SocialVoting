@@ -1,0 +1,21 @@
+<div class="col-md-8 wow fadeInRight col-xs-12 col-sm-12" data-wow-delay=".25s" id="content" style="float:right;">
+    <br>
+    <h2>
+        Your Searched History
+        <button style="float:right;" class="btn btn-info" (click)="clearuserhistory()">Clear History&emsp;<i class="fa fa-trash-o"></i></button>
+    </h2>
+    <table class="table table-bordered">
+        <tr>
+            <th>Username</th>
+            <th>searched content</th>
+            <th> date</th>
+        </tr>
+        <tbody>
+            <tr *ngFor="let h of history">
+                <td>{{h.username}}</td>
+                 <td>{{h.searchedContent}}</td>
+                <td>{{h.date}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

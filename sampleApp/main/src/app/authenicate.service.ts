@@ -28,6 +28,11 @@ export class AuthenicateService {
         headers.set('Content-Type', 'application/json');
         return this.http.post<User>('http://localhost:3000/users/login', data, { headers: headers });
     }
+     adminLogin(data) {
+        const headers = this._headers;
+        headers.set('Content-Type', 'application/json');
+        return this.http.post<User>('http://localhost:3000/users/adminlogin', data, { headers: headers });
+    }
 
 
     getProfile() {
@@ -71,6 +76,35 @@ export class AuthenicateService {
 
     }
 
+    saveToHistory(username)
+    {
+        this.loadToken();
+        console.log(username);
+        const headers = this._headers.append('Authorization', 'Bearer ' + this.authToken);
+        headers.append("cache-control", 'no-cache');
+        return this.http.post<User>("http://localhost:3000/users/savehistory", username, { headers: headers });
+
+    }
+
+    loadHistory() {
+        this.loadToken();
+        const headers = this._headers.append('Authorization', 'Bearer ' + this.authToken);
+        headers.append("cache-control", 'no-cache');
+        return this.http.get<User>("http://localhost:3000/users/loaduserhistory", { headers: headers });
+    }
+    loadAllHistory() {
+        this.loadToken();
+        const headers = this._headers.append('Authorization', 'Bearer ' + this.authToken);
+        headers.append("cache-control", 'no-cache');
+        return this.http.get<User>("http://localhost:3000/users/loadAlluserhistory", { headers: headers });
+    }
+    clearuserhistory()
+    {
+        this.loadToken();
+        const headers = this._headers.append('Authorization', 'Bearer ' + this.authToken);
+        headers.append("cache-control", 'no-cache');
+        return this.http.get<User>("http://localhost:3000/users/clearuserhistory", { headers: headers });
+    }
     storageUserData(data) {
         localStorage.setItem('token', data.token);
         localStorage.setItem('user', JSON.stringify(data.user));

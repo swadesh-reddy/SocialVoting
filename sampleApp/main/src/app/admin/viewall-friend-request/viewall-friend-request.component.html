@@ -1,0 +1,23 @@
+<div class="col-md-8 wow fadeInRight col-xs-12 col-sm-12" data-wow-delay=".25s" id="content" style="float:right;">
+    <br>
+    <h2> all friend request and Response details...</h2>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Request sent to</th>
+                <th>status</th>
+                </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let request of friendRequest">
+                <td>{{request.username}}</td>
+                <td>{{request.friend}}</td>
+                <td *ngIf="request.status==true"><button>friends<i class="fa fa-check"></i></button></td>
+                <td *ngIf="request.status==false"><button class="btn btn-warning">pending<i class="fa fa-loading"></i></button></td>
+            </tr>
+        </tbody>
+    </table>
+
+
+</div>

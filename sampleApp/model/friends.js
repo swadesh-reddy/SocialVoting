@@ -22,3 +22,11 @@ module.exports.getFriendByStatus = function (newFriend, callback) {
 
     friend.find(newFriend, callback);
 }
+module.exports.updateFriendRequest = function (acceptFriend,  callback) {
+
+    friend.findOne(acceptFriend, callback);
+}
+module.exports.deleteFriendRequest = function (acceptFriend, callback) {
+
+    friend.findOne(acceptFriend, callback);
+}

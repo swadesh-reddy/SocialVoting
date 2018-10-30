@@ -1,0 +1,15 @@
+<div class="col-md-8">
+    <div *ngIf="recommends" class="panel panel-default">
+        <div *ngFor="let recommand of recommends; let i = index" class="panel-body pnl-body">
+            <div class="col-md-4" style="float:left;border-right:3px solid #f5f5f5;">
+                <div class="user-pic col-md-12">
+                    <img src="http://localhost:3000/{{product[i].productimage}}" class="img-thumbnail" width="300" height="350">
+                </div>
+                <div class="left col-md-3 col-xs-6" style="font-family:bold">{{recommand.productname}}</div>
+            </div>
+            <div class="right col-md-3 col-xs-6"> Votes</div> <div class="left col-md-3 col-xs-6"> <i class="fa fa-thumbs-up"></i></div>
+            <div class="right col-md-3 col-xs-6"> RecommendedBy</div> <div class="left col-md-3 col-xs-6">{{recommand.username}}</div>
+            <div class="right col-md-3 col-xs-6"> Product Description</div> <div class="left col-md-3 col-xs-6">{{recommand.description}}</div>
+        </div>
+    </div>
+</div>

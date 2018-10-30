@@ -1,0 +1,31 @@
+<div class="container">
+    <app-header>Loading...</app-header>
+    <ul class="sidenav  col-md-4"  id="sidenav" style="float:left;">
+        <li>
+            <a routerLink="viewallusers">View All Users</a>
+        </li>
+        <li>
+            <a routerLink="viewallfriends">view all friends and request</a>
+        </li>
+        <li>
+            <a routerLink="addpost">Add post</a>
+        </li>
+        <li>
+            <a routerLink="viewallpost">View all posts with votes</a>
+        </li>
+        <li>
+            <a routerLink="viewallrecommendedpost">view all recommended posts</a>
+        </li>
+        <li>
+            <a routerLink="viewAllsearchhistory">view all search History</a>
+        </li>
+        <li>
+            <a routerLink="tophitkchart">ALL top k hit rate in chart</a>
+        </li>
+         <li>
+            <a (click)="logout()">logout</a>
+        </li>
+    </ul>
+    <div class=""><router-outlet></router-outlet></div>
+</div>
+
