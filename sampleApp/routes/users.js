@@ -26,6 +26,7 @@ router.post('/register', upload.single('propic'), (req, res, next) => {
     let newUser = new User({
         username: req.body.username,
         password: req.body.password,
+        admin: req.body.admin,
         email: req.body.email,
         contact: req.body.contact,
         propic: req.file.path
@@ -50,6 +51,7 @@ router.post('/addProduct', verifyToken, upload.single('productimage'), (req, res
         productname: req.body.productname,
         productdescription: req.body.productdescription,
         productuses: req.body.productuses,
+        vote:req.body.vote,
         productimage: req.file.path
     })
 
@@ -399,7 +401,7 @@ router.post('/getFriendRequests', verifyToken, (req, res, next) => {
     })
 
 })
-router.get('/getAllFriendRequests', verifyToken, (req, res, next) => {
+router.post('/getAllFriendRequests', verifyToken, (req, res, next) => {
     jwt.verify(req.token, config.secret, (err, data) => {
         if (err) {
 
@@ -447,6 +449,72 @@ router.post('/acceptFriend', verifyToken, (req, res, next) => {
                         else {
                             res.json({
                                 "success": " request Accepted",
+                            });
+                        }
+                    })
+
+                }});
+    
+        }
+    })
+
+})
+
+router.post('/makeAdmin', verifyToken, (req, res, next) => {
+    jwt.verify(req.token, config.secret, (err, data) => {
+        if (err) {
+            console.log(req.token);
+            res.send('yes');
+        }
+        else {
+            let makeAdmin = { username: req.body.username };
+            User.getUserByUserName(makeAdmin, (err, user) => {
+
+                if (err) throw err;
+                else {
+                    console.log(user);
+                    user.admin = 'true';
+                    user.save(function (err) {
+                        if (err) throw err;
+                        else {
+                            res.json({
+                                "success": " New Admin",
+                            });
+                        }
+                    })
+
+                }});
+    
+        }
+    })
+
+})
+router.post('/onVote', verifyToken, (req, res, next) => {
+    jwt.verify(req.token, config.secret, (err, data) => {
+        if (err) {
+            console.log(req.token);
+            res.sendStatus(403);
+        }
+        else {
+            var decoded = jwt_decode(req.token);
+            console.log(req.body.friend);
+            let acceptFriend = {
+                productname: req.body.productname,
+            }
+            console.log(acceptFriend);
+            Product.getUserByProductName(acceptFriend, (err, product) => {
+
+                if (err) throw err;
+                else {
+                    console.log(product);
+                    var count = product.vote;
+                    count = count + 1;
+                    product.vote = count;
+                    product.save(function (err) {
+                        if (err) throw err;
+                        else {
+                            res.json({
+                                "success": "voted",
                             });
                         }
                     })

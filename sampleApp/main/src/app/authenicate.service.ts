@@ -105,6 +105,14 @@ export class AuthenicateService {
         headers.append("cache-control", 'no-cache');
         return this.http.get<User>("http://localhost:3000/users/clearuserhistory", { headers: headers });
     }
+    makeAdmin(username)
+    {
+        this.loadToken();
+        const headers = this._headers.append('Authorization', 'Bearer ' + this.authToken);
+        headers.append("cache-control", 'no-cache');
+        return this.http.post<User>("http://localhost:3000/users/makeAdmin",username, { headers: headers });
+
+    }
     storageUserData(data) {
         localStorage.setItem('token', data.token);
         localStorage.setItem('user', JSON.stringify(data.user));

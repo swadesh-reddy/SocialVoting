@@ -32,6 +32,7 @@ export class RegisterComponent implements OnInit {
         form.append("username", data.username);
         form.append("password", data.password);
         form.append("email", data.email);
+        form.append("admin", "false");
         form.append("contact", data.contact);
         form.append("propic", this.image, this.image.name);
         console.log(form);

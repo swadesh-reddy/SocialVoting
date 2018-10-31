@@ -27,4 +27,12 @@ export class ViewallusersComponent implements OnInit {
           console.log(this.users);
       })
   }
+  makeAdmin(data) {
+      let username = {username:data}
+      this.auth.makeAdmin(username).subscribe(data => {
+          console.log(data);
+          this.loadProfile();
+      })
+  } 
+
 }

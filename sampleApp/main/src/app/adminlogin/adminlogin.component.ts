@@ -22,7 +22,7 @@ export class AdminloginComponent implements OnInit {
           this.data = data;
           console.log(this.data.user.admin);
           debugger
-          if (this.data.user.admin == true) {
+          if (this.data.user.admin == 'true') {
               debugger
               this.auth.storageUserData(data);
               this.router.navigate(['/admin/adminmainpage']);

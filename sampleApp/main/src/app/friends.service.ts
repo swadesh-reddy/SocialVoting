@@ -74,5 +74,11 @@ onSearchProduct(productname) {
         this.token = this.auth.loadToken();
         const headers = this._headers.append('Authorization', 'Bearer ' + this.token);
         return this.http.get<Product>("http://localhost:3000/users/getAllRecommendations", { headers: headers });   
-}
+    }
+    onVote(productname)
+    {
+        this.token = this.auth.loadToken();
+        const headers = this._headers.append('Authorization', 'Bearer ' + this.token);
+        return this.http.post<Product>("http://localhost:3000/users/onVote", productname, { headers: headers });
+    }
 }

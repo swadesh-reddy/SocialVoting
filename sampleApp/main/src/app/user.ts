@@ -5,5 +5,6 @@ export interface User{
     token: String,
     contact: Number,    
     success: Boolean,
-    propic: String
+    propic: String,
+    admin:String
 }

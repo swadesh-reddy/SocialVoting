@@ -7,3 +7,11 @@
 .star{
     color:red;
 }
+.fa-thumbs-o-up{
+    font-size:23px;
+    cursor:pointer;
+    color:gray;
+}
+.fa-thumbs-o-up:hover{
+    color:#000;
+}
