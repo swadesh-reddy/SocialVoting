@@ -15,10 +15,10 @@ export class SearchforpostComponent implements OnInit {
     constructor(private auth: AuthenicateService, private friend: FriendsService) { }
 
     ngOnInit() {
-        this.loadAllProfiles();
+        this.loadAllProducts();
   }
-  loadAllProfiles() {
-      this.friend.loadAllProfiles().subscribe(data => {
+    loadAllProducts() {
+      this.friend.loadAllProducts().subscribe(data => {
           console.log(data);
           this.users = data;
       })

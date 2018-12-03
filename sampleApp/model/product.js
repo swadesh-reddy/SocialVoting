@@ -13,8 +13,8 @@ var product = mongoose.model('product', productSchema);
 module.exports = product;
 
 module.exports.getAllProducts = function (authenication, callback) {
-    console.log(authenication);
-    product.find(authenication, callback);
+    console.log('red');
+    product.find({}, callback);
 }
 module.exports.getUserByProductName = function (authenication, callback) {
     console.log(authenication);

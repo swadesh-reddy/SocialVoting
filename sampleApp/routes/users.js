@@ -160,7 +160,7 @@ router.post('/getProductByName', verifyToken, (req, res, next) => {
 
 })
 
-router.get('/loaduserhistory', verifyToken, (req, res, next) => {
+router.post('/loaduserhistory', verifyToken, (req, res, next) => {
     jwt.verify(req.token, config.secret, (err, data) => {
         if (err) {
             console.log(req.token);
@@ -181,7 +181,7 @@ router.get('/loaduserhistory', verifyToken, (req, res, next) => {
     })
 
 })
-router.get('/loadAlluserhistory', verifyToken, (req, res, next) => {
+router.post('/loadAlluserhistory', verifyToken, (req, res, next) => {
     jwt.verify(req.token, config.secret, (err, data) => {
         if (err) {
             console.log(req.token);
@@ -200,9 +200,7 @@ router.get('/loadAlluserhistory', verifyToken, (req, res, next) => {
     })
 
 })
-
-
-router.get('/allprofiles', verifyToken, (req, res, next) => {
+router.post('/allprofiles', verifyToken, (req, res, next) => {
     jwt.verify(req.token, config.secret, (err, data) => {
         if (err) {
             console.log(req.token);
@@ -215,7 +213,7 @@ router.get('/allprofiles', verifyToken, (req, res, next) => {
             User.getAllProfiles((err, user) => {
                 if (err) { throw err }
                 else {
-                    console.log(decoded);
+                    console.log(user);
                      res.json(user);
                 }
             })
@@ -224,7 +222,7 @@ router.get('/allprofiles', verifyToken, (req, res, next) => {
     })
 
 })
-router.get('/getAllProducts', verifyToken, (req, res, next) => {
+router.post('/getAllProducts', verifyToken, (req, res, next) => {
     jwt.verify(req.token, config.secret, (err, data) => {
         if (err) {
             console.log(req.token);
@@ -237,8 +235,8 @@ router.get('/getAllProducts', verifyToken, (req, res, next) => {
             Product.getAllProducts(email, (err, user) => {
                 if (err) { throw err }
                 else {
-                    console.log(decoded);
-                     res.json(user);
+                    console.log('yes');
+                    res.json(user);
                 }
             })
 
@@ -246,7 +244,9 @@ router.get('/getAllProducts', verifyToken, (req, res, next) => {
     })
 
 })
-router.get('/getAllRecommendations', verifyToken, (req, res, next) => {
+
+
+router.post('/getAllRecommendations', verifyToken, (req, res, next) => {
     jwt.verify(req.token, config.secret, (err, data) => {
         if (err) {
             console.log(req.token);
@@ -331,7 +331,7 @@ router.post('/saverecommend', verifyToken, (req, res, next) => {
 
 });
 
-router.get('/clearuserhistory', verifyToken, (req, res, next) => {
+router.post('/clearuserhistory', verifyToken, (req, res, next) => {
     jwt.verify(req.token, config.secret, (err, data) => {
         if (err) {
             console.log(req.token);
@@ -353,7 +353,7 @@ router.get('/clearuserhistory', verifyToken, (req, res, next) => {
     })
 
 })
-router.get('/getRecommendedPosts', verifyToken, (req, res, next) => {
+router.post('/getRecommendedPosts', verifyToken, (req, res, next) => {
     jwt.verify(req.token, config.secret, (err, data) => {
         if (err) {
             console.log(req.token);

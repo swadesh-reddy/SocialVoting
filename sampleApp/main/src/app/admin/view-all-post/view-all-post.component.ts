@@ -18,7 +18,7 @@ export class ViewAllPostComponent implements OnInit {
       this.loadAllProducts();
   }
   loadAllProducts() {
-      this.friend.loadAllProfiles().subscribe(data => {
+      this.friend.loadAllProducts().subscribe(data => {
           console.log(data);
           this.product = data;
       })

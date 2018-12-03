@@ -53,7 +53,7 @@ export class AuthenicateService {
     getAllProfiles() {
         this.loadToken();
         const headers = this._headers.append('Authorization', 'Bearer ' + this.authToken);
-        return this.http.get<User>("http://localhost:3000/users/allprofiles", { headers: headers });
+        return this.http.post<User>("http://localhost:3000/users/allprofiles",headers, { headers: headers });
     }
 
     loggedIn() {
@@ -90,20 +90,20 @@ export class AuthenicateService {
         this.loadToken();
         const headers = this._headers.append('Authorization', 'Bearer ' + this.authToken);
         headers.append("cache-control", 'no-cache');
-        return this.http.get<User>("http://localhost:3000/users/loaduserhistory", { headers: headers });
+        return this.http.post<User>("http://localhost:3000/users/loaduserhistory",headers, { headers: headers });
     }
     loadAllHistory() {
         this.loadToken();
         const headers = this._headers.append('Authorization', 'Bearer ' + this.authToken);
         headers.append("cache-control", 'no-cache');
-        return this.http.get<User>("http://localhost:3000/users/loadAlluserhistory", { headers: headers });
+        return this.http.post<User>("http://localhost:3000/users/loadAlluserhistory",headers, { headers: headers });
     }
     clearuserhistory()
     {
         this.loadToken();
         const headers = this._headers.append('Authorization', 'Bearer ' + this.authToken);
         headers.append("cache-control", 'no-cache');
-        return this.http.get<User>("http://localhost:3000/users/clearuserhistory", { headers: headers });
+        return this.http.post<User>("http://localhost:3000/users/clearuserhistory",headers, { headers: headers });
     }
     makeAdmin(username)
     {

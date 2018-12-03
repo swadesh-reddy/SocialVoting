@@ -26,7 +26,7 @@ getFriendRequests(status)
 {
     this.token = this.auth.loadToken();
     const headers = this._headers.append('Authorization', 'Bearer ' + this.token);
-    return this.http.get<User>("http://localhost:3000/users/getAllFriendRequests", { headers: headers });
+    return this.http.post<User>("http://localhost:3000/users/getAllFriendRequests",headers, { headers: headers });
 
 }
 handleRequest(url, accept)
@@ -42,7 +42,7 @@ onAddProduct(product) {
     return this.http.post<User>("http://localhost:3000/users/addProduct", product, { headers: headers });
 
 }
-    onRecommend(product) {
+onRecommend(product) {
     this.token = this.auth.loadToken();
     const headers = this._headers.append('Authorization', 'Bearer ' + this.token);
     headers.set('Content-Type', 'multipart/form-data');
@@ -53,7 +53,7 @@ onAddProduct(product) {
     this.token = this.auth.loadToken();
     const headers = this._headers.append('Authorization', 'Bearer ' + this.token);
     headers.set('Content-Type', 'multipart/form-data');
-    return this.http.get<User>("http://localhost:3000/users/getRecommendedPosts", { headers: headers });
+    return this.http.post<User>("http://localhost:3000/users/getRecommendedPosts",headers, { headers: headers });
 
 }
 
@@ -63,17 +63,17 @@ onSearchProduct(productname) {
     return this.http.post<Product>("http://localhost:3000/users/getProductByName", productname, { headers: headers });
 
 }
-    loadAllProfiles()
-{
+loadAllProducts()
+    {
         this.token = this.auth.loadToken();
         const headers = this._headers.append('Authorization', 'Bearer ' + this.token);
-        return this.http.get<Product>("http://localhost:3000/users/getAllProducts", { headers: headers });   
+        return this.http.post<Product>("http://localhost:3000/users/getAllProducts", headers, { headers: headers });   
 }
     loadRecommendations()
 {
         this.token = this.auth.loadToken();
         const headers = this._headers.append('Authorization', 'Bearer ' + this.token);
-        return this.http.get<Product>("http://localhost:3000/users/getAllRecommendations", { headers: headers });   
+        return this.http.post<Product>("http://localhost:3000/users/getAllRecommendations",headers, { headers: headers });   
     }
     onVote(productname)
     {
