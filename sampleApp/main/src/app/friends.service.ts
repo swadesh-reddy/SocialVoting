@@ -22,6 +22,14 @@ getFriendRequests(status)
     return this.http.post<User>("http://localhost:3000/users/getFriendRequests", status, { headers: headers });
 
 }
+    checkFriend(username:any)
+    {
+        console.log(username)
+    this.token = this.auth.loadToken();
+    const headers = this._headers.append('Authorization', 'Bearer ' + this.token);
+    return this.http.post<User>("http://localhost:3000/users/checkFriends", username, { headers: headers });
+
+}
     getAllFriendRequests()
 {
     this.token = this.auth.loadToken();

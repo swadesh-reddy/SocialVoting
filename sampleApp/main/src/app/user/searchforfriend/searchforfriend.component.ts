@@ -14,7 +14,7 @@ export class SearchforfriendComponent implements OnInit {
     user = [];
     friendRequests = [];
     requestStatus = 'Request';
-
+    friendStatus:any
     constructor(private auth: AuthenicateService, private friend: FriendsService) {
     }
 
@@ -45,7 +45,7 @@ export class SearchforfriendComponent implements OnInit {
                     })
                 }
         }
-                });
+    });
     }
     onSearchFriend(username) {
         console.log(username)
@@ -55,6 +55,10 @@ export class SearchforfriendComponent implements OnInit {
             this.userdetails.propic = 'http://localhost:3000/' + this.userdetails.propic;
             console.log(this.userdetails);
         })
+        this.friend.checkFriend(username).subscribe(data => {
+            console.log(data);
+
+        this.friendStatus = data})
         let searchedContent = {"searchedContent":username.username}
         this.auth.saveToHistory(searchedContent).subscribe(data=>{console.log(data)})
     }

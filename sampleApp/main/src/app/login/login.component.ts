@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
     this.auth.Login(user).subscribe(data => {
       this.data = data;
       console.log(data);
-      if (this.data.success = true) {
+      if (this.data.success == true) {
         this.auth.storageUserData(data);
         this.router.navigate(['/user/usermainpage']);
       }

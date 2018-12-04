@@ -41,7 +41,8 @@ export class SearchforpostComponent implements OnInit {
   {
       var productname = { productname: this.Product.productname };
       console.log(productname);
-      this.friend.onVote(productname).subscribe(data=>{console.log(data)})
+      this.friend.onVote(productname).subscribe(data => { console.log(data) })
+      this.Product.vote = Number(this.Product.vote) + 1;
   }
   //onReview(data) {
   // //   this.friend.onReview(data).subscribe(data=>{console.log(data)})

@@ -97,7 +97,7 @@ router.post('/login', (req, res, next) => {
     User.getUserByUserName(authenicate, (err, user) => {
 
         if (err) { throw err }
-        if (!user) { res.json({ "message": "user not found" }); }
+        if (!user) { res.json({ success: false }); }
         else {
             var users = { user };
             const token = jwt.sign(users, config.secret,
@@ -113,6 +113,7 @@ router.post('/login', (req, res, next) => {
                     name: user.name,
                     username: user.username,
                     email: user.email,
+                    contact: user.contact,
                     propic: user.propic
                 }
             });
@@ -390,6 +391,32 @@ router.post('/getFriendRequests', verifyToken, (req, res, next) => {
                 status: req.body.status
             }
             Friend.getFriendByStatus(friendRequests, (err, users) => {
+                if (err) { throw err }
+                else {
+                    console.log(users);
+                    res.json(users);
+                }
+            })
+
+        }
+    })
+
+})
+router.post('/checkFriends', verifyToken, (req, res, next) => {
+    jwt.verify(req.token, config.secret, (err, data) => {
+        if (err) {
+
+            console.log(req.token);
+            res.sendStatus(403);
+        }
+        else {
+            var decoded = jwt_decode(req.token);
+            console.log(req.body.username);
+            var friendRequests = {
+                username: decoded.user.username,
+                friend: req.body.username
+            }
+            Friend.getFriendByUsername(friendRequests, (err, users) => {
                 if (err) { throw err }
                 else {
                     console.log(users);

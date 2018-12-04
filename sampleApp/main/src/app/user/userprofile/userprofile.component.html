@@ -7,10 +7,6 @@
                     <div class="user-pic col-md-12">
                         <img  [src]="user.propic"  class="img-thumbnail" width="300" height="350">
                     </div>
-                    <div class="col-md-12">
-                        <label class="upload-btn" for="userpic">Upload Image</label>
-                        <input type="file" id="userpic" name="userpic" #userpic="ngModel" (ngModel)="userpic" style="display:none" />
-                      </div>
                 </form>
               </div>
             <div class="right col-md-3 col-xs-6"> Username</div> <div class="left col-md-3 col-xs-6">{{user.username}}</div>
