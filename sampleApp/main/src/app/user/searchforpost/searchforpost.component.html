@@ -1,7 +1,5 @@
 <div class="col-md-8 wow fadeInRight col-xs-12 col-sm-12" data-wow-delay=".25s" id="content" style="float:right;">
-    <br>
-
-    <h2>All post with Keyword "ktm"</h2>
+     <h2>Search for product</h2>
     <form (ngSubmit)="onSearchPost(searchForm.value)" #searchForm="ngForm">
         <div class="input-group">
             <input list="post" class="form-control" name="productname" id="productname" #productname="ngModel" (ngModel)="user.productname" required>
@@ -13,20 +11,20 @@
             </div>
         </div>
     </form>
-    <br /><br />
-    <div *ngIf="Product" class="panel panel-default">
+    <br />
+     <div *ngIf="Product" class="panel panel-default">
         <div class="panel-body pnl-body">
             <div class="col-md-4" style="float:left;border-right:3px solid #f5f5f5;">
                 <div class="user-pic col-md-12">
                     <img src="http://localhost:3000/{{Product.productimage}}" class="img-thumbnail" width="300" height="350">
                 </div>
-                <div class="left col-md-5 col-xs-6" style="font-family:bold">{{Product.productname}}</div>
+                <div class="left col-md-7 col-xs-6" style="font-family:bold">{{Product.productname}}</div>
                 <div class="left col-md-3 col-xs-6" style="font-family:bold">votes:{{Product.vote}}</div>
             </div>
             <div class="right col-md-3 col-xs-6"> Vote</div> <div class="left col-md-3 col-xs-6" (click)="onVote()"> <i class="fa fa-thumbs-o-up"></i></div>
             <div class="right col-md-3 col-xs-6"> Product Uses</div> <div class="left col-md-3 col-xs-6">{{Product.productuses}}</div>
             <div class="right col-md-3 col-xs-6"> Product Description</div> <div class="left col-md-3 col-xs-6">{{Product.productdescription}}</div>
-            <div class="right col-md-3 col-xs-6"><button class="btn btn-primary" data-toggle="modal" data-target="#myModalHorizontal">Recommend To Friend</button></div> 
+            <div class="right col-md-3 col-xs-6"><button class="btn btn-primary" data-toggle="modal" data-target="#myModalHorizontal">Recommend To Friend</button></div>
             <div class="left col-md-3 col-xs-6">
                 <button class="btn btn-info" data-toggle="modal" data-target="#reviewModal">Review</button>
             </div>
