@@ -18,12 +18,14 @@
                 <div class="col-md-8">
                     <div class="right col-md-6 col-xs-6"> Username</div> <div class="left col-md-6">{{userdetails.username}}</div>
                     <div class="right col-md-6">status</div>
-                   <div  *ngIf ="friendStatus" class="left col-md-6 col-xs-6">
-                    <button id="btn-info" style="color:#fff;" class="btn btn-info" >Friends<i class="fa fa-check"></i></button>
-                   </div>
-                    <div  *ngIf="!friendStatus" class="left col-md-6 col-xs-6">
-                    <button id="btn-info" style="color:#fff;" class="btn btn-info" (click)="onRequest();">Send Request</button>
-                   </div>
+                    <div *ngIf="friendStatus == null" class="left col-md-6 col-xs-6">
+                        <button id="btn-info" style="color:#fff;" class="btn btn-info" (click)="onRequest();">Send Request</button>
+                    </div>
+                    <div *ngIf="friendStatus" class="left col-md-6 col-xs-6">
+                        <button *ngIf="friendStatus.status == false" id="btn-info" style="color:#fff;" class="btn btn-info">Request Sent<i class="fa fa-check"></i></button>
+                        <button *ngIf="friendStatus.status == true" id="btn-info" style="color:#fff;" class="btn btn-info">Friends<i class="fa fa-check"></i></button>
+                    </div>
+                  
                 </div>
             </div>
         </div>
@@ -45,10 +47,10 @@
                     </div>
                 </div>  <br /><br />
             </div>
-            <div class="container-fluid">
-               
-                </div>
-            </div>
+        </div>
+        <div *ngIf="friendRequests.length == 0"class="container-fluid">
+            <h4 style="color:#808080">No Friend Requests</h4>
+        </div>
 
     </div>
 </div>

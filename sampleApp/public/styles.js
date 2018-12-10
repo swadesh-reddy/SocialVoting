@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/* You can add global styles to this file, and also import other style files */\n.pnl-body .left, .pnl-body .right {\n    font-size: 13px;\n    letter-spacing: 1px;\n    text-transform: capitalize;\n    font-family: cursive;\n    line-height: 25px\n}\n.pnl-body {\n    border-left: 4px solid green;\n}"
+module.exports = "/* You can add global styles to this file, and also import other style files */\r\n.pnl-body .left, .pnl-body .right {\r\n    font-size: 13px;\r\n    letter-spacing: 1px;\r\n    text-transform: capitalize;\r\n    font-family: cursive;\r\n    line-height: 25px\r\n}\r\n.pnl-body {\r\n    border-left: 4px solid green;\r\n}"
 
 /***/ }),
 
@@ -539,7 +539,7 @@ if(false) {}
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\swade\source\repos\AngularMainProject\sampleApp\main\src\styles.css */"./src/styles.css");
+module.exports = __webpack_require__(/*! C:\Users\swade\source\repos\AngularMainProject\SocialVoting\sampleApp\main\src\styles.css */"./src/styles.css");
 
 
 /***/ })

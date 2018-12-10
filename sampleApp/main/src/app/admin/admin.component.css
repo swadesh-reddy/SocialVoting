@@ -21,18 +21,16 @@ li {
 
     .sidenav li {
         font-size: 16px;
-        padding: 7px 7px 7px 10px;
+        padding: 7px 7px;
         font-family: sans-serif;
         letter-spacing: 1px;
-        margin-right: 10px;
+        
         text-align: justify;
         text-transform: capitalize;
     }
 
         .sidenav li:hover {
-            background-color: cadetblue;
-            border: 1px solid #fff;
-            list-style: none;
+            box-shadow: 2px 2px 2px 2px lightgray;
         }
 
 .container {
@@ -44,66 +42,10 @@ a {
 }
 
 .sidenav li:hover a {
-    color: #fff;
     text-decoration: none;
 }
 
-.header {
-    color: #fff;
-}
-
-    .header ul {
-        margin-left: -18px;
-        margin-top: 15px;
-    }
-
-        .header ul li {
-            padding: 0px 20px 0px 20px;
-            font-size: 15px;
-            font-family: sans-serif;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            border-right: 1px solid;
-        }
-
-            .header ul li a {
-                color: #fff;
-            }
-
-                .header ul li a:hover {
-                    color: #000;
-                }
 
 .left {
     text-align: right;
-}
-
-.pnl-body .left, .pnl-body .right {
-    font-size: 13px;
-    letter-spacing: 1px;
-    text-transform: capitalize;
-    font-family: cursive;
-    line-height: 25px
-}
-
-.pnl-body {
-    border-left: 4px solid green;
-}
-
-.adminpic {
-    width: 650px;
-    height: 271px;
-}
-
-.carousel-caption {
-    right: 0px;
-    left: 0px;
-    margin-bottom: 180px;
-}
-
-.fa-arrow-left {
-    position: fixed;
-    right: 83px;
-    bottom: 28px;
-    font-size: 20px;
 }

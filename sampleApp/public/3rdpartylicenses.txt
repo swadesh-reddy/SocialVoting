@@ -95,6 +95,10 @@ MIT
 MIT
 MIT
 
+angular2-flash-messages@3.0.1
+MIT
+MIT
+
 rxjs@6.2.2
 Apache-2.0
 Apache License

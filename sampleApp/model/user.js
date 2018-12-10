@@ -21,7 +21,7 @@ module.exports.getUserByUserName = function (authenication, callback) {
 module.exports.getAllProfiles = function (callback) {
     user.find({}, callback);
 }
-module.exports.getUserByEmail = function (username, callback) {
+module.exports.getUserByEmail = function (email, callback) {
     console.log(email);
     user.findOne(email, callback);
 }

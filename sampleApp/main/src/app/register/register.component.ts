@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { RouterModule, Router } from '@angular/router';
 import { AuthenicateService } from "../authenicate.service";
 import { User } from '../user';
+import { FlashMessagesService } from 'angular2-flash-messages';
 
 @Component({
     selector: 'app-register',
@@ -14,7 +15,7 @@ export class RegisterComponent implements OnInit {
     user: User;
     image: File = null;
     public files: any[];
-    constructor(private auth: AuthenicateService, private router: Router) { }
+    constructor(private auth: AuthenicateService, private router: Router, private flashMessages: FlashMessagesService) { }
 
     ngOnInit() {
     }
@@ -38,10 +39,18 @@ export class RegisterComponent implements OnInit {
         console.log(form);
         this.auth.registerData(form).subscribe(data => {
             console.log(data);
-            if (data) {
+            this.user = data;
+            if (this.user.success == true) {
                 this.router.navigate(['/login'])
             }
+            else {
+                this.inValidRegistration();
+            }
         });
+    }
+    inValidRegistration() {
+
+        this.flashMessages.show('Email already exists', { cssClass: 'alert-warning', timeout: 5000 })
     }
     //onImage(image) {
     //  console.log(image);

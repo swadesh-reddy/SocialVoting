@@ -9,13 +9,20 @@ import { RouterModule, Router } from '@angular/router';
 })
 export class UserComponent implements OnInit {
 
+    show: Boolean = true;
     constructor(private auth: AuthenicateService, private router: Router) { }
 
-  ngOnInit() {
-  }
+    ngOnInit() {
+    }
     logout() {
         this.auth.logout();
         this.router.navigate(['/login']);
 
-}
+    }
+    closeNav() {
+        this.show = false;
+    }
+    openNav() {
+        this.show = true;
+    }
 }

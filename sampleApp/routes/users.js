@@ -23,6 +23,7 @@ var upload = multer({ storage: storage });
 
 router.post('/register', upload.single('propic'), (req, res, next) => {
     console.log(req);
+    let checkEmail = {"email": req.body.email }
     let newUser = new User({
         username: req.body.username,
         password: req.body.password,
@@ -31,18 +32,28 @@ router.post('/register', upload.single('propic'), (req, res, next) => {
         contact: req.body.contact,
         propic: req.file.path
     })
-
-    User.addUser(newUser, (err, user) => {
-
-        if (err) { res.json("Registartion failed") }
-        else {
+    User.getUserByEmail(checkEmail, (err, user) => {
+        if (err) { throw err }
+   
+        else if (user.email == req.body.email) {
             res.json({
-                "success": "Registration Successfull",
-                user
+                success: false
             });
         }
+        else {
+            User.addUser(newUser, (err, user) => {
+
+                if (err) { res.json("Registartion failed") }
+                else {
+                    res.json({
+                        success: true
+                    });
+                }
+            })
+
+        }
     })
-})
+  })
 
 
 router.post('/addProduct', verifyToken, upload.single('productimage'), (req, res, next) => {
@@ -81,7 +92,7 @@ router.post('/savehistory', verifyToken, (req, res, next) => {
         if (err) { res.json("Registartion failed") }
         else {
             res.json({
-                "success": "added Successfull",
+                success: true,
             });
         }
     })

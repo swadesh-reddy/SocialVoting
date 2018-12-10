@@ -3,6 +3,7 @@ import { AuthenicateService } from '../../authenicate.service';
 import { FriendsService } from '../../friends.service';
 import { User } from '../../user';
 import { Product } from '../../product';
+import { FlashMessagesService } from 'angular2-flash-messages';
 @Component({
   selector: 'app-searchforpost',
   templateUrl: './searchforpost.component.html',
@@ -12,7 +13,7 @@ export class SearchforpostComponent implements OnInit {
     Product: any
     recommand: any;
     users: Product;
-    constructor(private auth: AuthenicateService, private friend: FriendsService) { }
+    constructor(private auth: AuthenicateService, private friend: FriendsService, private flashMessages: FlashMessagesService) { }
 
     ngOnInit() {
         this.loadAllProducts();
@@ -35,7 +36,15 @@ export class SearchforpostComponent implements OnInit {
   onRecommend(data) {
       console.log(data);
       data.productname = this.Product.productname;
-      this.friend.onRecommend(data).subscribe(data=>{console.log(data)})
+      this.friend.onRecommend(data).subscribe(data => {
+          console.log(data)
+          this.onRecommendSuccess();
+      })
+  }
+  onRecommendSuccess() {
+
+      this.flashMessages.show('Recommand successful', { cssClass: 'alert-success', timeout: 3000 })
+    
   }
   onVote()
   {

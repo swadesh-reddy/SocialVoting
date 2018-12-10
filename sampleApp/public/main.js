@@ -128,7 +128,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  admin-mainpage works!\n</p>\n"
+module.exports = "<p>\r\n  admin-mainpage works!\r\n</p>\r\n"
 
 /***/ }),
 
@@ -180,7 +180,7 @@ var AdminMainpageComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\r\nli {\r\n    list-style: none;\r\n}\r\n\r\n.fa-close {\r\n    font-size: 21px;\r\n    float: right;\r\n    position: relative;\r\n    margin-right: 9px;\r\n    margin-top: 9px;\r\n    cursor: pointer;\r\n}\r\n\r\n.sidenav {\r\n    box-shadow: 2px 3px 4px #f5f5f5;\r\n    background-color: #fff;\r\n    border: 3px solid rgb(238, 238, 238);\r\n}\r\n\r\n.sidenav li {\r\n        font-size: 16px;\r\n        padding: 7px 7px 7px 10px;\r\n        font-family: sans-serif;\r\n        letter-spacing: 1px;\r\n        margin-right: 10px;\r\n        text-align: justify;\r\n        text-transform: capitalize;\r\n    }\r\n\r\n.sidenav li:hover {\r\n            background-color: cadetblue;\r\n            border: 1px solid #fff;\r\n            list-style: none;\r\n        }\r\n\r\n.container {\r\n    padding: 0px;\r\n}\r\n\r\na {\r\n    color: #000;\r\n}\r\n\r\n.sidenav li:hover a {\r\n    color: #fff;\r\n    text-decoration: none;\r\n}\r\n\r\n.header {\r\n    color: #fff;\r\n}\r\n\r\n.header ul {\r\n        margin-left: -18px;\r\n        margin-top: 15px;\r\n    }\r\n\r\n.header ul li {\r\n            padding: 0px 20px 0px 20px;\r\n            font-size: 15px;\r\n            font-family: sans-serif;\r\n            letter-spacing: 1px;\r\n            text-transform: uppercase;\r\n            border-right: 1px solid;\r\n        }\r\n\r\n.header ul li a {\r\n                color: #fff;\r\n            }\r\n\r\n.header ul li a:hover {\r\n                    color: #000;\r\n                }\r\n\r\n.left {\r\n    text-align: right;\r\n}\r\n\r\n.pnl-body .left, .pnl-body .right {\r\n    font-size: 13px;\r\n    letter-spacing: 1px;\r\n    text-transform: capitalize;\r\n    font-family: cursive;\r\n    line-height: 25px\r\n}\r\n\r\n.pnl-body {\r\n    border-left: 4px solid green;\r\n}\r\n\r\n.adminpic {\r\n    width: 650px;\r\n    height: 271px;\r\n}\r\n\r\n.carousel-caption {\r\n    right: 0px;\r\n    left: 0px;\r\n    margin-bottom: 180px;\r\n}\r\n\r\n.fa-arrow-left {\r\n    position: fixed;\r\n    right: 83px;\r\n    bottom: 28px;\r\n    font-size: 20px;\r\n}\r\n"
+module.exports = "\r\nli {\r\n    list-style: none;\r\n}\r\n\r\n.fa-close {\r\n    font-size: 21px;\r\n    float: right;\r\n    position: relative;\r\n    margin-right: 9px;\r\n    margin-top: 9px;\r\n    cursor: pointer;\r\n}\r\n\r\n.sidenav {\r\n    box-shadow: 2px 3px 4px #f5f5f5;\r\n    background-color: #fff;\r\n    border: 3px solid rgb(238, 238, 238);\r\n}\r\n\r\n.sidenav li {\r\n        font-size: 16px;\r\n        padding: 7px 7px;\r\n        font-family: sans-serif;\r\n        letter-spacing: 1px;\r\n        \r\n        text-align: justify;\r\n        text-transform: capitalize;\r\n    }\r\n\r\n.sidenav li:hover {\r\n            box-shadow: 2px 2px 2px 2px lightgray;\r\n        }\r\n\r\n.container {\r\n    padding: 0px;\r\n}\r\n\r\na {\r\n    color: #000;\r\n}\r\n\r\n.sidenav li:hover a {\r\n    text-decoration: none;\r\n}\r\n\r\n.left {\r\n    text-align: right;\r\n}\r\n"
 
 /***/ }),
 
@@ -191,7 +191,7 @@ module.exports = "\r\nli {\r\n    list-style: none;\r\n}\r\n\r\n.fa-close {\r\n 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\r\n    <app-header>Loading...</app-header>\r\n    <ul class=\"sidenav  col-md-4\"  id=\"sidenav\" style=\"float:left;\">\r\n        <li>\r\n            <a routerLink=\"viewallusers\">View All Users</a>\r\n        </li>\r\n        <li>\r\n            <a routerLink=\"viewallfriends\">view all friends and request</a>\r\n        </li>\r\n        <li>\r\n            <a routerLink=\"addpost\">Add post</a>\r\n        </li>\r\n        <li>\r\n            <a routerLink=\"viewallpost\">View all posts with votes</a>\r\n        </li>\r\n        <li>\r\n            <a routerLink=\"viewallrecommendedpost\">view all recommended posts</a>\r\n        </li>\r\n        <li>\r\n            <a routerLink=\"viewAllsearchhistory\">view all search History</a>\r\n        </li>\r\n        <li>\r\n            <a routerLink=\"tophitkchart\">ALL top k hit rate in chart</a>\r\n        </li>\r\n         <li>\r\n            <a (click)=\"logout()\">logout</a>\r\n        </li>\r\n    </ul>\r\n    <div class=\"\"><router-outlet></router-outlet></div>\r\n</div>\r\n\r\n"
+module.exports = "<div class=\"container\">\r\n    <button (click)=\"openNav()\" style=\"z-index:10000;position:fixed\"><i class=\"fa fa-bars\"></i></button>\r\n    <app-header>Loading...</app-header>\r\n    <ul *ngIf =\"show\" class=\"sidenav col-xs-12 col-md-4\" id=\"sidenav\" style=\"float:left;\">\r\n     <i class=\"fa fa-close\" (click)=\"closeNav()\"></i>\r\n        <li>\r\n            <a routerLink=\"viewallusers\">View All Users</a>\r\n        </li>\r\n        <li>\r\n            <a routerLink=\"viewallfriends\">view all friends and request</a>\r\n        </li>\r\n        <li>\r\n            <a routerLink=\"addpost\">Add post</a>\r\n        </li>\r\n        <li>\r\n            <a routerLink=\"viewallpost\">View all posts with votes</a>\r\n        </li>\r\n        <li>\r\n            <a routerLink=\"viewallrecommendedpost\">view all recommended posts</a>\r\n        </li>\r\n        <li>\r\n            <a routerLink=\"viewAllsearchhistory\">view all search History</a>\r\n        </li>\r\n        <li>\r\n            <a routerLink=\"tophitkchart\">ALL top k hit rate in chart</a>\r\n        </li>\r\n        <li>\r\n            <a (click)=\"logout()\">logout</a>\r\n        </li>\r\n    </ul>\r\n    <div class=\"\"><router-outlet></router-outlet></div>\r\n</div>\r\n\r\n"
 
 /***/ }),
 
@@ -224,12 +224,19 @@ var AdminComponent = /** @class */ (function () {
     function AdminComponent(auth, router) {
         this.auth = auth;
         this.router = router;
+        this.show = true;
     }
     AdminComponent.prototype.ngOnInit = function () {
     };
     AdminComponent.prototype.logout = function () {
         this.auth.logout();
         this.router.navigate(['/adminlogin']);
+    };
+    AdminComponent.prototype.closeNav = function () {
+        this.show = false;
+    };
+    AdminComponent.prototype.openNav = function () {
+        this.show = true;
     };
     AdminComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -264,7 +271,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  top-krating-chart works!\n</p>\n"
+module.exports = "<div class=\"col-md-8 wow fadeInRight col-xs-12 col-sm-12\" data-wow-delay=\".25s\" id=\"barchart\" style=\"float:right;\">\r\n</div>"
 
 /***/ }),
 
@@ -293,6 +300,7 @@ var TopKRatingChartComponent = /** @class */ (function () {
     function TopKRatingChartComponent() {
     }
     TopKRatingChartComponent.prototype.ngOnInit = function () {
+        Barchart();
     };
     TopKRatingChartComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -327,7 +335,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"col-md-8\">\r\n    <h2 class=\"sideheading\">View All My Friends</h2>\r\n    <div *ngFor=\"let request of product\" class=\"panel panel-default\">\r\n        <div class=\"panel-body pnl-body\">\r\n            <div class=\"col-md-4\"> <a routerLink=\"/user/viewprofile/{{request.productname}}\"><img src=\"http://localhost:3000/{{request.productimage}}\" class=\"img-circle\" width=\"70\" height=\"70\" style=\"float:left;\"></a></div>\r\n            <div class=\"col-md-8\">\r\n                <div class=\"right col-md-6 col-xs-6\"> product Name</div> <div class=\"left col-md-6\">{{request.productname}}</div>\r\n                <div class=\"right col-md-6\">status</div>\r\n                <div class=\"left col-md-6 col-xs-6\"> <button id=\"btn-info\" style=\"color:#fff;\" class=\"btn btn-info\" (click)=\"onRequest();\">view Profile</button></div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n"
+module.exports = "<div class=\"col-md-8\">\r\n    <h2 class=\"sideheading\">All Products with Votes</h2>\r\n    <div *ngFor=\"let request of product\" class=\"panel panel-default\">\r\n        <div class=\"panel-body pnl-body\">\r\n            <div class=\"col-md-4\"> <a routerLink=\"/user/viewprofile/{{request.productname}}\"><img src=\"http://localhost:3000/{{request.productimage}}\" class=\"img-circle\" width=\"70\" height=\"70\" style=\"float:left;\"></a></div>\r\n            <div class=\"col-md-8\">\r\n                <div class=\"right col-md-6 col-xs-6\"> product Name</div> <div class=\"left col-md-6\">{{request.productname}}</div>\r\n                <div class=\"right col-md-6\">votes</div>\r\n                <div class=\"left col-md-6 col-xs-6\">{{request.vote}}</div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -366,7 +374,7 @@ var ViewAllPostComponent = /** @class */ (function () {
     };
     ViewAllPostComponent.prototype.loadAllProducts = function () {
         var _this = this;
-        this.friend.loadAllProfiles().subscribe(function (data) {
+        this.friend.loadAllProducts().subscribe(function (data) {
             console.log(data);
             _this.product = data;
         });
@@ -404,7 +412,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"col-md-8\">\r\n    <h2 class=\"sideheading\">View All My Friends</h2>\r\n    <div *ngFor=\"let request of recommends\" class=\"panel panel-default\">\r\n        <div class=\"panel-body pnl-body\">\r\n            <div class=\"col-md-4\"> <a routerLink=\"/user/viewprofile/{{request.productname}}\"><img src=\"http://localhost:3000/{{request.productimage}}\" class=\"img-circle\" width=\"70\" height=\"70\" style=\"float:left;\"></a></div>\r\n            <div class=\"col-md-8\">\r\n                <div class=\"right col-md-6 col-xs-6\"> product Name</div> <div class=\"left col-md-6\">{{request.productname}}</div>\r\n                <div class=\"right col-md-6\">status</div>\r\n                <div class=\"left col-md-6 col-xs-6\"> <button id=\"btn-info\" style=\"color:#fff;\" class=\"btn btn-info\" (click)=\"onRequest();\">view Profile</button></div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n"
+module.exports = "\r\n<div class=\"col-md-8 wow fadeInRight col-xs-12 col-sm-12\" data-wow-delay=\".25s\" id=\"content\" style=\"float:right;\">\r\n    <h2> All recommandations</h2>\r\n    <table  class=\"table table-bordered\">\r\n        <thead>\r\n            <tr>\r\n                <th>Product</th>\r\n                <th>Recommended By</th>\r\n                <th>RecommendedTo</th>\r\n            </tr>\r\n        </thead>\r\n        <tbody>\r\n            <tr *ngFor=\"let request of recommends\">\r\n                <td>{{request.productname}}</td>\r\n                <td>{{request.username}}</td>\r\n                <td>{{request.recommendTo}}</td>\r\n                    </tr>\r\n        </tbody>\r\n    </table>\r\n\r\n\r\n</div>"
 
 /***/ }),
 
@@ -440,7 +448,10 @@ var ViewAllRecommendedPostComponent = /** @class */ (function () {
     }
     ViewAllRecommendedPostComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.friend.loadRecommendations().subscribe(function (data) { _this.recommends = data; });
+        this.friend.loadRecommendations().subscribe(function (data) {
+            _this.recommends = data;
+            console.log(_this.recommends);
+        });
     };
     ViewAllRecommendedPostComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -704,7 +715,7 @@ var ViewallusersComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = ".login {\r\n    top: 0;\r\n    position: fixed;\r\n    left: 0;\r\n    right: 0;\r\n    bottom: 0;\r\n}\r\n"
 
 /***/ }),
 
@@ -756,15 +767,14 @@ var AdminloginComponent = /** @class */ (function () {
         console.log(user);
         this.auth.adminLogin(user).subscribe(function (data) {
             _this.data = data;
-            console.log(_this.data.user.admin);
-            debugger;
-            if (_this.data.user.admin == 'true') {
-                debugger;
-                _this.auth.storageUserData(data);
-                _this.router.navigate(['/admin/adminmainpage']);
-            }
-            else {
-                _this.router.navigate(['/adminlogin']);
+            if (_this.data != null) {
+                if (_this.data.user.admin == 'true') {
+                    _this.auth.storageUserData(data);
+                    _this.router.navigate(['/admin/adminmainpage']);
+                }
+                else {
+                    _this.router.navigate(['/adminlogin']);
+                }
             }
         });
     };
@@ -822,6 +832,9 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
 
 var AppComponent = /** @class */ (function () {
     function AppComponent() {
@@ -832,7 +845,8 @@ var AppComponent = /** @class */ (function () {
             selector: 'app-root',
             template: __webpack_require__(/*! ./app.component.html */ "./src/app/app.component.html"),
             styles: [__webpack_require__(/*! ./app.component.css */ "./src/app/app.component.css")]
-        })
+        }),
+        __metadata("design:paramtypes", [])
     ], AppComponent);
     return AppComponent;
 }());
@@ -885,12 +899,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _adminlogin_adminlogin_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./adminlogin/adminlogin.component */ "./src/app/adminlogin/adminlogin.component.ts");
 /* harmony import */ var _admin_admin_mainpage_admin_mainpage_component__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./admin/admin-mainpage/admin-mainpage.component */ "./src/app/admin/admin-mainpage/admin-mainpage.component.ts");
 /* harmony import */ var _view_product_view_product_component__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./view-product/view-product.component */ "./src/app/view-product/view-product.component.ts");
+/* harmony import */ var angular2_flash_messages__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! angular2-flash-messages */ "./node_modules/angular2-flash-messages/module/index.js");
+/* harmony import */ var angular2_flash_messages__WEBPACK_IMPORTED_MODULE_34___default = /*#__PURE__*/__webpack_require__.n(angular2_flash_messages__WEBPACK_IMPORTED_MODULE_34__);
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -964,7 +981,8 @@ var AppModule = /** @class */ (function () {
                 _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormsModule"],
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClientModule"],
                 _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterModule"],
-                _approute_approute_module__WEBPACK_IMPORTED_MODULE_10__["ApprouteModule"]
+                _approute_approute_module__WEBPACK_IMPORTED_MODULE_10__["ApprouteModule"],
+                angular2_flash_messages__WEBPACK_IMPORTED_MODULE_34__["FlashMessagesModule"].forRoot(),
             ],
             providers: [_authenicate_service__WEBPACK_IMPORTED_MODULE_9__["AuthenicateService"]],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]]
@@ -1212,7 +1230,7 @@ var AuthenicateService = /** @class */ (function () {
     AuthenicateService.prototype.getAllProfiles = function () {
         this.loadToken();
         var headers = this._headers.append('Authorization', 'Bearer ' + this.authToken);
-        return this.http.get("http://localhost:3000/users/allprofiles", { headers: headers });
+        return this.http.post("http://localhost:3000/users/allprofiles", headers, { headers: headers });
     };
     AuthenicateService.prototype.loggedIn = function () {
         this.loadToken();
@@ -1247,19 +1265,19 @@ var AuthenicateService = /** @class */ (function () {
         this.loadToken();
         var headers = this._headers.append('Authorization', 'Bearer ' + this.authToken);
         headers.append("cache-control", 'no-cache');
-        return this.http.get("http://localhost:3000/users/loaduserhistory", { headers: headers });
+        return this.http.post("http://localhost:3000/users/loaduserhistory", headers, { headers: headers });
     };
     AuthenicateService.prototype.loadAllHistory = function () {
         this.loadToken();
         var headers = this._headers.append('Authorization', 'Bearer ' + this.authToken);
         headers.append("cache-control", 'no-cache');
-        return this.http.get("http://localhost:3000/users/loadAlluserhistory", { headers: headers });
+        return this.http.post("http://localhost:3000/users/loadAlluserhistory", headers, { headers: headers });
     };
     AuthenicateService.prototype.clearuserhistory = function () {
         this.loadToken();
         var headers = this._headers.append('Authorization', 'Bearer ' + this.authToken);
         headers.append("cache-control", 'no-cache');
-        return this.http.get("http://localhost:3000/users/clearuserhistory", { headers: headers });
+        return this.http.post("http://localhost:3000/users/clearuserhistory", headers, { headers: headers });
     };
     AuthenicateService.prototype.makeAdmin = function (username) {
         this.loadToken();
@@ -1327,10 +1345,16 @@ var FriendsService = /** @class */ (function () {
         var headers = this._headers.append('Authorization', 'Bearer ' + this.token);
         return this.http.post("http://localhost:3000/users/getFriendRequests", status, { headers: headers });
     };
+    FriendsService.prototype.checkFriend = function (username) {
+        console.log(username);
+        this.token = this.auth.loadToken();
+        var headers = this._headers.append('Authorization', 'Bearer ' + this.token);
+        return this.http.post("http://localhost:3000/users/checkFriends", username, { headers: headers });
+    };
     FriendsService.prototype.getAllFriendRequests = function () {
         this.token = this.auth.loadToken();
         var headers = this._headers.append('Authorization', 'Bearer ' + this.token);
-        return this.http.get("http://localhost:3000/users/getAllFriendRequests", { headers: headers });
+        return this.http.post("http://localhost:3000/users/getAllFriendRequests", headers, { headers: headers });
     };
     FriendsService.prototype.handleRequest = function (url, accept) {
         this.token = this.auth.loadToken();
@@ -1353,22 +1377,22 @@ var FriendsService = /** @class */ (function () {
         this.token = this.auth.loadToken();
         var headers = this._headers.append('Authorization', 'Bearer ' + this.token);
         headers.set('Content-Type', 'multipart/form-data');
-        return this.http.get("http://localhost:3000/users/getRecommendedPosts", { headers: headers });
+        return this.http.post("http://localhost:3000/users/getRecommendedPosts", headers, { headers: headers });
     };
     FriendsService.prototype.onSearchProduct = function (productname) {
         this.token = this.auth.loadToken();
         var headers = this._headers.append('Authorization', 'Bearer ' + this.token);
         return this.http.post("http://localhost:3000/users/getProductByName", productname, { headers: headers });
     };
-    FriendsService.prototype.loadAllProfiles = function () {
+    FriendsService.prototype.loadAllProducts = function () {
         this.token = this.auth.loadToken();
         var headers = this._headers.append('Authorization', 'Bearer ' + this.token);
-        return this.http.get("http://localhost:3000/users/getAllProducts", { headers: headers });
+        return this.http.post("http://localhost:3000/users/getAllProducts", headers, { headers: headers });
     };
     FriendsService.prototype.loadRecommendations = function () {
         this.token = this.auth.loadToken();
         var headers = this._headers.append('Authorization', 'Bearer ' + this.token);
-        return this.http.get("http://localhost:3000/users/getAllRecommendations", { headers: headers });
+        return this.http.post("http://localhost:3000/users/getAllRecommendations", headers, { headers: headers });
     };
     FriendsService.prototype.onVote = function (productname) {
         this.token = this.auth.loadToken();
@@ -1469,7 +1493,7 @@ module.exports = ".login\r\n{\r\n    top:0;\r\n    position:fixed;\r\n    left:0
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"login\"><div class=\"content\">\r\n  <form class=\"login-form\" (ngSubmit)=\"onLogin(loginForm.value)\" #loginForm=\"ngForm\">\r\n    <h3 class=\"form-title font-green\">Sign In</h3>\r\n    <div class=\"alert alert-danger display-hide\">\r\n      <button class=\"close\" data-close=\"alert\"></button>\r\n      <span> Enter any username and password. </span>\r\n    </div>\r\n    <div class=\"form-group\">\r\n      <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->\r\n      <label class=\"control-label visible-ie8 visible-ie9\">Email :</label>\r\n      <input class=\"form-control form-control-solid placeholder-no-fix\" type=\"text\" placeholder=\"Email\" name=\"email\" #email=\"ngModel\" (ngModel)=\"user.email\" minlength=\"4\" required>\r\n      <div *ngIf=\"email.invalid && (email.dirty || email.touched)\" class=\"text text-danger\">Email is required</div>\r\n    </div>\r\n    <div class=\"form-group\">\r\n      <label class=\"control-label visible-ie8 visible-ie9\">Password</label>\r\n      <input class=\"form-control form-control-solid placeholder-no-fix\"  type=\"password\" placeholder=\"Password\" name=\"password\" #password=\"ngModel\" (ngModel)=\"user.password\" minlength=\"4\" required />\r\n      <div *ngIf=\"password.invalid && (password.dirty || password.touched)\" class=\"text text-danger\">Password is required</div>\r\n    </div>\r\n    <div class=\"form-actions\">\r\n      <button type=\"submit\" [disabled]=\"!loginForm.form.valid\" class=\"btn green uppercase\">Login</button>\r\n      <label class=\"rememberme check mt-checkbox mt-checkbox-outline\">\r\n        <input type=\"checkbox\" name=\"remember\" value=\"1\" />Remember\r\n        <span></span>\r\n      </label>\r\n      <a href=\"javascript:;\" id=\"forget-password\" class=\"forget-password\">Forgot Password?</a>\r\n    </div>\r\n    <div class=\"login-options\">\r\n      <h4>Or login with</h4>\r\n      <ul class=\"social-icons\">\r\n        <li>\r\n          <a class=\"social-icon-color facebook\" data-original-title=\"facebook\" href=\"javascript:;\"></a>\r\n        </li>\r\n        <li>\r\n          <a class=\"social-icon-color twitter\" data-original-title=\"Twitter\" href=\"javascript:;\"></a>\r\n        </li>\r\n        <li>\r\n          <a class=\"social-icon-color googleplus\" data-original-title=\"Goole Plus\" href=\"javascript:;\"></a>\r\n        </li>\r\n        <li>\r\n          <a class=\"social-icon-color linkedin\" data-original-title=\"Linkedin\" href=\"javascript:;\"></a>\r\n        </li>\r\n      </ul>\r\n    </div>\r\n    <div class=\"create-account\">\r\n      <p>\r\n        <a routerLink=\"/register\" class=\"uppercase\">Create an account</a>\r\n      </p>\r\n    </div>\r\n  </form>\r\n</div>\r\n</div>\r\n"
+module.exports = "<div class=\"login\">\r\n    <div class=\"content\">\r\n        <flash-messages></flash-messages>\r\n        <form class=\"login-form\" (ngSubmit)=\"onLogin(loginForm.value)\" #loginForm=\"ngForm\">\r\n            <h3 class=\"form-title font-green\">Sign In</h3>\r\n            <div class=\"alert alert-danger display-hide\">\r\n                <button class=\"close\" data-close=\"alert\"></button>\r\n                <span> Enter any username and password. </span>\r\n            </div>\r\n            <div class=\"form-group\">\r\n                <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->\r\n                <label class=\"control-label visible-ie8 visible-ie9\">Email :</label>\r\n                <input class=\"form-control form-control-solid placeholder-no-fix\" type=\"text\" placeholder=\"Email\" name=\"email\" #email=\"ngModel\" (ngModel)=\"user.email\" minlength=\"4\" required>\r\n                <div *ngIf=\"email.invalid && (email.dirty || email.touched)\" class=\"text text-danger\">Email is required</div>\r\n            </div>\r\n            <div class=\"form-group\">\r\n                <label class=\"control-label visible-ie8 visible-ie9\">Password</label>\r\n                <input class=\"form-control form-control-solid placeholder-no-fix\" type=\"password\" placeholder=\"Password\" name=\"password\" #password=\"ngModel\" (ngModel)=\"user.password\" minlength=\"4\" required />\r\n                <div *ngIf=\"password.invalid && (password.dirty || password.touched)\" class=\"text text-danger\">Password is required</div>\r\n            </div>\r\n            <div class=\"form-actions\">\r\n                <button type=\"submit\" [disabled]=\"!loginForm.form.valid\" class=\"btn green uppercase\">Login</button>\r\n                <label class=\"rememberme check mt-checkbox mt-checkbox-outline\">\r\n                    <input type=\"checkbox\" name=\"remember\" value=\"1\" />Remember\r\n                    <span></span>\r\n                </label>\r\n                <a href=\"javascript:;\" id=\"forget-password\" class=\"forget-password\">Forgot Password?</a>\r\n            </div>\r\n            <div class=\"login-options\">\r\n                <h4>Or login with</h4>\r\n                <ul class=\"social-icons\">\r\n                    <li>\r\n                        <a class=\"social-icon-color facebook\" data-original-title=\"facebook\" href=\"javascript:;\"></a>\r\n                    </li>\r\n                    <li>\r\n                        <a class=\"social-icon-color twitter\" data-original-title=\"Twitter\" href=\"javascript:;\"></a>\r\n                    </li>\r\n                    <li>\r\n                        <a class=\"social-icon-color googleplus\" data-original-title=\"Goole Plus\" href=\"javascript:;\"></a>\r\n                    </li>\r\n                    <li>\r\n                        <a class=\"social-icon-color linkedin\" data-original-title=\"Linkedin\" href=\"javascript:;\"></a>\r\n                    </li>\r\n                </ul>\r\n            </div>\r\n            <div class=\"create-account\">\r\n                <p>\r\n                    <a routerLink=\"/register\" class=\"uppercase\">Create an account</a>\r\n                </p>\r\n            </div>\r\n        </form>\r\n\r\n    </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1486,6 +1510,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _authenicate_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../authenicate.service */ "./src/app/authenicate.service.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var angular2_flash_messages__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! angular2-flash-messages */ "./node_modules/angular2-flash-messages/module/index.js");
+/* harmony import */ var angular2_flash_messages__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(angular2_flash_messages__WEBPACK_IMPORTED_MODULE_3__);
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1498,10 +1524,12 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var LoginComponent = /** @class */ (function () {
-    function LoginComponent(auth, router) {
+    function LoginComponent(auth, router, flashMessages) {
         this.auth = auth;
         this.router = router;
+        this.flashMessages = flashMessages;
     }
     LoginComponent.prototype.ngOnInit = function () {
     };
@@ -1511,14 +1539,17 @@ var LoginComponent = /** @class */ (function () {
         this.auth.Login(user).subscribe(function (data) {
             _this.data = data;
             console.log(data);
-            if (_this.data.success = true) {
+            if (_this.data.success == true) {
                 _this.auth.storageUserData(data);
                 _this.router.navigate(['/user/usermainpage']);
             }
             else {
-                _this.router.navigate(['/login']);
+                _this.inValidLogin();
             }
         });
+    };
+    LoginComponent.prototype.inValidLogin = function () {
+        this.flashMessages.show('ivalid credentials', { cssClass: 'alert-warning', timeout: 5000 });
     };
     LoginComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -1526,7 +1557,7 @@ var LoginComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./login.component.html */ "./src/app/login/login.component.html"),
             styles: [__webpack_require__(/*! ./login.component.css */ "./src/app/login/login.component.css")]
         }),
-        __metadata("design:paramtypes", [_authenicate_service__WEBPACK_IMPORTED_MODULE_1__["AuthenicateService"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]])
+        __metadata("design:paramtypes", [_authenicate_service__WEBPACK_IMPORTED_MODULE_1__["AuthenicateService"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"], angular2_flash_messages__WEBPACK_IMPORTED_MODULE_3__["FlashMessagesService"]])
     ], LoginComponent);
     return LoginComponent;
 }());
@@ -1553,7 +1584,7 @@ module.exports = "\r\n h1 {\r\n    font-family: monospace;\r\n    text-transform
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = " \r\n<div class=\"register container-fluid\">\r\n    <br><br />\r\n     <div class=\"main col-md-offset-3 col-md-6\">\r\n        <div class=\"panel panel-default\">\r\n            <div class=\"panel-heading\"><h4>Register</h4></div>\r\n            <div class=\"panel-body\">\r\n                <form (ngSubmit)=\"onRegister(registerForm.value)\" #registerForm=\"ngForm\">\r\n                    <div class=\"form-group\">\r\n                        <label for=\"username\">Username :</label>\r\n                        <input type=\"text\" class=\"form-control input-md\" name=\"username\" #username=\"ngModel\" (ngModel)=\"user.username\" minlength=\"4\" required>\r\n                        <div *ngIf=\"username.invalid && (username.dirty || username.touched)\" class=\"text text-danger\">Username is required</div>\r\n                    </div>\r\n                    <div class=\"form-group\">\r\n                        <label for=\"email\">Email :</label>\r\n                        <input type=\"email\" class=\"form-control input-md\" name=\"email\" #email=\"ngModel\" (ngModel)=\"user.email\" minlength=\"4\" required>\r\n                        <div *ngIf=\"email.invalid && (email.dirty || email.touched)\" class=\"text text-danger\">Email is required</div>\r\n                    </div>\r\n                    <div class=\"form-group\">\r\n                        <label for=\"contact\">Contact:</label>\r\n                        <input type=\"Number\" class=\"form-control input-md\" name=\"contact\" #contact=\"ngModel\" (ngModel)=\"user.contact\" minlength=\"4\" required>\r\n                        <div *ngIf=\"contact.invalid && (contact.dirty || contact.touched)\" class=\"text text-danger\">Contact is required</div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                        <label for=\"pwd\">Password:</label>\r\n                        <input type=\"password\" class=\"form-control input-md\" name=\"password\" #password=\"ngModel\" (ngModel)=\"user.password\" minlength=\"4\" required>\r\n                        <div *ngIf=\"password.invalid && (password.dirty || password.touched)\" class=\"text text-danger\">Password is required</div>\r\n                    </div>\r\n                    <div class=\"form-group\">\r\n                        <label for=\"propic\">Image:</label>\r\n                        <input type=\"file\" class=\"form-control input-md\" (change)=\"onFileChange($event)\" id=\"propic\" name=\"propic\" required>\r\n                    </div>\r\n                    <!--<label class=\"container\">\r\n          Remember me\r\n          <input type=\"checkbox\" checked=\"checked\">\r\n          <span class=\"checkmark\"></span>\r\n        </label>-->\r\n                    <button type=\"submit\" [disabled]=\"!registerForm.form.valid\" class=\"btn btn-primary btn-lg\">Submit</button>\r\n                </form>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n"
+module.exports = " \r\n<div class=\"register container-fluid\">\r\n    <br><br />\r\n        <div class=\"main col-md-offset-3 col-md-6\">\r\n            <flash-messages></flash-messages>\r\n            <div class=\"panel panel-default\">\r\n                <div class=\"panel-heading\"><h4>Register</h4></div>\r\n                <div class=\"panel-body\">\r\n                    <form (ngSubmit)=\"onRegister(registerForm.value)\" #registerForm=\"ngForm\">\r\n                        <div class=\"form-group\">\r\n                            <label for=\"username\">Username :</label>\r\n                            <input type=\"text\" class=\"form-control input-md\" name=\"username\" #username=\"ngModel\" (ngModel)=\"user.username\" minlength=\"4\" required>\r\n                            <div *ngIf=\"username.invalid && (username.dirty || username.touched)\" class=\"text text-danger\">Username is required</div>\r\n                        </div>\r\n                        <div class=\"form-group\">\r\n                            <label for=\"email\">Email :</label>\r\n                            <input type=\"email\" class=\"form-control input-md\" name=\"email\" #email=\"ngModel\" (ngModel)=\"user.email\" minlength=\"4\" required>\r\n                            <div *ngIf=\"email.invalid && (email.dirty || email.touched)\" class=\"text text-danger\">Email is required</div>\r\n                        </div>\r\n                        <div class=\"form-group\">\r\n                            <label for=\"contact\">Contact:</label>\r\n                            <input type=\"Number\" class=\"form-control input-md\" name=\"contact\" #contact=\"ngModel\" (ngModel)=\"user.contact\" minlength=\"4\" required>\r\n                            <div *ngIf=\"contact.invalid && (contact.dirty || contact.touched)\" class=\"text text-danger\">Contact is required</div>\r\n                        </div>\r\n\r\n                        <div class=\"form-group\">\r\n                            <label for=\"pwd\">Password:</label>\r\n                            <input type=\"password\" class=\"form-control input-md\" name=\"password\" #password=\"ngModel\" (ngModel)=\"user.password\" minlength=\"4\" required>\r\n                            <div *ngIf=\"password.invalid && (password.dirty || password.touched)\" class=\"text text-danger\">Password is required</div>\r\n                        </div>\r\n                        <div class=\"form-group\">\r\n                            <label for=\"propic\">Image:</label>\r\n                            <input type=\"file\" class=\"form-control input-md\" (change)=\"onFileChange($event)\" id=\"propic\" name=\"propic\" required>\r\n                        </div>\r\n                        <!--<label class=\"container\">\r\n                  Remember me\r\n                  <input type=\"checkbox\" checked=\"checked\">\r\n                  <span class=\"checkmark\"></span>\r\n                </label>-->\r\n                        <button type=\"submit\" [disabled]=\"!registerForm.form.valid\" class=\"btn btn-primary btn-lg\">Submit</button>\r\n                    </form>\r\n                </div>\r\n            </div>\r\n        </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1570,6 +1601,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _authenicate_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../authenicate.service */ "./src/app/authenicate.service.ts");
+/* harmony import */ var angular2_flash_messages__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! angular2-flash-messages */ "./node_modules/angular2-flash-messages/module/index.js");
+/* harmony import */ var angular2_flash_messages__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(angular2_flash_messages__WEBPACK_IMPORTED_MODULE_3__);
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1582,10 +1615,12 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var RegisterComponent = /** @class */ (function () {
-    function RegisterComponent(auth, router) {
+    function RegisterComponent(auth, router, flashMessages) {
         this.auth = auth;
         this.router = router;
+        this.flashMessages = flashMessages;
         this.image = null;
     }
     RegisterComponent.prototype.ngOnInit = function () {
@@ -1609,10 +1644,17 @@ var RegisterComponent = /** @class */ (function () {
         console.log(form);
         this.auth.registerData(form).subscribe(function (data) {
             console.log(data);
-            if (data) {
+            _this.user = data;
+            if (_this.user.success == true) {
                 _this.router.navigate(['/login']);
             }
+            else {
+                _this.inValidRegistration();
+            }
         });
+    };
+    RegisterComponent.prototype.inValidRegistration = function () {
+        this.flashMessages.show('Email already exists', { cssClass: 'alert-warning', timeout: 5000 });
     };
     RegisterComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -1620,7 +1662,7 @@ var RegisterComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./register.component.html */ "./src/app/register/register.component.html"),
             styles: [__webpack_require__(/*! ./register.component.css */ "./src/app/register/register.component.css")]
         }),
-        __metadata("design:paramtypes", [_authenicate_service__WEBPACK_IMPORTED_MODULE_2__["AuthenicateService"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]])
+        __metadata("design:paramtypes", [_authenicate_service__WEBPACK_IMPORTED_MODULE_2__["AuthenicateService"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"], angular2_flash_messages__WEBPACK_IMPORTED_MODULE_3__["FlashMessagesService"]])
     ], RegisterComponent);
     return RegisterComponent;
 }());
@@ -1728,7 +1770,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"col-md-8\">\r\n    <div *ngIf=\"recommends\" class=\"panel panel-default\">\r\n        <div *ngFor=\"let recommand of recommends; let i = index\" class=\"panel-body pnl-body\">\r\n            <div class=\"col-md-4\" style=\"float:left;border-right:3px solid #f5f5f5;\">\r\n                <div class=\"user-pic col-md-12\">\r\n                    <img src=\"http://localhost:3000/{{product[i].productimage}}\" class=\"img-thumbnail\" width=\"300\" height=\"350\">\r\n                </div>\r\n                <div class=\"left col-md-3 col-xs-6\" style=\"font-family:bold\">{{recommand.productname}}</div>\r\n            </div>\r\n            <div class=\"right col-md-3 col-xs-6\"> Votes</div> <div class=\"left col-md-3 col-xs-6\"> <i class=\"fa fa-thumbs-up\"></i></div>\r\n            <div class=\"right col-md-3 col-xs-6\"> RecommendedBy</div> <div class=\"left col-md-3 col-xs-6\">{{recommand.username}}</div>\r\n            <div class=\"right col-md-3 col-xs-6\"> Product Description</div> <div class=\"left col-md-3 col-xs-6\">{{recommand.description}}</div>\r\n        </div>\r\n    </div>\r\n</div>"
+module.exports = "<div class=\"col-md-8\">\r\n    <h2>All Recommandations</h2>\r\n\r\n    <div *ngIf=\"recommends\" class=\"panel panel-default\">\r\n        <div *ngFor=\"let recommand of recommends; let i = index\" class=\"panel-body pnl-body\">\r\n            <div class=\"col-md-4\" style=\"float:left;border-right:3px solid #f5f5f5;\">\r\n                <div class=\"user-pic col-md-12\">\r\n                    <img src=\"http://localhost:3000/{{product[i].productimage}}\" class=\"img-thumbnail\" width=\"300\" height=\"350\">\r\n                </div>\r\n                <div class=\"right col-md-3 col-xs-6\"><button class=\"btn\" routerLink=\"/user/searchforpost\">Vote For {{recommand.productname}}</button></div> \r\n\r\n            </div>\r\n              <div class=\"right col-md-3 col-xs-6\"> RecommendedBy</div> <div class=\"left col-md-3 col-xs-6\">{{recommand.username}}</div>\r\n            <div class=\"right col-md-3 col-xs-6\"> Product Description</div> <div class=\"left col-md-3 col-xs-6\">{{recommand.description}}</div>\r\n        </div>\r\n    </div>\r\n</div>"
 
 /***/ }),
 
@@ -1813,7 +1855,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"col-md-8 col-xs-12 col-sm-12\" id=\"content\" style=\"float:right;\">\r\n    <div class=\"col-md-8\">\r\n        <h2 class=\"sideheading\">Search Friends</h2>\r\n        <form (ngSubmit)=\"onSearchFriend(searchForm.value)\" #searchForm=\"ngForm\">\r\n            <div class=\"input-group\">\r\n                <input list=\"post\" class=\"form-control\" name=\"username\" id=\"username\" #username=\"ngModel\" (ngModel)=\"user.searchFriend\" required>\r\n                <datalist id=\"post\"><option *ngFor=\"let u of users\" [value]=\"u.username\">{{u.email}}</option></datalist>\r\n                <div class=\"input-group-btn\">\r\n                    <button class=\"btn btn-default\" type=\"submit\">\r\n                        <i class=\"glyphicon glyphicon-search\"></i>\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </form> <br /><br /><br />\r\n        <div *ngIf=\"userdetails\" class=\"panel panel-default\">\r\n            <div class=\"panel-body pnl-body\">\r\n                <div class=\"col-md-4\"> <img [src]=\"userdetails.propic\" class=\"img-circle\" width=\"70\" height=\"70\" style=\"float:left;\"></div>\r\n                <div class=\"col-md-8\">\r\n                    <div class=\"right col-md-6 col-xs-6\"> Username</div> <div class=\"left col-md-6\">{{userdetails.username}}</div>\r\n                    <div class=\"right col-md-6\">status</div>\r\n                    <div class=\"left col-md-6 col-xs-6\"> <button id=\"btn-info\" style=\"color:#fff;\" class=\"btn btn-info\" (click)=\"onRequest();\">{{requestStatus}}</button></div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n\r\n    </div>\r\n    <div class=\"col-md-4\">\r\n        <h2 class=\"sideheading\">Friend Request</h2>\r\n\r\n        <div *ngFor=\"let request of friendRequests\" class=\"panel panel-default\">\r\n            <div class=\"panel-body\">\r\n                <div class=\"col-md-4\"> <img [src]=\"request.propic\" class=\"img-circle\" width=\"60\" height=\"60\" style=\"float:left;\"></div>\r\n                <div class=\"col-md-8\">\r\n                    <label class=\"col-md-8\">{{request.username}}</label>\r\n                    <div class=\"col-md-6\">\r\n                        <button id=\"accept\" class=\"btn btn-primary\" (click)=\"acceptFriendRequest(request.username);\" style=\"color:#fff;\"> <i class=\"fa fa-check\"></i></button>\r\n                    </div>\r\n                    <div class=\"col-md-6\">\r\n                        <button class=\"btn btn-danger\" (click)=\"deleteFriendRequest(request.username);\"> <i class=\"fa fa-close\"></i></button>\r\n                    </div>\r\n                </div>  <br /><br />\r\n            </div>\r\n            <div class=\"container-fluid\">\r\n               \r\n                </div>\r\n            </div>\r\n\r\n    </div>\r\n</div>\r\n"
+module.exports = "<div class=\"col-md-8 col-xs-12 col-sm-12\" id=\"content\" style=\"float:right;\">\r\n    <div class=\"col-md-8\">\r\n        <h2 class=\"sideheading\">Search Friends</h2>\r\n        <form (ngSubmit)=\"onSearchFriend(searchForm.value)\" #searchForm=\"ngForm\">\r\n            <div class=\"input-group\">\r\n                <input list=\"post\" class=\"form-control\" name=\"username\" id=\"username\" #username=\"ngModel\" (ngModel)=\"user.searchFriend\" required>\r\n                <datalist id=\"post\"><option *ngFor=\"let u of users\" [value]=\"u.username\">{{u.email}}</option></datalist>\r\n                <div class=\"input-group-btn\">\r\n                    <button class=\"btn btn-default\" type=\"submit\">\r\n                        <i class=\"glyphicon glyphicon-search\"></i>\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </form> <br /><br /><br />\r\n        <div *ngIf=\"userdetails\" class=\"panel panel-default\">\r\n            <div class=\"panel-body pnl-body\">\r\n                <div class=\"col-md-4\"> <img [src]=\"userdetails.propic\" class=\"img-circle\" width=\"70\" height=\"70\" style=\"float:left;\"></div>\r\n                <div class=\"col-md-8\">\r\n                    <div class=\"right col-md-6 col-xs-6\"> Username</div> <div class=\"left col-md-6\">{{userdetails.username}}</div>\r\n                    <div class=\"right col-md-6\">status</div>\r\n                    <div *ngIf=\"friendStatus == null\" class=\"left col-md-6 col-xs-6\">\r\n                        <button id=\"btn-info\" style=\"color:#fff;\" class=\"btn btn-info\" (click)=\"onRequest();\">Send Request</button>\r\n                    </div>\r\n                    <div *ngIf=\"friendStatus\" class=\"left col-md-6 col-xs-6\">\r\n                        <button *ngIf=\"friendStatus.status == false\" id=\"btn-info\" style=\"color:#fff;\" class=\"btn btn-info\">Request Sent<i class=\"fa fa-check\"></i></button>\r\n                        <button *ngIf=\"friendStatus.status == true\" id=\"btn-info\" style=\"color:#fff;\" class=\"btn btn-info\">Friends<i class=\"fa fa-check\"></i></button>\r\n                    </div>\r\n                  \r\n                </div>\r\n            </div>\r\n        </div>\r\n\r\n    </div>\r\n    <div class=\"col-md-4\">\r\n        <h2 class=\"sideheading\">Friend Request</h2>\r\n\r\n        <div *ngFor=\"let request of friendRequests\" class=\"panel panel-default\">\r\n            <div class=\"panel-body\">\r\n                <div class=\"col-md-4\"> <img [src]=\"request.propic\" class=\"img-circle\" width=\"60\" height=\"60\" style=\"float:left;\"></div>\r\n                <div class=\"col-md-8\">\r\n                    <label class=\"col-md-8\">{{request.username}}</label>\r\n                    <div class=\"col-md-6\">\r\n                        <button id=\"accept\" class=\"btn btn-primary\" (click)=\"acceptFriendRequest(request.username);\" style=\"color:#fff;\"> <i class=\"fa fa-check\"></i></button>\r\n                    </div>\r\n                    <div class=\"col-md-6\">\r\n                        <button class=\"btn btn-danger\" (click)=\"deleteFriendRequest(request.username);\"> <i class=\"fa fa-close\"></i></button>\r\n                    </div>\r\n                </div>  <br /><br />\r\n            </div>\r\n        </div>\r\n        <div *ngIf=\"friendRequests.length == 0\"class=\"container-fluid\">\r\n            <h4 style=\"color:#808080\">No Friend Requests</h4>\r\n        </div>\r\n\r\n    </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1889,11 +1931,14 @@ var SearchforfriendComponent = /** @class */ (function () {
             _this.userdetails.propic = 'http://localhost:3000/' + _this.userdetails.propic;
             console.log(_this.userdetails);
         });
+        this.friend.checkFriend(username).subscribe(function (data) {
+            console.log(data);
+            _this.friendStatus = data;
+        });
         var searchedContent = { "searchedContent": username.username };
         this.auth.saveToHistory(searchedContent).subscribe(function (data) { console.log(data); });
     };
     SearchforfriendComponent.prototype.onRequest = function () {
-        var _this = this;
         var friend = {
             'friend': this.userdetails.username,
             'status': false
@@ -1901,7 +1946,6 @@ var SearchforfriendComponent = /** @class */ (function () {
         console.log(friend);
         this.auth.sendRequest(friend).subscribe(function (data) {
             console.log(data);
-            _this.requestStatus = 'Request Sent';
         });
     };
     SearchforfriendComponent.prototype.acceptFriendRequest = function (friend) {
@@ -1945,7 +1989,7 @@ module.exports = "\r\n.modal-body .form-horizontal .control-label {\r\n    text-
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"col-md-8 wow fadeInRight col-xs-12 col-sm-12\" data-wow-delay=\".25s\" id=\"content\" style=\"float:right;\">\r\n    <br>\r\n\r\n    <h2>All post with Keyword \"ktm\"</h2>\r\n    <form (ngSubmit)=\"onSearchPost(searchForm.value)\" #searchForm=\"ngForm\">\r\n        <div class=\"input-group\">\r\n            <input list=\"post\" class=\"form-control\" name=\"productname\" id=\"productname\" #productname=\"ngModel\" (ngModel)=\"user.productname\" required>\r\n            <datalist id=\"post\"><option *ngFor=\"let u of users\" [value]=\"u.productname\">{{u.productname}}</option></datalist>\r\n            <div class=\"input-group-btn\">\r\n                <button class=\"btn btn-default\" type=\"submit\">\r\n                    <i class=\"glyphicon glyphicon-search\"></i>\r\n                </button>\r\n            </div>\r\n        </div>\r\n    </form>\r\n    <br /><br />\r\n    <div *ngIf=\"Product\" class=\"panel panel-default\">\r\n        <div class=\"panel-body pnl-body\">\r\n            <div class=\"col-md-4\" style=\"float:left;border-right:3px solid #f5f5f5;\">\r\n                <div class=\"user-pic col-md-12\">\r\n                    <img src=\"http://localhost:3000/{{Product.productimage}}\" class=\"img-thumbnail\" width=\"300\" height=\"350\">\r\n                </div>\r\n                <div class=\"left col-md-5 col-xs-6\" style=\"font-family:bold\">{{Product.productname}}</div>\r\n                <div class=\"left col-md-3 col-xs-6\" style=\"font-family:bold\">votes:{{Product.vote}}</div>\r\n            </div>\r\n            <div class=\"right col-md-3 col-xs-6\"> Vote</div> <div class=\"left col-md-3 col-xs-6\" (click)=\"onVote()\"> <i class=\"fa fa-thumbs-o-up\"></i></div>\r\n            <div class=\"right col-md-3 col-xs-6\"> Product Uses</div> <div class=\"left col-md-3 col-xs-6\">{{Product.productuses}}</div>\r\n            <div class=\"right col-md-3 col-xs-6\"> Product Description</div> <div class=\"left col-md-3 col-xs-6\">{{Product.productdescription}}</div>\r\n            <div class=\"right col-md-3 col-xs-6\"><button class=\"btn btn-primary\" data-toggle=\"modal\" data-target=\"#myModalHorizontal\">Recommend To Friend</button></div> \r\n            <div class=\"left col-md-3 col-xs-6\">\r\n                <button class=\"btn btn-info\" data-toggle=\"modal\" data-target=\"#reviewModal\">Review</button>\r\n            </div>\r\n        </div>\r\n    </div>\r\n\r\n</div>\r\n\r\n\r\n\r\n<div class=\"modal fade\" id=\"myModalHorizontal\" tabindex=\"-1\" role=\"dialog\"\r\n     aria-labelledby=\"myModalLabel\" aria-hidden=\"true\">\r\n    <div class=\"modal-dialog\">\r\n        <div class=\"modal-content\">\r\n            <!-- Modal Header -->\r\n            <div class=\"modal-header\">\r\n                <button type=\"button\" class=\"close\"\r\n                        data-dismiss=\"modal\">\r\n                    <span aria-hidden=\"true\">&times;</span>\r\n                    <span class=\"sr-only\">Close</span>\r\n                </button>\r\n                <h4 class=\"modal-title\" id=\"myModalLabel\">\r\n                    Modal title\r\n                </h4>\r\n            </div>\r\n\r\n            <!-- Modal Body -->\r\n            <div class=\"modal-body\">\r\n                <form class=\"form-horizontal\" (ngSubmit)=\"onRecommend(RecommendForm.value)\" #RecommendForm=\"ngForm\" role=\"form\">\r\n                    <div class=\"form-group col-md-12\">\r\n                        <label class=\"control-label \"> Product Name<i class=\"star\">*</i></label>\r\n                        <input class=\"form-control form-control-solid\" type=\"text\" placeholder=\"productname\" [value]=\"Product.productname\" name=\"productname\" #productname=\"ngModel\" (ngModel)=\"recommand.productname\" disabled>\r\n                      </div>\r\n                    <div class=\"form-group col-md-12\">\r\n                        <label class=\"control-label \">Friend<i class=\"star\">*</i></label>\r\n                        <input class=\"form-control form-control-solid placeholder-no-fix\" type=\"text\"  name=\"recommendTo\" #recommendTo=\"ngModel\" (ngModel)=\"recommand.recommendTo\" minlength=\"4\" required>\r\n                        <div *ngIf=\"recommendTo.invalid && (recommendTo.dirty || recommendTo.touched)\" class=\"text text-danger\">Email is required</div>\r\n                    </div>\r\n                    <div class=\"form-group col-md-12\">\r\n                        <label class=\"control-label \">Description<i class=\"star\">*</i></label>\r\n                        <textarea class=\"form-control\" name=\"description\" #description=\"ngModel\" (ngModel)=\"recommand.description\" required></textarea>\r\n                    </div>\r\n                   \r\n                    <div class=\"form-group\">\r\n                        <div class=\"col-sm-10\">\r\n                            <button type=\"submit\" [disabled]=\"!RecommendForm.form.valid\" class=\"btn btn-primary\">Submit</button>\r\n                        </div>\r\n                    </div>\r\n                </form>\r\n            </div>\r\n\r\n            <!-- Modal Footer -->\r\n            <div class=\"modal-footer\">\r\n                <button type=\"button\" class=\"btn btn-default\"\r\n                        data-dismiss=\"modal\">\r\n                    Close\r\n                </button>\r\n                \r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n\r\n<div class=\"modal fade\" id=\"reviewModal\" tabindex=\"-1\" role=\"dialog\"\r\n     aria-labelledby=\"myModalLabel\" aria-hidden=\"true\">\r\n    <div class=\"modal-dialog\">\r\n        <div class=\"modal-content\">\r\n            <!-- Modal Header -->\r\n            <div class=\"modal-header\">\r\n                <button type=\"button\" class=\"close\"\r\n                        data-dismiss=\"modal\">\r\n                    <span aria-hidden=\"true\">&times;</span>\r\n                    <span class=\"sr-only\">Close</span>\r\n                </button>\r\n                <h4 class=\"modal-title\" id=\"myModalLabel\">\r\n                    Modal title\r\n                </h4>\r\n            </div>\r\n\r\n            <!-- Modal Body -->\r\n            <div class=\"modal-body\">\r\n\r\n                <form class=\"form-horizontal\" (ngSubmit)=\"onReview(ReviewForm.value)\" #ReviewForm=\"ngForm\" role=\"form\">\r\n                    <div class=\"form-group col-md-12\">\r\n                        <label class=\"control-label \"> Product Name<i class=\"star\">*</i></label>\r\n                        <input class=\"form-control form-control-solid placeholder-no-fix\" type=\"text\" placeholder=\"productname\" name=\"productname\" #productname=\"ngModel\" (ngModel)=\"user.productname\" minlength=\"4\" required>\r\n                        <div *ngIf=\"productname.invalid && (productname.dirty || productname.touched)\" class=\"text text-danger\">Email is required</div>\r\n\r\n                    </div>\r\n                    \r\n                    <div class=\"form-group col-md-12\">\r\n                        <label class=\"control-label \">Description<i class=\"star\">*</i></label>\r\n                        <textarea class=\"form-control\" name=\"productdescription\" #productdescription=\"ngModel\" (ngModel)=\"user.productdescription\" required></textarea>\r\n                    </div>\r\n                   \r\n                    <div class=\"form-group\">\r\n                        <div class=\"col-sm-10\">\r\n                            <button type=\"submit\" [disabled]=\"!ReviewForm.form.valid\" class=\"btn btn-primary\">Submit</button>\r\n                        </div>\r\n                    </div>\r\n                </form>\r\n            </div>\r\n\r\n            <!-- Modal Footer -->\r\n            <div class=\"modal-footer\">\r\n                <button type=\"button\" class=\"btn btn-default\"\r\n                        data-dismiss=\"modal\">\r\n                    Close\r\n                </button>\r\n                \r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n"
+module.exports = "<div class=\"col-md-8 wow fadeInRight col-xs-12 col-sm-12\" data-wow-delay=\".25s\" id=\"content\" style=\"float:right;\">\r\n     <h2>Search for product</h2>\r\n    <form (ngSubmit)=\"onSearchPost(searchForm.value)\" #searchForm=\"ngForm\">\r\n        <div class=\"input-group\">\r\n            <input list=\"post\" class=\"form-control\" name=\"productname\" id=\"productname\" #productname=\"ngModel\" (ngModel)=\"user.productname\" required>\r\n            <datalist id=\"post\"><option *ngFor=\"let u of users\" [value]=\"u.productname\">{{u.productname}}</option></datalist>\r\n            <div class=\"input-group-btn\">\r\n                <button class=\"btn btn-default\" type=\"submit\">\r\n                    <i class=\"glyphicon glyphicon-search\"></i>\r\n                </button>\r\n            </div>\r\n        </div>\r\n    </form>\r\n    <br />\r\n     <div *ngIf=\"Product\" class=\"panel panel-default\">\r\n        <div class=\"panel-body pnl-body\">\r\n            <div class=\"col-md-4\" style=\"float:left;border-right:3px solid #f5f5f5;\">\r\n                <div class=\"user-pic col-md-12\">\r\n                    <img src=\"http://localhost:3000/{{Product.productimage}}\" class=\"img-thumbnail\" width=\"300\" height=\"350\">\r\n                </div>\r\n                <div class=\"left col-md-7 col-xs-6\" style=\"font-family:bold\">{{Product.productname}}</div>\r\n                <div class=\"left col-md-3 col-xs-6\" style=\"font-family:bold\">votes:{{Product.vote}}</div>\r\n            </div>\r\n            <div class=\"right col-md-3 col-xs-6\"> Vote</div> <div class=\"left col-md-3 col-xs-6\" (click)=\"onVote()\"> <i class=\"fa fa-thumbs-o-up\"></i></div>\r\n            <div class=\"right col-md-3 col-xs-6\"> Product Uses</div> <div class=\"left col-md-3 col-xs-6\">{{Product.productuses}}</div>\r\n            <div class=\"right col-md-3 col-xs-6\"> Product Description</div> <div class=\"left col-md-3 col-xs-6\">{{Product.productdescription}}</div>\r\n            <div class=\"right col-md-3 col-xs-6\"><button class=\"btn btn-primary\" data-toggle=\"modal\" data-target=\"#myModalHorizontal\">Recommend To Friend</button></div>\r\n            <div class=\"left col-md-3 col-xs-6\">\r\n                <button class=\"btn btn-info\" data-toggle=\"modal\" data-target=\"#reviewModal\">Review</button>\r\n            </div>\r\n        </div>\r\n    </div>\r\n\r\n</div>\r\n\r\n\r\n\r\n<div class=\"modal fade\" id=\"myModalHorizontal\" tabindex=\"-1\" role=\"dialog\"\r\n     aria-labelledby=\"myModalLabel\" aria-hidden=\"true\">\r\n \r\n    <div class=\"modal-dialog\">\r\n        <div class=\"modal-content\">\r\n            <!-- Modal Header -->\r\n            <div class=\"modal-header\">\r\n                <button type=\"button\" class=\"close\"\r\n                        data-dismiss=\"modal\">\r\n                    <span aria-hidden=\"true\">&times;</span>\r\n                    <span class=\"sr-only\">Close</span>\r\n                </button>\r\n                <h4 class=\"modal-title\" id=\"myModalLabel\">\r\n                    Modal title\r\n                </h4>\r\n            </div>\r\n\r\n            <!-- Modal Body -->\r\n            <div class=\"modal-body\">\r\n\r\n                <form class=\"form-horizontal\" (ngSubmit)=\"onRecommend(RecommendForm.value)\" #RecommendForm=\"ngForm\" role=\"form\">\r\n                    <div class=\"form-group col-md-12\">\r\n                        <label class=\"control-label \"> Product Name<i class=\"star\">*</i></label>\r\n                        <input class=\"form-control form-control-solid\" type=\"text\" placeholder=\"productname\" [value]=\"Product.productname\" name=\"productname\" #productname=\"ngModel\" (ngModel)=\"recommand.productname\" disabled>\r\n                    </div>\r\n                    <div class=\"form-group col-md-12\">\r\n                        <label class=\"control-label \">Friend<i class=\"star\">*</i></label>\r\n                        <input class=\"form-control form-control-solid placeholder-no-fix\" type=\"text\" name=\"recommendTo\" #recommendTo=\"ngModel\" (ngModel)=\"recommand.recommendTo\" minlength=\"4\" required>\r\n                        <div *ngIf=\"recommendTo.invalid && (recommendTo.dirty || recommendTo.touched)\" class=\"text text-danger\">Email is required</div>\r\n                    </div>\r\n                    <div class=\"form-group col-md-12\">\r\n                        <label class=\"control-label \">Description<i class=\"star\">*</i></label>\r\n                        <textarea class=\"form-control\" name=\"description\" #description=\"ngModel\" (ngModel)=\"recommand.description\" required></textarea>\r\n                    </div>\r\n\r\n                    <div class=\"form-group\">\r\n                        <div class=\"col-sm-10\">\r\n                            <button type=\"submit\" [disabled]=\"!RecommendForm.form.valid\" class=\"btn btn-primary\">Submit</button>\r\n                        </div>\r\n                    </div>\r\n                    <flash-messages></flash-messages>\r\n                </form>\r\n            </div>\r\n\r\n            <!-- Modal Footer -->\r\n            <div class=\"modal-footer\">\r\n                <button type=\"button\" class=\"btn btn-default\"\r\n                        data-dismiss=\"modal\">\r\n                    Close\r\n                </button>\r\n\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n\r\n<div class=\"modal fade\" id=\"reviewModal\" tabindex=\"-1\" role=\"dialog\"\r\n     aria-labelledby=\"myModalLabel\" aria-hidden=\"true\">\r\n    <div class=\"modal-dialog\">\r\n        <div class=\"modal-content\">\r\n            <!-- Modal Header -->\r\n            <div class=\"modal-header\">\r\n                <button type=\"button\" class=\"close\"\r\n                        data-dismiss=\"modal\">\r\n                    <span aria-hidden=\"true\">&times;</span>\r\n                    <span class=\"sr-only\">Close</span>\r\n                </button>\r\n                <h4 class=\"modal-title\" id=\"myModalLabel\">\r\n                    Modal title\r\n                </h4>\r\n            </div>\r\n\r\n            <!-- Modal Body -->\r\n            <div class=\"modal-body\">\r\n\r\n                <form class=\"form-horizontal\" (ngSubmit)=\"onReview(ReviewForm.value)\" #ReviewForm=\"ngForm\" role=\"form\">\r\n                    <div class=\"form-group col-md-12\">\r\n                        <label class=\"control-label \"> Product Name<i class=\"star\">*</i></label>\r\n                        <input class=\"form-control form-control-solid placeholder-no-fix\" type=\"text\" placeholder=\"productname\" name=\"productname\" #productname=\"ngModel\" (ngModel)=\"user.productname\" minlength=\"4\" required>\r\n                        <div *ngIf=\"productname.invalid && (productname.dirty || productname.touched)\" class=\"text text-danger\">Email is required</div>\r\n\r\n                    </div>\r\n                    \r\n                    <div class=\"form-group col-md-12\">\r\n                        <label class=\"control-label \">Description<i class=\"star\">*</i></label>\r\n                        <textarea class=\"form-control\" name=\"productdescription\" #productdescription=\"ngModel\" (ngModel)=\"user.productdescription\" required></textarea>\r\n                    </div>\r\n                   \r\n                    <div class=\"form-group\">\r\n                        <div class=\"col-sm-10\">\r\n                            <button type=\"submit\" [disabled]=\"!ReviewForm.form.valid\" class=\"btn btn-primary\">Submit</button>\r\n                        </div>\r\n                    </div>\r\n                </form>\r\n            </div>\r\n\r\n            <!-- Modal Footer -->\r\n            <div class=\"modal-footer\">\r\n                <button type=\"button\" class=\"btn btn-default\"\r\n                        data-dismiss=\"modal\">\r\n                    Close\r\n                </button>\r\n                \r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n"
 
 /***/ }),
 
@@ -1962,6 +2006,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _authenicate_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../authenicate.service */ "./src/app/authenicate.service.ts");
 /* harmony import */ var _friends_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../friends.service */ "./src/app/friends.service.ts");
+/* harmony import */ var angular2_flash_messages__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! angular2-flash-messages */ "./node_modules/angular2-flash-messages/module/index.js");
+/* harmony import */ var angular2_flash_messages__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(angular2_flash_messages__WEBPACK_IMPORTED_MODULE_3__);
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1974,17 +2020,19 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var SearchforpostComponent = /** @class */ (function () {
-    function SearchforpostComponent(auth, friend) {
+    function SearchforpostComponent(auth, friend, flashMessages) {
         this.auth = auth;
         this.friend = friend;
+        this.flashMessages = flashMessages;
     }
     SearchforpostComponent.prototype.ngOnInit = function () {
-        this.loadAllProfiles();
+        this.loadAllProducts();
     };
-    SearchforpostComponent.prototype.loadAllProfiles = function () {
+    SearchforpostComponent.prototype.loadAllProducts = function () {
         var _this = this;
-        this.friend.loadAllProfiles().subscribe(function (data) {
+        this.friend.loadAllProducts().subscribe(function (data) {
             console.log(data);
             _this.users = data;
         });
@@ -1999,14 +2047,22 @@ var SearchforpostComponent = /** @class */ (function () {
         this.auth.saveToHistory(searchedContent).subscribe(function (data) { console.log(data); });
     };
     SearchforpostComponent.prototype.onRecommend = function (data) {
+        var _this = this;
         console.log(data);
         data.productname = this.Product.productname;
-        this.friend.onRecommend(data).subscribe(function (data) { console.log(data); });
+        this.friend.onRecommend(data).subscribe(function (data) {
+            console.log(data);
+            _this.onRecommendSuccess();
+        });
+    };
+    SearchforpostComponent.prototype.onRecommendSuccess = function () {
+        this.flashMessages.show('Recommand successful', { cssClass: 'alert-success', timeout: 3000 });
     };
     SearchforpostComponent.prototype.onVote = function () {
         var productname = { productname: this.Product.productname };
         console.log(productname);
         this.friend.onVote(productname).subscribe(function (data) { console.log(data); });
+        this.Product.vote = Number(this.Product.vote) + 1;
     };
     SearchforpostComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -2014,7 +2070,7 @@ var SearchforpostComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./searchforpost.component.html */ "./src/app/user/searchforpost/searchforpost.component.html"),
             styles: [__webpack_require__(/*! ./searchforpost.component.css */ "./src/app/user/searchforpost/searchforpost.component.css")]
         }),
-        __metadata("design:paramtypes", [_authenicate_service__WEBPACK_IMPORTED_MODULE_1__["AuthenicateService"], _friends_service__WEBPACK_IMPORTED_MODULE_2__["FriendsService"]])
+        __metadata("design:paramtypes", [_authenicate_service__WEBPACK_IMPORTED_MODULE_1__["AuthenicateService"], _friends_service__WEBPACK_IMPORTED_MODULE_2__["FriendsService"], angular2_flash_messages__WEBPACK_IMPORTED_MODULE_3__["FlashMessagesService"]])
     ], SearchforpostComponent);
     return SearchforpostComponent;
 }());
@@ -2041,7 +2097,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  tophitkrate works!\n</p>\n"
+module.exports = "<p>\r\n  tophitkrate works!\r\n</p>\r\n"
 
 /***/ }),
 
@@ -2104,7 +2160,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  user-interest works!\n</p>\n"
+module.exports = "<p>\r\n  user-interest works!\r\n</p>\r\n"
 
 /***/ }),
 
@@ -2167,7 +2223,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  user-side-bar works!\n</p>\n"
+module.exports = "<p>\r\n  user-side-bar works!\r\n</p>\r\n"
 
 /***/ }),
 
@@ -2219,7 +2275,7 @@ var UserSideBarComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\r\nli {\r\n  list-style: none;\r\n}\r\n\r\n.fa-close {\r\n  font-size: 21px;\r\n  float: right;\r\n  position: relative;\r\n  margin-right: 9px;\r\n  margin-top: 9px;\r\n  cursor: pointer;\r\n}\r\n\r\n.fa-arrow-right {\r\n  font-size: 21px;\r\n  float: right;\r\n  position: relative;\r\n  margin-right: -25px;\r\n  cursor: pointer;\r\n}\r\n\r\n.sidenav {\r\n  box-shadow: 2px 3px 4px #f5f5f5;\r\n  background-color: #fff;\r\n  border: 3px solid rgb(238, 238, 238);\r\n}\r\n\r\n.sidenav li {\r\n    font-size: 16px;\r\n    padding: 7px 7px 7px 10px;\r\n    font-family: sans-serif;\r\n    letter-spacing: 1px;\r\n    margin-right: 10px;\r\n    text-align: justify;\r\n    text-transform: capitalize;\r\n  }\r\n\r\n.sidenav li:hover {\r\n      background-color: cadetblue;\r\n      border: 1px solid #fff;\r\n      list-style: none;\r\n    }\r\n\r\n.container {\r\n  padding: 0px;\r\n}\r\n\r\na {\r\n  color: #000;\r\n}\r\n\r\n.sidenav li:hover a {\r\n  color: #fff;\r\n  text-decoration: none;\r\n}\r\n\r\n.header {\r\n  color: #fff;\r\n}\r\n\r\n.header ul {\r\n    margin-left: -18px;\r\n    margin-top: 15px;\r\n  }\r\n\r\n.header ul li {\r\n      padding: 0px 20px 0px 20px;\r\n      font-size: 15px;\r\n      font-family: sans-serif;\r\n      letter-spacing: 1px;\r\n      text-transform: uppercase;\r\n      border-right: 1px solid;\r\n    }\r\n\r\n.header ul li a {\r\n        color: #fff;\r\n      }\r\n\r\n.header ul li a:hover {\r\n          color: #000;\r\n        }\r\n\r\n.left {\r\n  text-align: right;\r\n}\r\n\r\n.pnl-body .left, .pnl-body .right {\r\n  font-size: 13px;\r\n  letter-spacing: 1px;\r\n  text-transform: capitalize;\r\n  font-family: cursive;\r\n  line-height: 25px\r\n}\r\n\r\n.pnl-body {\r\n  border-left: 4px solid green;\r\n}\r\n\r\n.adminpic {\r\n  width: 650px;\r\n  height: 271px;\r\n}\r\n\r\n.carousel-caption {\r\n  right: 0px;\r\n  left: 0px;\r\n  margin-bottom: 180px;\r\n}\r\n\r\n.fa-arrow-left {\r\n  position: fixed;\r\n  right: 83px;\r\n  bottom: 28px;\r\n  font-size: 20px;\r\n}\r\n"
+module.exports = "\r\nli {\r\n    list-style: none;\r\n}\r\n\r\n.fa-close {\r\n    font-size: 21px;\r\n    float: right;\r\n    position: relative;\r\n    margin-right: 9px;\r\n    margin-top: 9px;\r\n    cursor: pointer;\r\n}\r\n\r\n.sidenav {\r\n    box-shadow: 2px 3px 4px #f5f5f5;\r\n    background-color: #fff;\r\n    border: 3px solid rgb(238, 238, 238);\r\n}\r\n\r\n.sidenav li {\r\n        font-size: 16px;\r\n        padding: 7px 7px;\r\n        font-family: sans-serif;\r\n        letter-spacing: 1px;\r\n        text-align: justify;\r\n        text-transform: capitalize;\r\n    }\r\n\r\n.sidenav li:hover {\r\n            box-shadow: 2px 2px 2px 2px lightgray;\r\n        }\r\n\r\n.container {\r\n    padding: 0px;\r\n}\r\n\r\na {\r\n    color: #000;\r\n}\r\n\r\n.sidenav li:hover a {\r\n    text-decoration: none;\r\n}\r\n\r\n.left {\r\n    text-align: right;\r\n}\r\n"
 
 /***/ }),
 
@@ -2230,7 +2286,7 @@ module.exports = "\r\nli {\r\n  list-style: none;\r\n}\r\n\r\n.fa-close {\r\n  f
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\r\n  <app-header>Loading...</app-header>\r\n    <ul class=\"sidenav wow col-md-4 fadeInLeft hidden-xs\" data-wow-delay=\".25s\" id=\"sidenav\" style=\"float:left;\">\r\n      <li>\r\n        <a routerLink=\"userprofile\">View your profile</a>\r\n      </li>\r\n      <li>\r\n        <a routerLink=\"searchforfriend\">search friends & friend request</a>\r\n      </li>\r\n      <li>\r\n        <a routerLink=\"viewallmyfriends\">view all my friends</a>\r\n      </li>\r\n      <li>\r\n        <a routerLink=\"searchforpost\">search for post</a>\r\n      </li>\r\n      <li>\r\n        <a routerLink=\"mysearchhistory\">my search History</a>\r\n      </li>\r\n      <li>\r\n        <a routerLink=\"recommend\">view recommendations</a>\r\n      </li>\r\n      <li>\r\n        <a (click)=\"logout()\">logout</a>\r\n      </li>\r\n    </ul>\r\n  <div class=\"\"><router-outlet></router-outlet></div>\r\n  </div>\r\n\r\n"
+module.exports = "<div class=\"container\">\r\n    <button (click)=\"openNav()\" style=\"z-index:10000;position:fixed\"><i class=\"fa fa-bars\"></i></button>\r\n    <app-header>Loading...</app-header>\r\n    <ul *ngIf=\"show\" class=\"sidenav col-xs-12 col-md-4\" id=\"sidenav\" style=\"float:left;\">\r\n        <i class=\"fa fa-close\" (click)=\"closeNav()\"></i>\r\n        <li>\r\n            <a routerLink=\"userprofile\">View your profile</a>\r\n        </li>\r\n        <li>\r\n            <a routerLink=\"searchforfriend\">search friends & friend request</a>\r\n        </li>\r\n        <li>\r\n            <a routerLink=\"viewallmyfriends\">view all my friends</a>\r\n        </li>\r\n        <li>\r\n            <a routerLink=\"searchforpost\">search for post</a>\r\n        </li>\r\n        <li>\r\n            <a routerLink=\"mysearchhistory\">my search History</a>\r\n        </li>\r\n        <li>\r\n            <a routerLink=\"recommend\">view recommendations</a>\r\n        </li>\r\n        <li>\r\n            <a (click)=\"logout()\">logout</a>\r\n        </li>\r\n    </ul>\r\n    <div class=\"\"><router-outlet></router-outlet></div>\r\n</div>\r\n\r\n"
 
 /***/ }),
 
@@ -2263,12 +2319,19 @@ var UserComponent = /** @class */ (function () {
     function UserComponent(auth, router) {
         this.auth = auth;
         this.router = router;
+        this.show = true;
     }
     UserComponent.prototype.ngOnInit = function () {
     };
     UserComponent.prototype.logout = function () {
         this.auth.logout();
         this.router.navigate(['/login']);
+    };
+    UserComponent.prototype.closeNav = function () {
+        this.show = false;
+    };
+    UserComponent.prototype.openNav = function () {
+        this.show = true;
     };
     UserComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -2369,7 +2432,7 @@ module.exports = "\r\n.upload-btn {\r\n    margin-top: 13px;\r\n    margin-right
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"col-md-8 wow fadeInRight col-xs-12 col-sm-12\" data-wow-delay=\".25s\" data-wow-delay=\".25s\" id=\"content\" style=\"float:right;\">\r\n    <h2>User Profile</h2>\r\n    <div class=\"panel panel-default\">\r\n        <div class=\"panel-body pnl-body\">\r\n            <div class=\"col-md-4\" style=\"float:left;border-right:3px solid #f5f5f5;\">\r\n                <form (ngSubmit)=\"onImageChange(ImageChange.value)\" #ImageChange=\"ngForm\">\r\n                    <div class=\"user-pic col-md-12\">\r\n                        <img  [src]=\"user.propic\"  class=\"img-thumbnail\" width=\"300\" height=\"350\">\r\n                    </div>\r\n                    <div class=\"col-md-12\">\r\n                        <label class=\"upload-btn\" for=\"userpic\">Upload Image</label>\r\n                        <input type=\"file\" id=\"userpic\" name=\"userpic\" #userpic=\"ngModel\" (ngModel)=\"userpic\" style=\"display:none\" />\r\n                      </div>\r\n                </form>\r\n              </div>\r\n            <div class=\"right col-md-3 col-xs-6\"> Username</div> <div class=\"left col-md-3 col-xs-6\">{{user.username}}</div>\r\n            <div class=\"right col-md-3 col-xs-6\"> Email</div> <div class=\"left col-md-3 col-xs-6\">{{user.email}}</div>\r\n            <div class=\"right col-md-3 col-xs-6\"> Mobile</div> <div class=\"left col-md-3 col-xs-6\">{{user.contact}}</div>\r\n             </div>\r\n    </div> \r\n\r\n\r\n</div>"
+module.exports = "<div class=\"col-md-8 wow fadeInRight col-xs-12 col-sm-12\" data-wow-delay=\".25s\" data-wow-delay=\".25s\" id=\"content\" style=\"float:right;\">\r\n    <h2>User Profile</h2>\r\n    <div class=\"panel panel-default\">\r\n        <div class=\"panel-body pnl-body\">\r\n            <div class=\"col-md-4\" style=\"float:left;border-right:3px solid #f5f5f5;\">\r\n                <form (ngSubmit)=\"onImageChange(ImageChange.value)\" #ImageChange=\"ngForm\">\r\n                    <div class=\"user-pic col-md-12\">\r\n                        <img  [src]=\"user.propic\"  class=\"img-thumbnail\" width=\"300\" height=\"350\">\r\n                    </div>\r\n                </form>\r\n              </div>\r\n            <div class=\"right col-md-3 col-xs-6\"> Username</div> <div class=\"left col-md-3 col-xs-6\">{{user.username}}</div>\r\n            <div class=\"right col-md-3 col-xs-6\"> Email</div> <div class=\"left col-md-3 col-xs-6\">{{user.email}}</div>\r\n            <div class=\"right col-md-3 col-xs-6\"> Mobile</div> <div class=\"left col-md-3 col-xs-6\">{{user.contact}}</div>\r\n             </div>\r\n    </div> \r\n\r\n\r\n</div>"
 
 /***/ }),
 
@@ -2442,7 +2505,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"col-md-8\">\r\n    <h2 class=\"sideheading\">View All My Friends</h2>    \r\n    <div *ngFor=\"let request of friends\"  class=\"panel panel-default\">\r\n        <div class=\"panel-body pnl-body\">\r\n            <div class=\"col-md-4\"> <a routerLink=\"/user/viewprofile/{{request.username}}\" ><img [src]=\"request.propic\" class=\"img-circle\" width=\"70\" height=\"70\" style=\"float:left;\"></a></div>\r\n            <div class=\"col-md-8\">\r\n                <div class=\"right col-md-6 col-xs-6\"> Username</div> <div class=\"left col-md-6\">{{request.username}}</div>\r\n                <div class=\"right col-md-6\">status</div>\r\n                <div class=\"left col-md-6 col-xs-6\"> <button id=\"btn-info\" style=\"color:#fff;\" class=\"btn btn-info\" (click)=\"onRequest();\">view Profile</button></div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n\r\n</div>\r\n"
+module.exports = "<div class=\"col-md-8\">\r\n    <h2 class=\"sideheading\">View All My Friends</h2>\r\n    <div *ngFor=\"let request of friends\" class=\"col-md-3 col-xs-4\">\r\n        <div class=\"userpic\">\r\n            <a routerLink=\"/user/viewprofile/{{request.username}}\"><img [src]=\"request.propic\" class=\"img-circle\" width=\"70\" height=\"70\"></a>\r\n        </div>\r\n            <div class=\"left col-md-12\">{{request.username}}</div>\r\n\r\n        \r\n    </div>\r\n\r\n</div>\r\n"
 
 /***/ }),
 
@@ -2611,7 +2674,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  view-product works!\n</p>\n"
+module.exports = "<p>\r\n  view-product works!\r\n</p>\r\n"
 
 /***/ }),
 
@@ -2716,7 +2779,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\swade\source\repos\AngularMainProject\sampleApp\main\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Users\swade\source\repos\AngularMainProject\SocialVoting\sampleApp\main\src\main.ts */"./src/main.ts");
 
 
 /***/ })

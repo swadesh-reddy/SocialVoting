@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthenicateService } from '../../authenicate.service';
 import { FriendsService } from '../../friends.service';
 import { User } from '../../user';
+import { Friend } from '../../friend';
 
 @Component({
     selector: 'app-searchforfriend',
@@ -14,7 +15,7 @@ export class SearchforfriendComponent implements OnInit {
     user = [];
     friendRequests = [];
     requestStatus = 'Request';
-    friendStatus:any
+    friendStatus:any    
     constructor(private auth: AuthenicateService, private friend: FriendsService) {
     }
 
@@ -71,7 +72,6 @@ export class SearchforfriendComponent implements OnInit {
         console.log(friend);
       this.auth.sendRequest(friend).subscribe(data => {
             console.log(data);
-            this.requestStatus = 'Request Sent';
          })
     }
 

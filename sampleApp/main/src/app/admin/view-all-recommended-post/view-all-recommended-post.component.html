@@ -1,13 +1,22 @@
-<div class="col-md-8">
-    <h2 class="sideheading">View All My Friends</h2>
-    <div *ngFor="let request of recommends" class="panel panel-default">
-        <div class="panel-body pnl-body">
-            <div class="col-md-4"> <a routerLink="/user/viewprofile/{{request.productname}}"><img src="http://localhost:3000/{{request.productimage}}" class="img-circle" width="70" height="70" style="float:left;"></a></div>
-            <div class="col-md-8">
-                <div class="right col-md-6 col-xs-6"> product Name</div> <div class="left col-md-6">{{request.productname}}</div>
-                <div class="right col-md-6">status</div>
-                <div class="left col-md-6 col-xs-6"> <button id="btn-info" style="color:#fff;" class="btn btn-info" (click)="onRequest();">view Profile</button></div>
-            </div>
-        </div>
-    </div>
+
+<div class="col-md-8 wow fadeInRight col-xs-12 col-sm-12" data-wow-delay=".25s" id="content" style="float:right;">
+    <h2> All recommandations</h2>
+    <table  class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Recommended By</th>
+                <th>RecommendedTo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let request of recommends">
+                <td>{{request.productname}}</td>
+                <td>{{request.username}}</td>
+                <td>{{request.recommendTo}}</td>
+                    </tr>
+        </tbody>
+    </table>
+
+
 </div>

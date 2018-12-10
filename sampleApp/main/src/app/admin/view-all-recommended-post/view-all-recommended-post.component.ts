@@ -14,7 +14,11 @@ export class ViewAllRecommendedPostComponent implements OnInit {
     constructor(private auth: AuthenicateService, private friend: FriendsService) { }
 
     ngOnInit() {
-        this.friend.loadRecommendations().subscribe(data => {this.recommends = data})
+        this.friend.loadRecommendations().subscribe(data => {
+            this.recommends = data;
+        console.log(this.recommends)
+        })
+
   }
 
 }

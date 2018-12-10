@@ -1,6 +1,8 @@
 <div class="container">
+    <button (click)="openNav()" style="z-index:10000;position:fixed"><i class="fa fa-bars"></i></button>
     <app-header>Loading...</app-header>
-    <ul class="sidenav  col-md-4"  id="sidenav" style="float:left;">
+    <ul *ngIf ="show" class="sidenav col-xs-12 col-md-4" id="sidenav" style="float:left;">
+     <i class="fa fa-close" (click)="closeNav()"></i>
         <li>
             <a routerLink="viewallusers">View All Users</a>
         </li>
@@ -22,7 +24,7 @@
         <li>
             <a routerLink="tophitkchart">ALL top k hit rate in chart</a>
         </li>
-         <li>
+        <li>
             <a (click)="logout()">logout</a>
         </li>
     </ul>

@@ -32,6 +32,7 @@ import { TopKRatingChartComponent } from './admin/top-krating-chart/top-krating-
 import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { AdminMainpageComponent } from './admin/admin-mainpage/admin-mainpage.component';
 import { ViewProductComponent } from './view-product/view-product.component';
+import { FlashMessagesModule } from 'angular2-flash-messages';
 @NgModule({
   declarations: [
     AppComponent,
@@ -67,7 +68,8 @@ import { ViewProductComponent } from './view-product/view-product.component';
     FormsModule,
     HttpClientModule,
     RouterModule,
-    ApprouteModule
+      ApprouteModule,
+      FlashMessagesModule.forRoot(),
   ],
   providers: [AuthenicateService],
   bootstrap: [AppComponent]

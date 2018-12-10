@@ -1,8 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit } from '@angular/core';
 import { User } from '../user';
 import {AuthenicateService} from '../authenicate.service';
 import { UsermainpageComponent } from '../user/usermainpage/usermainpage.component';
-import {RouterModule, Router} from '@angular/router';
+import { RouterModule, Router } from '@angular/router';
+import { FlashMessagesService } from 'angular2-flash-messages';
+declare var jquery: any;
+declare var $: any;
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -10,7 +13,7 @@ import {RouterModule, Router} from '@angular/router';
 })
 export class LoginComponent implements OnInit {
  
-  constructor(private auth: AuthenicateService, private router:Router) {  }
+    constructor(private auth: AuthenicateService, private router: Router, private flashMessages: FlashMessagesService, private el: ElementRef) {  }
   user: User;
   data: User;
   ngOnInit() {
@@ -25,7 +28,17 @@ export class LoginComponent implements OnInit {
         this.auth.storageUserData(data);
         this.router.navigate(['/user/usermainpage']);
       }
-      else { this.router.navigate(['/login'])}
+      else {
+          this.inValidLogin();
+      }
     })
+  }
+  inValidLogin() {
+     
+      this.flashMessages.show('ivalid credentials', { cssClass: 'alert-warning', timeout: 5000})
+  }
+  changeText() {
+
+      
   }
 }

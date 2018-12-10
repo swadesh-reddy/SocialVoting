@@ -20,12 +20,15 @@ export class AdminloginComponent implements OnInit {
       console.log(user);
       this.auth.adminLogin(user).subscribe(data => {
           this.data = data;
-         
+         if(this.data != null){
           if (this.data.user.admin == 'true') {
               this.auth.storageUserData(data);
               this.router.navigate(['/admin/adminmainpage']);
-          }
+
+             }
           else { this.router.navigate(['/adminlogin']) }
+         }
+         
       })
   }
 

@@ -1,28 +1,30 @@
 <div class="container">
-  <app-header>Loading...</app-header>
-    <ul class="sidenav wow col-md-4 fadeInLeft hidden-xs" data-wow-delay=".25s" id="sidenav" style="float:left;">
-      <li>
-        <a routerLink="userprofile">View your profile</a>
-      </li>
-      <li>
-        <a routerLink="searchforfriend">search friends & friend request</a>
-      </li>
-      <li>
-        <a routerLink="viewallmyfriends">view all my friends</a>
-      </li>
-      <li>
-        <a routerLink="searchforpost">search for post</a>
-      </li>
-      <li>
-        <a routerLink="mysearchhistory">my search History</a>
-      </li>
-      <li>
-        <a routerLink="recommend">view recommendations</a>
-      </li>
-      <li>
-        <a (click)="logout()">logout</a>
-      </li>
+    <button (click)="openNav()" style="z-index:10000;position:fixed"><i class="fa fa-bars"></i></button>
+    <app-header>Loading...</app-header>
+    <ul *ngIf="show" class="sidenav col-xs-12 col-md-4" id="sidenav" style="float:left;">
+        <i class="fa fa-close" (click)="closeNav()"></i>
+        <li>
+            <a routerLink="userprofile">View your profile</a>
+        </li>
+        <li>
+            <a routerLink="searchforfriend">search friends & friend request</a>
+        </li>
+        <li>
+            <a routerLink="viewallmyfriends">view all my friends</a>
+        </li>
+        <li>
+            <a routerLink="searchforpost">search for post</a>
+        </li>
+        <li>
+            <a routerLink="mysearchhistory">my search History</a>
+        </li>
+        <li>
+            <a routerLink="recommend">view recommendations</a>
+        </li>
+        <li>
+            <a (click)="logout()">logout</a>
+        </li>
     </ul>
-  <div class=""><router-outlet></router-outlet></div>
-  </div>
+    <div class=""><router-outlet></router-outlet></div>
+</div>
 
