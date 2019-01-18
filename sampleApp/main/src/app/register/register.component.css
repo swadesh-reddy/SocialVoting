@@ -27,8 +27,7 @@ label {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('../../assets/images/socialmedia3.jpg')
-}
+ }
 ng-valid[required], .ng-valid.required {
   border-bottom: 2px solid #42A948; /* green */
 }

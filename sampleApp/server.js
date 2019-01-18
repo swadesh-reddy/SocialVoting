@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 var config = require("./config");
 var cors = require("cors");
 var users = require("./routes/users");
-var port = 3000;
+var port = process.env.PORT || 3000;
 var url = config.database;
 const router = express.Router();
 const jwt = require('jsonwebtoken');
@@ -16,7 +16,7 @@ mongoose.connect(url, config.parser);
 
 mongoose.connection.on('connected', () => { console.log("connected") })
 
-mongoose.connection.on('error', () => { console.log("error") });
+mongoose.connection.on('error', (error) => { console.log(error) });
 app.use(express.static(path.join(path.resolve(), 'public')));
 app.use('/images', express.static('images'))
 

@@ -34,8 +34,8 @@ router.post('/register', upload.single('propic'), (req, res, next) => {
     })
     User.getUserByEmail(checkEmail, (err, user) => {
         if (err) { throw err }
-   
-        else if (user.email == req.body.email) {
+        if (user != null) { 
+        if (user.email == req.body.email) {
             res.json({
                 success: false
             });
@@ -52,6 +52,17 @@ router.post('/register', upload.single('propic'), (req, res, next) => {
             })
 
         }
+        }
+        else {
+            User.addUser(newUser, (err, user) => {
+
+                if (err) { res.json("Registartion failed") }
+                else {
+                    res.json({
+                        success: true
+                    });
+                }
+            })}
     })
   })
 

@@ -539,7 +539,7 @@ if(false) {}
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\swade\source\repos\AngularMainProject\SocialVoting\sampleApp\main\src\styles.css */"./src/styles.css");
+module.exports = __webpack_require__(/*! C:\Users\swade\code\SocialVoting\sampleApp\main\src\styles.css */"./src/styles.css");
 
 
 /***/ })

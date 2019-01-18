@@ -1,12 +1,13 @@
-<div class="col-md-8">
+<div class="col-md-8 col-xs-12 col-sm-12" id="content" style="float:right;">
+
     <h2 class="sideheading">View All My Friends</h2>
     <div *ngFor="let request of friends" class="col-md-3 col-xs-4">
         <div class="userpic">
             <a routerLink="/user/viewprofile/{{request.username}}"><img [src]="request.propic" class="img-circle" width="70" height="70"></a>
         </div>
-            <div class="left col-md-12">{{request.username}}</div>
+        <div class="left col-md-12">{{request.username}}</div>
 
-        
+
     </div>
 
 </div>

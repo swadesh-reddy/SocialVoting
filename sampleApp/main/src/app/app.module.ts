@@ -33,6 +33,7 @@ import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { AdminMainpageComponent } from './admin/admin-mainpage/admin-mainpage.component';
 import { ViewProductComponent } from './view-product/view-product.component';
 import { FlashMessagesModule } from 'angular2-flash-messages';
+import { FriendProfileComponent } from './user/friend-profile/friend-profile.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -61,7 +62,8 @@ import { FlashMessagesModule } from 'angular2-flash-messages';
     TopKRatingChartComponent,
     AdminloginComponent,
     AdminMainpageComponent,
-    ViewProductComponent
+    ViewProductComponent,
+    FriendProfileComponent
   ],
   imports: [
     BrowserModule,

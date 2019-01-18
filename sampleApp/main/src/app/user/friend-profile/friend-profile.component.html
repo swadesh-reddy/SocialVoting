@@ -1,0 +1,25 @@
+<div class="col-md-8 wow fadeInRight col-xs-12 col-sm-12" data-wow-delay=".25s" data-wow-delay=".25s" id="content" style="float:right;">
+    <h2>User Profile</h2>
+    <div class="panel panel-default">
+        <div *ngIf="user" class="panel-body pnl-body">
+            <div class="col-md-4" style="float:left;border-right:3px solid #f5f5f5;">
+                  <div class="user-pic col-md-12">
+                        <img [src]="user.propic" class="img-thumbnail" width="300" height="350">
+                    </div>          
+            </div>
+            <div class="right col-md-3 col-xs-6"> Username</div> <div class="left col-md-3 col-xs-6">{{user.username}}</div>
+            <div class="right col-md-3 col-xs-6"> Email</div> <div class="left col-md-3 col-xs-6">{{user.email}}</div>
+            <div class="right col-md-3 col-xs-6"> Mobile</div> <div class="left col-md-3 col-xs-6">{{user.contact}}</div>
+            <div class="right col-md-6">status</div>
+            <div *ngIf="friendStatus == null" class="left col-md-6 col-xs-6">
+                <button id="btn-info" style="color:#fff;" class="btn btn-info" (click)="onRequest();">Send Request</button>
+            </div>
+            <div *ngIf="friendStatus" class="left col-md-6 col-xs-6">
+                <button *ngIf="friendStatus.status == false" id="btn-info" style="color:#fff;" class="btn btn-info">Request Sent<i class="fa fa-check"></i></button>
+                <button *ngIf="friendStatus.status == true" id="btn-info" style="color:#fff;" class="btn btn-info">Friends<i class="fa fa-check"></i></button>
+            </div>
+        </div>
+    </div>
+
+
+</div>

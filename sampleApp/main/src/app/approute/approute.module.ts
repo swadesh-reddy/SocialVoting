@@ -14,6 +14,7 @@ import { SearchforfriendComponent } from '../user/searchforfriend/searchforfrien
 import { UserInterestComponent } from '../user/user-interest/user-interest.component';
 import { ViewprofileComponent } from '../user/viewprofile/viewprofile.component';
 import { ViewAllMyFriendsComponent } from '../user/view-all-my-friends/view-all-my-friends.component';
+import { FriendProfileComponent } from '../user/friend-profile/friend-profile.component';
 import { UserComponent } from '../user/user.component';
 import { AdminComponent } from '../admin/admin.component';
 import { ViewallusersComponent } from '../admin/viewallusers/viewallusers.component';
@@ -34,6 +35,7 @@ const routes: Routes = [
     children: [
         { path: 'usermainpage', component: UsermainpageComponent, canActivate: [AuthGuard] },
     { path: 'userprofile', component: UserprofileComponent,canActivate: [AuthGuard] },
+    { path: 'friendprofile/:username', component: FriendProfileComponent,canActivate: [AuthGuard] },
     { path: 'userinterest', component: UserInterestComponent,canActivate: [AuthGuard] },
     { path: 'viewallmyfriends', component: ViewAllMyFriendsComponent, canActivate: [AuthGuard] },
     { path: 'viewprofile/:username', component: ViewprofileComponent, canActivate: [AuthGuard] },

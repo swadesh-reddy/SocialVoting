@@ -20,15 +20,9 @@ export class SearchforfriendComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.loadProfile();
-        this.loadFriendRequests();
+            this.loadFriendRequests();
     }
-    loadProfile() {
-        this.auth.getAllProfiles().subscribe(data => {
-            console.log(data);
-            this.users = data;
-         })
-    }
+   
     loadFriendRequests()
     {
         let status={status:false}
@@ -48,32 +42,8 @@ export class SearchforfriendComponent implements OnInit {
         }
     });
     }
-    onSearchFriend(username) {
-        console.log(username)
-        this.auth.getProfileById(username).subscribe(data => {
-            console.log(data);
-            this.userdetails = data;
-            this.userdetails.propic = 'http://localhost:3000/' + this.userdetails.propic;
-            console.log(this.userdetails);
-        })
-        this.friend.checkFriend(username).subscribe(data => {
-            console.log(data);
-
-        this.friendStatus = data})
-        let searchedContent = {"searchedContent":username.username}
-        this.auth.saveToHistory(searchedContent).subscribe(data=>{console.log(data)})
-    }
-    onRequest()
-    {
-        let friend = {
-            'friend': this.userdetails.username,
-            'status': false
-        }
-        console.log(friend);
-      this.auth.sendRequest(friend).subscribe(data => {
-            console.log(data);
-         })
-    }
+    
+   
 
     acceptFriendRequest(friend)
     {

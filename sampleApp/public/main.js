@@ -1203,17 +1203,17 @@ var AuthenicateService = /** @class */ (function () {
         console.log(data);
         var headers = this._headers;
         headers.set('Content-Type', 'multipart/form-data');
-        return this.http.post('http://localhost:3000/users/register', data, { headers: headers });
+        return this.http.post('users/register', data, { headers: headers });
     };
     AuthenicateService.prototype.Login = function (data) {
         var headers = this._headers;
         headers.set('Content-Type', 'application/json');
-        return this.http.post('http://localhost:3000/users/login', data, { headers: headers });
+        return this.http.post('users/login', data, { headers: headers });
     };
     AuthenicateService.prototype.adminLogin = function (data) {
         var headers = this._headers;
         headers.set('Content-Type', 'application/json');
-        return this.http.post('http://localhost:3000/users/adminlogin', data, { headers: headers });
+        return this.http.post('users/adminlogin', data, { headers: headers });
     };
     AuthenicateService.prototype.getProfile = function () {
         var userString = localStorage.getItem('user');
@@ -1225,12 +1225,12 @@ var AuthenicateService = /** @class */ (function () {
     AuthenicateService.prototype.getProfileById = function (username) {
         this.loadToken();
         var headers = this._headers.append('Authorization', 'Bearer ' + this.authToken);
-        return this.http.post("http://localhost:3000/users/profileById", username, { headers: headers });
+        return this.http.post("users/profileById", username, { headers: headers });
     };
     AuthenicateService.prototype.getAllProfiles = function () {
         this.loadToken();
         var headers = this._headers.append('Authorization', 'Bearer ' + this.authToken);
-        return this.http.post("http://localhost:3000/users/allprofiles", headers, { headers: headers });
+        return this.http.post("users/allprofiles", headers, { headers: headers });
     };
     AuthenicateService.prototype.loggedIn = function () {
         this.loadToken();
@@ -1252,38 +1252,38 @@ var AuthenicateService = /** @class */ (function () {
         console.log(friendName);
         var headers = this._headers.append('Authorization', 'Bearer ' + this.authToken);
         headers.append("cache-control", 'no-cache');
-        return this.http.post("http://localhost:3000/users/friendrequest", friendName, { headers: headers });
+        return this.http.post("users/friendrequest", friendName, { headers: headers });
     };
     AuthenicateService.prototype.saveToHistory = function (username) {
         this.loadToken();
         console.log(username);
         var headers = this._headers.append('Authorization', 'Bearer ' + this.authToken);
         headers.append("cache-control", 'no-cache');
-        return this.http.post("http://localhost:3000/users/savehistory", username, { headers: headers });
+        return this.http.post("users/savehistory", username, { headers: headers });
     };
     AuthenicateService.prototype.loadHistory = function () {
         this.loadToken();
         var headers = this._headers.append('Authorization', 'Bearer ' + this.authToken);
         headers.append("cache-control", 'no-cache');
-        return this.http.post("http://localhost:3000/users/loaduserhistory", headers, { headers: headers });
+        return this.http.post("users/loaduserhistory", headers, { headers: headers });
     };
     AuthenicateService.prototype.loadAllHistory = function () {
         this.loadToken();
         var headers = this._headers.append('Authorization', 'Bearer ' + this.authToken);
         headers.append("cache-control", 'no-cache');
-        return this.http.post("http://localhost:3000/users/loadAlluserhistory", headers, { headers: headers });
+        return this.http.post("users/loadAlluserhistory", headers, { headers: headers });
     };
     AuthenicateService.prototype.clearuserhistory = function () {
         this.loadToken();
         var headers = this._headers.append('Authorization', 'Bearer ' + this.authToken);
         headers.append("cache-control", 'no-cache');
-        return this.http.post("http://localhost:3000/users/clearuserhistory", headers, { headers: headers });
+        return this.http.post("users/clearuserhistory", headers, { headers: headers });
     };
     AuthenicateService.prototype.makeAdmin = function (username) {
         this.loadToken();
         var headers = this._headers.append('Authorization', 'Bearer ' + this.authToken);
         headers.append("cache-control", 'no-cache');
-        return this.http.post("http://localhost:3000/users/makeAdmin", username, { headers: headers });
+        return this.http.post("users/makeAdmin", username, { headers: headers });
     };
     AuthenicateService.prototype.storageUserData = function (data) {
         localStorage.setItem('token', data.token);
@@ -1343,61 +1343,61 @@ var FriendsService = /** @class */ (function () {
     FriendsService.prototype.getFriendRequests = function (status) {
         this.token = this.auth.loadToken();
         var headers = this._headers.append('Authorization', 'Bearer ' + this.token);
-        return this.http.post("http://localhost:3000/users/getFriendRequests", status, { headers: headers });
+        return this.http.post("users/getFriendRequests", status, { headers: headers });
     };
     FriendsService.prototype.checkFriend = function (username) {
         console.log(username);
         this.token = this.auth.loadToken();
         var headers = this._headers.append('Authorization', 'Bearer ' + this.token);
-        return this.http.post("http://localhost:3000/users/checkFriends", username, { headers: headers });
+        return this.http.post("users/checkFriends", username, { headers: headers });
     };
     FriendsService.prototype.getAllFriendRequests = function () {
         this.token = this.auth.loadToken();
         var headers = this._headers.append('Authorization', 'Bearer ' + this.token);
-        return this.http.post("http://localhost:3000/users/getAllFriendRequests", headers, { headers: headers });
+        return this.http.post("users/getAllFriendRequests", headers, { headers: headers });
     };
     FriendsService.prototype.handleRequest = function (url, accept) {
         this.token = this.auth.loadToken();
         var headers = this._headers.append('Authorization', 'Bearer ' + this.token);
-        return this.http.post("http://localhost:3000/users/" + url, accept, { headers: headers });
+        return this.http.post("users/" + url, accept, { headers: headers });
     };
     FriendsService.prototype.onAddProduct = function (product) {
         this.token = this.auth.loadToken();
         var headers = this._headers.append('Authorization', 'Bearer ' + this.token);
         headers.set('Content-Type', 'multipart/form-data');
-        return this.http.post("http://localhost:3000/users/addProduct", product, { headers: headers });
+        return this.http.post("users/addProduct", product, { headers: headers });
     };
     FriendsService.prototype.onRecommend = function (product) {
         this.token = this.auth.loadToken();
         var headers = this._headers.append('Authorization', 'Bearer ' + this.token);
         headers.set('Content-Type', 'multipart/form-data');
-        return this.http.post("http://localhost:3000/users/saverecommend", product, { headers: headers });
+        return this.http.post("users/saverecommend", product, { headers: headers });
     };
     FriendsService.prototype.getRecommendedPosts = function () {
         this.token = this.auth.loadToken();
         var headers = this._headers.append('Authorization', 'Bearer ' + this.token);
         headers.set('Content-Type', 'multipart/form-data');
-        return this.http.post("http://localhost:3000/users/getRecommendedPosts", headers, { headers: headers });
+        return this.http.post("users/getRecommendedPosts", headers, { headers: headers });
     };
     FriendsService.prototype.onSearchProduct = function (productname) {
         this.token = this.auth.loadToken();
         var headers = this._headers.append('Authorization', 'Bearer ' + this.token);
-        return this.http.post("http://localhost:3000/users/getProductByName", productname, { headers: headers });
+        return this.http.post("users/getProductByName", productname, { headers: headers });
     };
     FriendsService.prototype.loadAllProducts = function () {
         this.token = this.auth.loadToken();
         var headers = this._headers.append('Authorization', 'Bearer ' + this.token);
-        return this.http.post("http://localhost:3000/users/getAllProducts", headers, { headers: headers });
+        return this.http.post("users/getAllProducts", headers, { headers: headers });
     };
     FriendsService.prototype.loadRecommendations = function () {
         this.token = this.auth.loadToken();
         var headers = this._headers.append('Authorization', 'Bearer ' + this.token);
-        return this.http.post("http://localhost:3000/users/getAllRecommendations", headers, { headers: headers });
+        return this.http.post("users/getAllRecommendations", headers, { headers: headers });
     };
     FriendsService.prototype.onVote = function (productname) {
         this.token = this.auth.loadToken();
         var headers = this._headers.append('Authorization', 'Bearer ' + this.token);
-        return this.http.post("http://localhost:3000/users/onVote", productname, { headers: headers });
+        return this.http.post("users/onVote", productname, { headers: headers });
     };
     FriendsService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
@@ -1482,7 +1482,7 @@ var HeaderComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".login\r\n{\r\n    top:0;\r\n    position:fixed;\r\n    left:0;\r\n    right:0;\r\n    bottom:0;\r\n}"
+module.exports = ".login\r\n{\r\n    top:0;\r\n    position:fixed;\r\n    left:0;\r\n    right:0;\r\n    bottom:0;\r\n}\r\n.panel{\r\n    margin-bottom:0px\r\n}\r\n.forget-password{\r\n    float:right\r\n}\r\n.form-control{\r\n    height:45px;\r\n    border-radius:0px;\r\n\r\n}\r\n.heading {\r\n    text-align: center;\r\n    padding-top: 12px;\r\n    font-size: 20px;\r\n    /* font-family: monospace; */\r\n    letter-spacing: 1px;\r\n}\r\n.fa {\r\n    float: right;\r\n    margin-top: -27px;\r\n    margin-right: 19px;\r\n    font-size: larger;\r\n    color: lightgray;\r\n}\r\n.panel-footer {\r\n    font-size: 17px;\r\n    text-align: center;\r\n    background-color: #fff;\r\n}\r\ninput[type=email]:focus + .fa-envelope{\r\n    color:blue\r\n}\r\ninput[type=password]:focus + .fa-lock{\r\n    color:blue\r\n}"
 
 /***/ }),
 
@@ -1493,7 +1493,7 @@ module.exports = ".login\r\n{\r\n    top:0;\r\n    position:fixed;\r\n    left:0
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"login\">\r\n    <div class=\"content\">\r\n        <flash-messages></flash-messages>\r\n        <form class=\"login-form\" (ngSubmit)=\"onLogin(loginForm.value)\" #loginForm=\"ngForm\">\r\n            <h3 class=\"form-title font-green\">Sign In</h3>\r\n            <div class=\"alert alert-danger display-hide\">\r\n                <button class=\"close\" data-close=\"alert\"></button>\r\n                <span> Enter any username and password. </span>\r\n            </div>\r\n            <div class=\"form-group\">\r\n                <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->\r\n                <label class=\"control-label visible-ie8 visible-ie9\">Email :</label>\r\n                <input class=\"form-control form-control-solid placeholder-no-fix\" type=\"text\" placeholder=\"Email\" name=\"email\" #email=\"ngModel\" (ngModel)=\"user.email\" minlength=\"4\" required>\r\n                <div *ngIf=\"email.invalid && (email.dirty || email.touched)\" class=\"text text-danger\">Email is required</div>\r\n            </div>\r\n            <div class=\"form-group\">\r\n                <label class=\"control-label visible-ie8 visible-ie9\">Password</label>\r\n                <input class=\"form-control form-control-solid placeholder-no-fix\" type=\"password\" placeholder=\"Password\" name=\"password\" #password=\"ngModel\" (ngModel)=\"user.password\" minlength=\"4\" required />\r\n                <div *ngIf=\"password.invalid && (password.dirty || password.touched)\" class=\"text text-danger\">Password is required</div>\r\n            </div>\r\n            <div class=\"form-actions\">\r\n                <button type=\"submit\" [disabled]=\"!loginForm.form.valid\" class=\"btn green uppercase\">Login</button>\r\n                <label class=\"rememberme check mt-checkbox mt-checkbox-outline\">\r\n                    <input type=\"checkbox\" name=\"remember\" value=\"1\" />Remember\r\n                    <span></span>\r\n                </label>\r\n                <a href=\"javascript:;\" id=\"forget-password\" class=\"forget-password\">Forgot Password?</a>\r\n            </div>\r\n            <div class=\"login-options\">\r\n                <h4>Or login with</h4>\r\n                <ul class=\"social-icons\">\r\n                    <li>\r\n                        <a class=\"social-icon-color facebook\" data-original-title=\"facebook\" href=\"javascript:;\"></a>\r\n                    </li>\r\n                    <li>\r\n                        <a class=\"social-icon-color twitter\" data-original-title=\"Twitter\" href=\"javascript:;\"></a>\r\n                    </li>\r\n                    <li>\r\n                        <a class=\"social-icon-color googleplus\" data-original-title=\"Goole Plus\" href=\"javascript:;\"></a>\r\n                    </li>\r\n                    <li>\r\n                        <a class=\"social-icon-color linkedin\" data-original-title=\"Linkedin\" href=\"javascript:;\"></a>\r\n                    </li>\r\n                </ul>\r\n            </div>\r\n            <div class=\"create-account\">\r\n                <p>\r\n                    <a routerLink=\"/register\" class=\"uppercase\">Create an account</a>\r\n                </p>\r\n            </div>\r\n        </form>\r\n\r\n    </div>\r\n</div>\r\n"
+module.exports = "\r\n<div class=\"login container-fluid\">\r\n    <br><br />\r\n    <div class=\"main col-md-offset-4 col-md-4 col-xs-12\">\r\n        <div class=\"panel panel-default\">\r\n            <div class=\"heading\"><h4>SIGN IN</h4></div>\r\n            <div class=\"panel-body\">\r\n                <flash-messages></flash-messages>\r\n                <form class=\"login-form\" (ngSubmit)=\"onLogin(loginForm.value)\" #loginForm=\"ngForm\">\r\n\r\n                    <div class=\"form-group\">\r\n                        <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->\r\n                           <input class=\"form-control form-control-solid placeholder-no-fix\" type=\"email\" placeholder=\"Email\" name=\"email\" #email=\"ngModel\" (ngModel)=\"user.email\" minlength=\"4\" required>\r\n                        <span class=\"fa fa-envelope\"></span>\r\n                        <div *ngIf=\"email.invalid && (email.dirty || email.touched)\" class=\"text text-danger\">Email is required</div>\r\n                    </div>\r\n                    <div class=\"form-group\">\r\n                           <input class=\"form-control form-control-solid password\" type=\"password\" placeholder=\"Password\" name=\"password\" #password=\"ngModel\" (ngModel)=\"user.password\" minlength=\"4\" required />\r\n                           <span class=\"fa fa-lock\" (click)=\"changeText()\"></span>\r\n                        <div *ngIf=\"password.invalid && (password.dirty || password.touched)\" class=\"text text-danger\">Password is required</div>\r\n                    </div>\r\n                    <div class=\"form-group\">\r\n                        <button type=\"submit\" [disabled]=\"!loginForm.form.valid\" class=\"col-md-2 btn btn-primary\">Login</button>\r\n                        \r\n                        <a href=\"javascript:;\" id=\"forget-password\" class=\"forget-password\">Forgot Password?</a>\r\n                    </div>\r\n                </form>\r\n            </div>\r\n\r\n            <div class=\"panel panel-footer\">\r\n                     <a routerLink=\"/register\" class=\"uppercase\">Create an account</a>\r\n             </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1526,10 +1526,11 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 var LoginComponent = /** @class */ (function () {
-    function LoginComponent(auth, router, flashMessages) {
+    function LoginComponent(auth, router, flashMessages, el) {
         this.auth = auth;
         this.router = router;
         this.flashMessages = flashMessages;
+        this.el = el;
     }
     LoginComponent.prototype.ngOnInit = function () {
     };
@@ -1551,13 +1552,15 @@ var LoginComponent = /** @class */ (function () {
     LoginComponent.prototype.inValidLogin = function () {
         this.flashMessages.show('ivalid credentials', { cssClass: 'alert-warning', timeout: 5000 });
     };
+    LoginComponent.prototype.changeText = function () {
+    };
     LoginComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-login',
             template: __webpack_require__(/*! ./login.component.html */ "./src/app/login/login.component.html"),
             styles: [__webpack_require__(/*! ./login.component.css */ "./src/app/login/login.component.css")]
         }),
-        __metadata("design:paramtypes", [_authenicate_service__WEBPACK_IMPORTED_MODULE_1__["AuthenicateService"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"], angular2_flash_messages__WEBPACK_IMPORTED_MODULE_3__["FlashMessagesService"]])
+        __metadata("design:paramtypes", [_authenicate_service__WEBPACK_IMPORTED_MODULE_1__["AuthenicateService"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"], angular2_flash_messages__WEBPACK_IMPORTED_MODULE_3__["FlashMessagesService"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"]])
     ], LoginComponent);
     return LoginComponent;
 }());
@@ -1584,7 +1587,7 @@ module.exports = "\r\n h1 {\r\n    font-family: monospace;\r\n    text-transform
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = " \r\n<div class=\"register container-fluid\">\r\n    <br><br />\r\n        <div class=\"main col-md-offset-3 col-md-6\">\r\n            <flash-messages></flash-messages>\r\n            <div class=\"panel panel-default\">\r\n                <div class=\"panel-heading\"><h4>Register</h4></div>\r\n                <div class=\"panel-body\">\r\n                    <form (ngSubmit)=\"onRegister(registerForm.value)\" #registerForm=\"ngForm\">\r\n                        <div class=\"form-group\">\r\n                            <label for=\"username\">Username :</label>\r\n                            <input type=\"text\" class=\"form-control input-md\" name=\"username\" #username=\"ngModel\" (ngModel)=\"user.username\" minlength=\"4\" required>\r\n                            <div *ngIf=\"username.invalid && (username.dirty || username.touched)\" class=\"text text-danger\">Username is required</div>\r\n                        </div>\r\n                        <div class=\"form-group\">\r\n                            <label for=\"email\">Email :</label>\r\n                            <input type=\"email\" class=\"form-control input-md\" name=\"email\" #email=\"ngModel\" (ngModel)=\"user.email\" minlength=\"4\" required>\r\n                            <div *ngIf=\"email.invalid && (email.dirty || email.touched)\" class=\"text text-danger\">Email is required</div>\r\n                        </div>\r\n                        <div class=\"form-group\">\r\n                            <label for=\"contact\">Contact:</label>\r\n                            <input type=\"Number\" class=\"form-control input-md\" name=\"contact\" #contact=\"ngModel\" (ngModel)=\"user.contact\" minlength=\"4\" required>\r\n                            <div *ngIf=\"contact.invalid && (contact.dirty || contact.touched)\" class=\"text text-danger\">Contact is required</div>\r\n                        </div>\r\n\r\n                        <div class=\"form-group\">\r\n                            <label for=\"pwd\">Password:</label>\r\n                            <input type=\"password\" class=\"form-control input-md\" name=\"password\" #password=\"ngModel\" (ngModel)=\"user.password\" minlength=\"4\" required>\r\n                            <div *ngIf=\"password.invalid && (password.dirty || password.touched)\" class=\"text text-danger\">Password is required</div>\r\n                        </div>\r\n                        <div class=\"form-group\">\r\n                            <label for=\"propic\">Image:</label>\r\n                            <input type=\"file\" class=\"form-control input-md\" (change)=\"onFileChange($event)\" id=\"propic\" name=\"propic\" required>\r\n                        </div>\r\n                        <!--<label class=\"container\">\r\n                  Remember me\r\n                  <input type=\"checkbox\" checked=\"checked\">\r\n                  <span class=\"checkmark\"></span>\r\n                </label>-->\r\n                        <button type=\"submit\" [disabled]=\"!registerForm.form.valid\" class=\"btn btn-primary btn-lg\">Submit</button>\r\n                    </form>\r\n                </div>\r\n            </div>\r\n        </div>\r\n</div>\r\n"
+module.exports = " \r\n<div class=\"register container-fluid\">\r\n    <br><br />\r\n        <div class=\"main col-md-offset-3 col-md-6 col-xs-12\">\r\n            <flash-messages></flash-messages>\r\n            <div class=\"panel panel-default\">\r\n                <div class=\"panel-heading\"><h4>Register</h4></div>\r\n                <div class=\"panel-body\">\r\n                    <form (ngSubmit)=\"onRegister(registerForm.value)\" #registerForm=\"ngForm\">\r\n                        <div class=\"form-group\">\r\n                            <label for=\"username\">Username :</label>\r\n                            <input type=\"text\" class=\"form-control input-md\" name=\"username\" #username=\"ngModel\" (ngModel)=\"user.username\" minlength=\"4\" required>\r\n                            <div *ngIf=\"username.invalid && (username.dirty || username.touched)\" class=\"text text-danger\">Username is required</div>\r\n                        </div>\r\n                        <div class=\"form-group\">\r\n                            <label for=\"email\">Email :</label>\r\n                            <input type=\"email\" class=\"form-control input-md\" name=\"email\" #email=\"ngModel\" (ngModel)=\"user.email\" minlength=\"4\" required>\r\n                            <div *ngIf=\"email.invalid && (email.dirty || email.touched)\" class=\"text text-danger\">Email is required</div>\r\n                        </div>\r\n                        <div class=\"form-group\">\r\n                            <label for=\"contact\">Contact:</label>\r\n                            <input type=\"Number\" class=\"form-control input-md\" name=\"contact\" #contact=\"ngModel\" (ngModel)=\"user.contact\" minlength=\"4\" required>\r\n                            <div *ngIf=\"contact.invalid && (contact.dirty || contact.touched)\" class=\"text text-danger\">Contact is required</div>\r\n                        </div>\r\n\r\n                        <div class=\"form-group\">\r\n                            <label for=\"pwd\">Password:</label>\r\n                            <input type=\"password\" class=\"form-control input-md\" name=\"password\" #password=\"ngModel\" (ngModel)=\"user.password\" minlength=\"4\" required>\r\n                            <div *ngIf=\"password.invalid && (password.dirty || password.touched)\" class=\"text text-danger\">Password is required</div>\r\n                        </div>\r\n                        <div class=\"form-group\">\r\n                            <label for=\"propic\">Image:</label>\r\n                            <input type=\"file\" class=\"form-control input-md\" (change)=\"onFileChange($event)\" id=\"propic\" name=\"propic\" required>\r\n                        </div>\r\n                        <!--<label class=\"container\">\r\n                  Remember me\r\n                  <input type=\"checkbox\" checked=\"checked\">\r\n                  <span class=\"checkmark\"></span>\r\n                </label>-->\r\n                        <button type=\"submit\" [disabled]=\"!registerForm.form.valid\" class=\"btn btn-primary btn-lg\">Submit</button>\r\n                    </form>\r\n                </div>\r\n            </div>\r\n        </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -2779,7 +2782,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\swade\source\repos\AngularMainProject\SocialVoting\sampleApp\main\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Users\swade\code\SocialVoting\sampleApp\main\src\main.ts */"./src/main.ts");
 
 
 /***/ })

@@ -40,7 +40,7 @@ export class AuthenicateService {
         userString = JSON.parse(userString)
         this.user = { 'user': userString };
         console.log(this.user);
-        return this.user;
+        return this.user.user;
 
     }
     getProfileById(username:any)
@@ -119,6 +119,7 @@ export class AuthenicateService {
         this.authToken = data.token;
        
     }
+   
     logout() {
 
         this.authToken = '';

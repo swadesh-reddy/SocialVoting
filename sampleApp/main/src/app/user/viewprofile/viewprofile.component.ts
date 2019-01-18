@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../../user';
 import { AuthenicateService } from '../../authenicate.service';
 import { ActivatedRoute } from '@angular/router';
-import 'rxjs/add/operator/filter';
 
 @Component({
   selector: 'app-viewprofile',
@@ -10,13 +9,13 @@ import 'rxjs/add/operator/filter';
   styleUrls: ['./viewprofile.component.css']
 })
 export class ViewprofileComponent implements OnInit {
-    username: string;
+    username: string='';
     user: User;
     constructor(private route: ActivatedRoute, private auth: AuthenicateService) { }
 
     ngOnInit() {
         this.username = this.route.snapshot.paramMap.get('username');
-          let data = {username:this.username}
+          var data = {username:this.username}
           this.auth.getProfileById(data).subscribe(userdata => {
               console.log(userdata);
               this.user = userdata;

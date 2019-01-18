@@ -11,7 +11,7 @@ import { User } from '../../user';
 export class MysearchhistoryComponent implements OnInit {
     histories: Array<User> = [];
     history: User;
-    constructor(private auth: AuthenicateService, private friend: FriendsService) { }
+    constructor(private auth: AuthenicateService) { }
     
   ngOnInit() {
       this.loadhistory();
@@ -19,8 +19,8 @@ export class MysearchhistoryComponent implements OnInit {
   }
   loadhistory() {
       this.auth.loadHistory().subscribe(data => {
-          console.log(data);
-          this.history=data;})
+          this.history = data;
+      })
   }
   clearuserhistory() {
       this.auth.clearuserhistory().subscribe(data=>{console.log(data)})
