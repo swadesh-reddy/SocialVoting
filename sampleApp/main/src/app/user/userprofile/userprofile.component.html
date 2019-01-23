@@ -3,12 +3,10 @@
     <div class="panel panel-default">
         <div class="panel-body pnl-body">
             <div class="col-md-4" style="float:left;border-right:3px solid #f5f5f5;">
-                <form (ngSubmit)="onImageChange(ImageChange.value)" #ImageChange="ngForm">
                     <div class="user-pic col-md-12">
                         <img  [src]="user.propic"  class="img-thumbnail" width="300" height="350">
                     </div>
-                </form>
-              </div>
+               </div>
             <div class="right col-md-3 col-xs-6"> Username</div> <div class="left col-md-3 col-xs-6">{{user.username}}</div>
             <div class="right col-md-3 col-xs-6"> Email</div> <div class="left col-md-3 col-xs-6">{{user.email}}</div>
             <div class="right col-md-3 col-xs-6"> Mobile</div> <div class="left col-md-3 col-xs-6">{{user.contact}}</div>

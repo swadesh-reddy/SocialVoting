@@ -20,7 +20,13 @@ export class UserComponent implements OnInit {
 
     }
     closeNav() {
-        this.show = false;
+        var sidenav = document.getElementById("mySidenav");
+        if (sidenav.style.width == "350px") {
+            sidenav.style.width = "0";
+        }
+        else {
+            sidenav.style.width = "350px";
+        }
     }
     openNav() {
         this.show = true;

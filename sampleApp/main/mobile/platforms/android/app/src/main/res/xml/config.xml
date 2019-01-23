@@ -12,10 +12,7 @@
         Apache Cordova Team
     </author>
     <content src="index.html" />
-  <plugin name="NetworkStatus" value="org.apache.cordova.NetworkManager" />
     <access origin="*" />
-    <allow-navigation href="*" />
-    <allow-intent href="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <allow-intent href="tel:*" />

@@ -35,12 +35,12 @@
         <h2 class="sideheading">Friend Request</h2>
 
         <div *ngFor="let request of friendRequests" class="panel panel-default col-md-7 col-xs-12">
-            <div class="panel-body">
-                <div class="user"><img [src]="request.propic" class="img" width="65" height="70" style="float:left;"></div>
-                <div class="col-md-8">
+            <div class="">
+                <div class="user"><img [src]="request.propic" class="img" width="70" height="70" style="float:left;"></div>
+                <div class="col-md-8 col-xs-9">
                     <label class="col-md-12 col-xs-10">{{request.username}}</label>
-                        <button id="accept" class="col-md-6 col-xs-4 btn btn-primary" (click)="acceptFriendRequest(request.username);" style="color:#fff;">Accept <i class="fa fa-check"></i></button>  
-                        <button class="col-md-6 col-xs-4 btn btn-danger" (click)="deleteFriendRequest(request.username);">Decline <i class="fa fa-close"></i></button>
+                        <button id="accept" class="col-md-6 col-xs-6 btn btn-primary" (click)="acceptFriendRequest(request.username);" style="color:#fff;">Accept <i class="fa fa-check"></i></button>  
+                        <button class="col-md-6 col-xs-6 btn btn-danger" (click)="deleteFriendRequest(request.username);">Decline <i class="fa fa-close"></i></button>
                  </div>  <br /><br />
             </div>
         </div>

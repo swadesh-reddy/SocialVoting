@@ -34,7 +34,7 @@ export class SearchforfriendComponent implements OnInit {
                     console.log(data[key].username);
                     this.auth.getProfileById({ 'username': data[key].username }).subscribe(data => {
                         console.log(data);
-                        data.propic = 'http://localhost:3000/' + data.propic;
+                        data.propic = 'https://publicserver.localtunnel.me/' + data.propic;
                         this.friendRequests.push(data);
                         console.log(this.friendRequests);
                     })

@@ -3,6 +3,7 @@ import { FriendsService } from '../../friends.service';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { RouterModule, Router } from '@angular/router';
 import { User } from '../../user';
+import { Product } from '../../product';
 
 
 @Component({
@@ -12,6 +13,7 @@ import { User } from '../../user';
 })
 export class AddPostComponent implements OnInit {
     form: FormGroup;
+    product: Product;
     user: User;
     image: File = null;
     public files: any[];

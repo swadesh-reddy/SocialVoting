@@ -19,7 +19,7 @@ export class UserprofileComponent implements OnInit {
     loadProfile() {
         var data = this.auth.getProfile();
         this.user = data;
-          this.user.propic = 'http://localhost:3000/' + this.user.propic;
+          this.user.propic = 'https://publicserver.localtunnel.me/' + this.user.propic;
           console.log(this.user);
 
     }
