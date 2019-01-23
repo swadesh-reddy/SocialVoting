@@ -21,17 +21,17 @@ export class AuthenicateService {
         console.log(data);
         const headers = this._headers;
         headers.set('Content-Type', 'multipart/form-data');
-        return this.http.post<User>('https://publicserver.localtunnel.me/users/register', data, { headers: headers });
+        return this.http.post<User>('http://localhost:3000/users/register', data, { headers: headers });
     }
     Login(data) {
         const headers = this._headers;
         headers.set('Content-Type', 'application/json');
-        return this.http.post<User>('https://publicserver.localtunnel.me/users/login', data, { headers: headers });
+        return this.http.post<User>('http://localhost:3000/users/login', data, { headers: headers });
     }
      adminLogin(data) {
         const headers = this._headers;
         headers.set('Content-Type', 'application/json');
-        return this.http.post<User>('https://publicserver.localtunnel.me/users/adminlogin', data, { headers: headers });
+        return this.http.post<User>('http://localhost:3000/users/adminlogin', data, { headers: headers });
     }
 
 
@@ -47,13 +47,13 @@ export class AuthenicateService {
     {
         this.loadToken();   
         const headers = this._headers.append('Authorization', 'Bearer ' + this.authToken);
-        return this.http.post<User>("https://publicserver.localtunnel.me/users/profileById", username, { headers: headers });
+        return this.http.post<User>("http://localhost:3000/users/profileById", username, { headers: headers });
 
     }
     getAllProfiles() {
         this.loadToken();
         const headers = this._headers.append('Authorization', 'Bearer ' + this.authToken);
-        return this.http.post<User>("https://publicserver.localtunnel.me/users/allprofiles",headers, { headers: headers });
+        return this.http.post<User>("http://localhost:3000/users/allprofiles",headers, { headers: headers });
     }
 
     loggedIn() {
@@ -72,7 +72,7 @@ export class AuthenicateService {
         console.log(friendName);
         const headers = this._headers.append('Authorization', 'Bearer ' + this.authToken);
         headers.append("cache-control", 'no-cache');
-        return this.http.post<User>("https://publicserver.localtunnel.me/users/friendrequest", friendName, { headers: headers });
+        return this.http.post<User>("http://localhost:3000/users/friendrequest", friendName, { headers: headers });
 
     }
 
@@ -82,7 +82,7 @@ export class AuthenicateService {
         console.log(username);
         const headers = this._headers.append('Authorization', 'Bearer ' + this.authToken);
         headers.append("cache-control", 'no-cache');
-        return this.http.post<User>("https://publicserver.localtunnel.me/users/savehistory", username, { headers: headers });
+        return this.http.post<User>("http://localhost:3000/users/savehistory", username, { headers: headers });
 
     }
 
@@ -90,27 +90,27 @@ export class AuthenicateService {
         this.loadToken();
         const headers = this._headers.append('Authorization', 'Bearer ' + this.authToken);
         headers.append("cache-control", 'no-cache');
-        return this.http.post<User>("https://publicserver.localtunnel.me/users/loaduserhistory",headers, { headers: headers });
+        return this.http.post<User>("http://localhost:3000/users/loaduserhistory",headers, { headers: headers });
     }
     loadAllHistory() {
         this.loadToken();
         const headers = this._headers.append('Authorization', 'Bearer ' + this.authToken);
         headers.append("cache-control", 'no-cache');
-        return this.http.post<User>("https://publicserver.localtunnel.me/users/loadAlluserhistory",headers, { headers: headers });
+        return this.http.post<User>("http://localhost:3000/users/loadAlluserhistory",headers, { headers: headers });
     }
     clearuserhistory()
     {
         this.loadToken();
         const headers = this._headers.append('Authorization', 'Bearer ' + this.authToken);
         headers.append("cache-control", 'no-cache');
-        return this.http.post<User>("https://publicserver.localtunnel.me/users/clearuserhistory",headers, { headers: headers });
+        return this.http.post<User>("http://localhost:3000/users/clearuserhistory",headers, { headers: headers });
     }
     makeAdmin(username)
     {
         this.loadToken();
         const headers = this._headers.append('Authorization', 'Bearer ' + this.authToken);
         headers.append("cache-control", 'no-cache');
-        return this.http.post<User>("https://publicserver.localtunnel.me/users/makeAdmin",username, { headers: headers });
+        return this.http.post<User>("http://localhost:3000/users/makeAdmin",username, { headers: headers });
 
     }
     storageUserData(data) {

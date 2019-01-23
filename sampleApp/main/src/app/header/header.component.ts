@@ -30,7 +30,7 @@ export class HeaderComponent implements OnInit {
             this.users = data;
         })
         this.userdetails = this.auth.getProfile();
-        this.userdetails.propic = 'https://publicserver.localtunnel.me/' + this.userdetails.propic;
+        this.userdetails.propic = 'http://localhost:3000/' + this.userdetails.propic;
     }
   openNav() {
           var sidenav = document.getElementById("mySidenav");

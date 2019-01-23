@@ -15,7 +15,8 @@ export class SearchforfriendComponent implements OnInit {
     user = [];
     friendRequests = [];
     requestStatus = 'Request';
-    friendStatus:any    
+    friendStatus: any;
+    nodata: String;
     constructor(private auth: AuthenicateService, private friend: FriendsService) {
     }
 
@@ -28,15 +29,16 @@ export class SearchforfriendComponent implements OnInit {
         let status={status:false}
         this.friend.getFriendRequests(status).subscribe(data => {
             console.log(data);
+            if (this.friendRequests.length == 0) {
+                this.nodata = 'No Friend Requests';
+                console.log(this.nodata)
+            } else { this.nodata = ''; }
             for (var key in data) {
-                console.log(key);
                 if (data[key].username !== undefined) {
-                    console.log(data[key].username);
                     this.auth.getProfileById({ 'username': data[key].username }).subscribe(data => {
                         console.log(data);
-                        data.propic = 'https://publicserver.localtunnel.me/' + data.propic;
+                        data.propic = 'http://localhost:3000/' + data.propic;
                         this.friendRequests.push(data);
-                        console.log(this.friendRequests);
                     })
                 }
         }

@@ -3,8 +3,8 @@
             <div class=" col-md-offset-2 col-xs-8 col-md-6 search">
             <form (ngSubmit)="onSearchFriend(searchForm.value)" #searchForm="ngForm">
                 <div class="input-group">
-                    <input list="post" class="form-control" name="username" id="username" #username="ngModel" (ngModel)="username" required>
-                    <datalist id="post"><option *ngFor="let u of users" [value]="u.username">{{u.email}}</option></datalist>
+                    <input list="friend" class="form-control" name="username" id="username" #username="ngModel" (ngModel)="username" required>
+                    <datalist id="friend"><option *ngFor="let u of users" [value]="u.username">{{u.email}}</option></datalist>
                     <div class="input-group-btn">
                         <button class="btn btn-default" type="submit">
                             <i class="glyphicon glyphicon-search"></i>

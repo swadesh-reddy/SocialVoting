@@ -12,7 +12,7 @@ import { FlashMessagesService } from 'angular2-flash-messages';
 export class SearchforpostComponent implements OnInit {
     Product: any
     recommand: any;
-    users: Product;
+    product: Product;
     constructor(private auth: AuthenicateService, private friend: FriendsService, private flashMessages: FlashMessagesService) { }
 
     ngOnInit() {
@@ -21,7 +21,7 @@ export class SearchforpostComponent implements OnInit {
     loadAllProducts() {
       this.friend.loadAllProducts().subscribe(data => {
           console.log(data);
-          this.users = data;
+          this.product = data;
       })
   }
   onSearchPost(productname) {

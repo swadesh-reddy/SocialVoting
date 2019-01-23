@@ -2,7 +2,11 @@
 padding:0px;
 }
 .panel{
-padding-left:0px;
+padding:0px;
+}
+
+.col-md-8 {
+    padding:0px;
 }
 img {
-padding-right:10px;}
+padding-right:5px;}
