@@ -1,14 +1,21 @@
 <div class="col-md-8 wow fadeInRight col-xs-12 col-sm-12" data-wow-delay=".25s" data-wow-delay=".25s" id="content" style="float:right;">
-    <h2>User Profile</h2>
-    <div class="panel panel-default">
+     <div class="panel panel-default">
         <div class="panel-body">
             <div class="col-md-4 userpic">
-                <img [src]="user.propic" width="200" height="200">
+                <img [src]="user.propic" width="100%" height="200">
             </div>
             <div class="col-md-8 col-xs-12 userdetails">
-                <label class="right col-md-12 col-xs-12"> <span class="fa fa-user-o"></span> {{user.username}}</label>
-                <label class="right col-md-12 col-xs-12"> <span class="fa fa-envelope"></span> {{user.email}}</label>
-                <label class="right col-md-12 col-xs-12"><span class="fa fa-address-book-o"></span> {{user.contact}}</label>
+                <label class="col-md-12 col-xs-12"> <span class="fa fa-user-o"></span> {{user.username}}</label>
+                <label class="col-md-12 col-xs-12"> <span class="fa fa-envelope"></span> {{user.email}}</label>
+                <label class="col-md-12 col-xs-12"><span class="fa fa-address-book-o"></span> {{user.contact}}</label>
+           
+                <h4 class="col-md-12 col-xs-12">Friends</h4>
+                <div *ngFor="let request of friends" class="col-md-2 col-xs-4">
+                    <div class="userpic">
+                        <a routerLink="/user/viewprofile/{{request.username}}"><img [src]="request.propic" class="img-circle" width="70" height="70"></a>
+                    </div>
+                    <div class="left col-md-12">{{request.username}}</div>
+                 </div>
             </div>
         </div>
     </div> 

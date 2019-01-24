@@ -1,12 +1,14 @@
 <app-header>Loading...</app-header>
 <div class="container">
     <div id="mySidenav" class="sidenav" style="float:left">
-        <a (click)="closeNav()" routerLink="userprofile" >View your profile<i class="fa fa-chevron-right" style="float:right;margin-top:4px"></i></a>
-        <a (click)="closeNav()" routerLink="searchforfriend">friend request<i class="fa fa-chevron-right" style="float:right;margin-top:4px"></i></a>
+        <div class="col-md-12 col-xs-12 user">
+            <img [src]="userdetails.propic" (click)="closeNav()" routerLink="userprofile" class="img-circle userdetail" width="70" height="70">
+            <div class="userdetail"><label >{{userdetails.username}}</label></div>
+        </div>
+        <a (click)="closeNav()" routerLink="searchforfriend">Friend Request<i class="fa fa-chevron-right" style="float:right;margin-top:4px"></i></a>
         <a (click)="closeNav()" routerLink="searchforpost">Search For Post<i class="fa fa-chevron-right" style="float:right;margin-top:4px"></i></a>
-        <a (click)="closeNav()" routerLink="viewallmyfriends">view all my friends<i class="fa fa-chevron-right" style="float:right;margin-top:4px"></i></a>
-        <a (click)="closeNav()" routerLink="mysearchhistory">my search History<i class="fa fa-chevron-right" style="float:right;margin-top:4px"></i></a>
-        <a (click)="closeNav()" routerLink="recommend">view recommendations<i class="fa fa-chevron-right" style="float:right;margin-top:4px"></i></a>
+        <a (click)="closeNav()" routerLink="mysearchhistory">Search History<i class="fa fa-chevron-right" style="float:right;margin-top:4px"></i></a>
+        <a (click)="closeNav()" routerLink="recommend">View Recommendations<i class="fa fa-chevron-right" style="float:right;margin-top:4px"></i></a>
         <a (click)="logout()">logout<i class="fa fa-chevron-right" style="float:right;margin-top:4px"></i></a>
     </div>
     <div><router-outlet></router-outlet></div>

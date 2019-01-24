@@ -13,7 +13,6 @@ import { HeaderComponent } from './header/header.component';
 import { UserSideBarComponent } from './user/user-side-bar/user-side-bar.component';
 import { UserComponent } from './user/user.component';
 import { UserprofileComponent } from './user/userprofile/userprofile.component';
-import { ViewAllMyFriendsComponent } from './user/view-all-my-friends/view-all-my-friends.component';
 import { SearchforpostComponent } from './user/searchforpost/searchforpost.component';
 import { MysearchhistoryComponent } from './user/mysearchhistory/mysearchhistory.component';
 import { RecommendationComponent } from './user/recommendation/recommendation.component';
@@ -44,8 +43,7 @@ import { FriendProfileComponent } from './user/friend-profile/friend-profile.com
     UserSideBarComponent,
     UserComponent,
     UserprofileComponent,
-    ViewAllMyFriendsComponent,
-    SearchforpostComponent,
+     SearchforpostComponent,
     MysearchhistoryComponent,
     RecommendationComponent,
     UserInterestComponent,

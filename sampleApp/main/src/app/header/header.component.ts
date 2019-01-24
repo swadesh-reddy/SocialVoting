@@ -22,23 +22,16 @@ export class HeaderComponent implements OnInit {
     constructor(private auth: AuthenicateService, private router: Router, private friend: FriendsService) { }
 
     ngOnInit() {
-       this.loadProfile();
+    
     }
-    loadProfile() {
-        this.auth.getAllProfiles().subscribe(data => {
-
-            this.users = data;
-        })
-        this.userdetails = this.auth.getProfile();
-        this.userdetails.propic = 'http://localhost:3000/' + this.userdetails.propic;
-    }
+    
   openNav() {
           var sidenav = document.getElementById("mySidenav");
-          if (sidenav.style.width == "350px") {
+          if (sidenav.style.width == "300px") {
               sidenav.style.width = "0";
           }
           else {
-              sidenav.style.width = "350px";
+              sidenav.style.width = "300px";
           }
   }
   onSearchFriend(username) {

@@ -15,8 +15,9 @@
     border-top: 1px solid #f1f1f1;
     position: fixed;
     z-index: 1;
-    top: 52px;
+    top: 50px;
     left: 0;
+    color: #f1f1f1;
     background-color: #4184ab;
     overflow-x: hidden;
     transition: 0.5s;
@@ -25,7 +26,7 @@
     .sidenav a {
         padding: 8px 8px 8px 32px;
         text-decoration: none;
-        font-size: 25px;
+        font-size: 18px;
         color: #f1f1f1;
         display: block;
         transition: 0.3s;
@@ -38,6 +39,20 @@
     margin-top: 6px;
 }
 
+.user {
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    padding-top: 20px;
+    background-color: #692e422e;
+}
+    .user img {
+    padding-bottom:7px;
+    cursor:pointer;
+    }
+    .user .userdetail {
+        /* height: 100px; */
+        margin-left: 35%;
+    }
 @media screen and (max-height: 450px) {
     .sidenav {
         padding-top: 15px;

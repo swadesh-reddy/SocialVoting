@@ -13,7 +13,6 @@ import { MysearchhistoryComponent } from '../user/mysearchhistory/mysearchhistor
 import { SearchforfriendComponent } from '../user/searchforfriend/searchforfriend.component';
 import { UserInterestComponent } from '../user/user-interest/user-interest.component';
 import { ViewprofileComponent } from '../user/viewprofile/viewprofile.component';
-import { ViewAllMyFriendsComponent } from '../user/view-all-my-friends/view-all-my-friends.component';
 import { FriendProfileComponent } from '../user/friend-profile/friend-profile.component';
 import { UserComponent } from '../user/user.component';
 import { AdminComponent } from '../admin/admin.component';
@@ -37,7 +36,6 @@ const routes: Routes = [
     { path: 'userprofile', component: UserprofileComponent,canActivate: [AuthGuard] },
     { path: 'friendprofile/:username', component: FriendProfileComponent,canActivate: [AuthGuard] },
     { path: 'userinterest', component: UserInterestComponent,canActivate: [AuthGuard] },
-    { path: 'viewallmyfriends', component: ViewAllMyFriendsComponent, canActivate: [AuthGuard] },
     { path: 'viewprofile/:username', component: ViewprofileComponent, canActivate: [AuthGuard] },
     { path: 'recommend', component: RecommendationComponent, canActivate: [AuthGuard] },
     { path: 'searchforfriend', component: SearchforfriendComponent, canActivate: [AuthGuard] },

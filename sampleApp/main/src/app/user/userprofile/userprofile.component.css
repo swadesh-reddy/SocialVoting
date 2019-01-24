@@ -14,7 +14,8 @@
 padding:0;
 }
 .userpic {
-padding-left:0
+padding-left:0;
+padding-right:0
 }
 .userdetails {
     padding: 20px 6px;
@@ -25,3 +26,7 @@ padding-left:0
     letter-spacing: 1px;
     word-spacing: 16px;
 }
+    .userdetails label span {
+        color: #4184ab;
+        font-size:20px;
+    }

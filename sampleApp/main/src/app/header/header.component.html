@@ -1,6 +1,6 @@
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
-            <div class=" col-md-offset-2 col-xs-8 col-md-6 search">
+            <div class=" col-md-offset-2 col-xs-8 col-md-8 search">
             <form (ngSubmit)="onSearchFriend(searchForm.value)" #searchForm="ngForm">
                 <div class="input-group">
                     <input list="friend" class="form-control" name="username" id="username" #username="ngModel" (ngModel)="username" required>
@@ -15,7 +15,6 @@
         </div>
         <div class="navbar-right">
             <div class="dropdown">
-                <img [src]="userdetails.propic" class="img-circle dropdown-toggle" width="40" height="40" >
                 <span style="float:right;font-size:30px;" (click)="openNav()">&#9776;</span>
             </div>
         </div>

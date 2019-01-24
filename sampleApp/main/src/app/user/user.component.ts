@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenicateService } from '../authenicate.service';
 import { RouterModule, Router } from '@angular/router';
+import { User } from '../user';
 
 @Component({
   selector: 'app-user',
@@ -10,9 +11,22 @@ import { RouterModule, Router } from '@angular/router';
 export class UserComponent implements OnInit {
 
     show: Boolean = true;
+    public users: User;
+    public userdetails: User;
+
     constructor(private auth: AuthenicateService, private router: Router) { }
 
     ngOnInit() {
+        this.loadProfile();
+    }
+
+    loadProfile() {
+        this.auth.getAllProfiles().subscribe(data => {
+
+            this.users = data;
+        })
+        this.userdetails = this.auth.getProfile();
+        this.userdetails.propic = 'http://localhost:3000/' + this.userdetails.propic;
     }
     logout() {
         this.auth.logout();
@@ -21,11 +35,11 @@ export class UserComponent implements OnInit {
     }
     closeNav() {
         var sidenav = document.getElementById("mySidenav");
-        if (sidenav.style.width == "350px") {
+        if (sidenav.style.width == "300px") {
             sidenav.style.width = "0";
         }
         else {
-            sidenav.style.width = "350px";
+            sidenav.style.width = "300px";
         }
     }
     openNav() {
