@@ -10,3 +10,18 @@
         opacity:0.7;
     }
 
+.panel-body {
+padding:0;
+}
+.userpic {
+padding-left:0
+}
+.userdetails {
+    padding: 20px 6px;
+}
+.userdetails label{
+    font-family: sans-serif;
+    font-size: 13px;
+    letter-spacing: 1px;
+    word-spacing: 16px;
+}
