@@ -15,7 +15,7 @@
         <tbody>
             <tr *ngFor="let u of users; let i=index">
                 <td>{{i+1}}</td>
-                 <td><img src="http://localhost:3000/{{u.propic}}" class="img-circle" width="40" height="40"></td>
+                 <td><img src="https://publicserver.localtunnel.me/{{u.propic}}" class="img-circle" width="40" height="40"></td>
                 <td>{{u.username}}</td>
                 <td>{{u.email}}</td>
                 <td *ngIf="u.admin == 'false'"><button class="btn btn-primary" (click)="makeAdmin(u.username)">make Admin</button></td>   

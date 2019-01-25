@@ -1,33 +1,21 @@
+<app-adminheader>Loading...</app-adminheader>
+
 <div class="container">
-    <button (click)="openNav()" style="z-index:10000;position:fixed"><i class="fa fa-bars"></i></button>
-    <app-header>Loading...</app-header>
-    <ul *ngIf ="show" class="sidenav col-xs-12 col-md-4" id="sidenav" style="float:left;">
-     <i class="fa fa-close" (click)="closeNav()"></i>
-        <li>
-            <a routerLink="viewallusers">View All Users</a>
-        </li>
-        <li>
-            <a routerLink="viewallfriends">view all friends and request</a>
-        </li>
-        <li>
-            <a routerLink="addpost">Add post</a>
-        </li>
-        <li>
-            <a routerLink="viewallpost">View all posts with votes</a>
-        </li>
-        <li>
-            <a routerLink="viewallrecommendedpost">view all recommended posts</a>
-        </li>
-        <li>
-            <a routerLink="viewAllsearchhistory">view all search History</a>
-        </li>
-        <li>
-            <a routerLink="tophitkchart">ALL top k hit rate in chart</a>
-        </li>
-        <li>
-            <a (click)="logout()">logout</a>
-        </li>
-    </ul>
-    <div class=""><router-outlet></router-outlet></div>
+    <div id="mySidenav1" class="sidenav" style="float:left">
+        <div class="col-md-12 col-xs-12 user">
+            <img [src]="userdetails.propic" (click)="closeNav()" routerLink="userprofile" class="img-circle userdetail" width="70" height="70">
+            <div class="userdetail"><label>{{userdetails.username}}</label></div>
+        </div>
+        <a (click)="closeNav()" routerLink="viewallusers">View All Users<i class="fa fa-chevron-right" style="float:right;margin-top:4px"></i></a>
+        <a (click)="closeNav()" routerLink="viewallfriends">view all friends and request<i class="fa fa-chevron-right" style="float:right;margin-top:4px"></i></a>
+        <a (click)="closeNav()" routerLink="addpost">Add post<i class="fa fa-chevron-right" style="float:right;margin-top:4px"></i></a>
+        <a (click)="closeNav()" routerLink="viewallpost">View All Posts<i class="fa fa-chevron-right" style="float:right;margin-top:4px"></i></a>
+        <a (click)="closeNav()" routerLink="viewallrecommendedpost">View All Recommended Posts<i class="fa fa-chevron-right" style="float:right;margin-top:4px"></i></a>
+        <a (click)="closeNav()" routerLink="viewAllsearchhistory">View All Search History<i class="fa fa-chevron-right" style="float:right;margin-top:4px"></i></a>
+        <a (click)="closeNav()" routerLink="tophitkchart">View Chart<i class="fa fa-chevron-right" style="float:right;margin-top:4px"></i></a>
+        <a (click)="logout()">logout<i class="fa fa-chevron-right" style="float:right;margin-top:4px"></i></a>
+    </div>
+    <div><router-outlet></router-outlet></div>
 </div>
+
 

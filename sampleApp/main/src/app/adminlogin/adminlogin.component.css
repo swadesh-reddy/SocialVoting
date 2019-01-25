@@ -5,3 +5,46 @@
     right: 0;
     bottom: 0;
 }
+
+.panel {
+    margin-bottom: 0px
+}
+
+.forget-password {
+    float: right
+}
+
+.form-control {
+    height: 45px;
+    border-radius: 0px;
+}
+
+.heading {
+    text-align: center;
+    padding-top: 12px;
+    font-size: 20px;
+    /* font-family: monospace; */
+    letter-spacing: 1px;
+}
+
+.fa {
+    float: right;
+    margin-top: -27px;
+    margin-right: 19px;
+    font-size: larger;
+    color: lightgray;
+}
+
+.panel-footer {
+    font-size: 17px;
+    text-align: center;
+    background-color: #fff;
+}
+
+input[type=email]:focus + .fa-envelope {
+    color: blue
+}
+
+input[type=password]:focus + .fa-lock {
+    color: blue
+}

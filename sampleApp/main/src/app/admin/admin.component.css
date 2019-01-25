@@ -1,51 +1,84 @@
-
-li {
-    list-style: none;
-}
-
-.fa-close {
-    font-size: 21px;
-    float: right;
-    position: relative;
-    margin-right: 9px;
-    margin-top: 9px;
+.navbar-right div {
     cursor: pointer;
+    padding-right: 10px;
+    padding-top: 6px;
+    float: right;
 }
 
-
-.sidenav {
-    box-shadow: 2px 3px 4px #f5f5f5;
-    background-color: #fff;
-    border: 3px solid rgb(238, 238, 238);
-}
-
-    .sidenav li {
-        font-size: 16px;
-        padding: 7px 7px;
-        font-family: sans-serif;
-        letter-spacing: 1px;
-        
-        text-align: justify;
-        text-transform: capitalize;
+    .navbar-right div img {
+        margin-right: 10px;
     }
 
-        .sidenav li:hover {
-            box-shadow: 2px 2px 2px 2px lightgray;
+.sidenav {
+    height: 100%;
+    width: 0;
+    border-top: 1px solid #f1f1f1;
+    position: fixed;
+    z-index: 1;
+    top: 50px;
+    left: 0;
+    color: #f1f1f1;
+    background-color: #4184ab;
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+    .sidenav a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 18px;
+        color: #f1f1f1;
+        display: block;
+        transition: 0.3s;
+        border-bottom: 1px solid;
+        margin-left: 13px;
+        margin-right: 13px;
+    }
+
+.search {
+    margin-top: 6px;
+}
+
+.user {
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    padding-top: 20px;
+    background-color: #692e422e;
+}
+
+    .user img {
+        padding-bottom: 7px;
+        cursor: pointer;
+    }
+
+    .user .userdetail {
+        /* height: 100px; */
+        margin-left: 35%;
+    }
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+        .sidenav a {
+            font-size: 18px;
         }
-
-.container {
-    padding: 0px;
 }
 
-a {
-    color: #000;
+.username {
+    padding: 10px;
+    letter-spacing: 1px;
 }
 
-.sidenav li:hover a {
-    text-decoration: none;
+.votes {
+    padding-right: 10px
 }
 
-
-.left {
-    text-align: right;
+.panelbtmline {
+    margin: 10px;
 }
+
+    .panelbtmline .btn {
+        margin-right: 10px;
+    }
