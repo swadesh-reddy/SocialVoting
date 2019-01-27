@@ -10,3 +10,15 @@ padding:0px;
 }
 img {
 padding-right:5px;}
+.btn-default {
+    height: 44px;
+    background-color: #4184ab;
+    color: #fff;
+    border: 1px solid #4184ab;
+    font-size: 25px;
+    padding-top: 7px;
+}
+.input-group input {
+    height: 44px;
+    border: 1px solid #4184ab;
+}

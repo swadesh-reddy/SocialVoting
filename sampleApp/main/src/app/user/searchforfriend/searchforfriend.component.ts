@@ -10,51 +10,55 @@ import { Friend } from '../../friend';
     styleUrls: ['./searchforfriend.component.css']
 })
 export class SearchforfriendComponent implements OnInit {
-    public users: User;
     public userdetails: User;
-    user = [];
-    friendRequests = [];
-    requestStatus = 'Request';
-    friendStatus: any;
-    nodata: String;
+    public user:User;
+     friendStatus: any;
+    
     constructor(private auth: AuthenicateService, private friend: FriendsService) {
     }
 
     ngOnInit() {
-            this.loadFriendRequests();
-    }
-   
-    loadFriendRequests()
-    {
-        let status={status:false}
-        this.friend.getFriendRequests(status).subscribe(data => {
-            console.log(data);
-            if (this.friendRequests.length == 0) {
-                this.nodata = 'No Friend Requests';
-                console.log(this.nodata)
-            } else { this.nodata = ''; }
-            for (var key in data) {
-                if (data[key].username !== undefined) {
-                    this.auth.getProfileById({ 'username': data[key].username }).subscribe(data => {
-                        console.log(data);
-                        data.propic = 'https://publicserver.localtunnel.me/' + data.propic;
-                        this.friendRequests.push(data);
-                    })
-                }
+        this.loadProfile();
         }
-    });
-    }
-    
-   
+    loadProfile() {
+        var data = this.auth.getProfile();
+        this.user = data;
+        this.user.propic = 'https://publicserver.localtunnel.me/' + this.user.propic;
+        console.log(this.user);
 
-    acceptFriendRequest(friend)
-    {
-        let accept = {friend: friend, status:true}
-        this.friend.handleRequest('acceptFriend', accept).subscribe(data=>{})
     }
-    deleteFriendRequest(friend)
-    {
-        let accept = {friend: friend, status:true}
-        this.friend.handleRequest('deleteFriend', accept).subscribe(data=>{})
+    onSearchFriend(username) {
+        this.auth.getProfileById(username).subscribe(userdata => {
+            console.log(userdata);
+            this.userdetails = userdata;
+            this.userdetails.propic = 'https://publicserver.localtunnel.me/' + this.userdetails.propic;
+        })
+        this.checkFriend(username);
+        let searchedContent = { "searchedContent": username.username }
+        this.auth.saveToHistory(searchedContent).subscribe(data => { console.log(data) })
+    }
+    checkFriend(username) {
+        this.friend.checkFriend(username).subscribe(data => {
+            console.log(data);
+            this.friendStatus = data;
+        })
+    }
+    onRequest() {
+        this.checkFriend(this.userdetails.username);
+        let friend = {
+            'friend': this.userdetails.username,
+            'status': false
+        }
+        console.log(friend);
+        this.auth.sendRequest(friend).subscribe(data => {
+            console.log(data);
+        })
+        let notification = {
+            'friendname': this.userdetails.username,
+            'productname': ''
+        }
+        this.friend.addNotification(notification).subscribe(data => {
+            console.log(data);
+        })
     }
 }

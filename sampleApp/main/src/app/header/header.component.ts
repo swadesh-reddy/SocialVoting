@@ -4,6 +4,7 @@ import { FriendsService } from '../friends.service';
 import { FriendProfileComponent } from '../user/friend-profile/friend-profile.component';
 import { User } from '../user';
 import { Friend } from '../friend';
+import { Notification } from '../notification';
 import { RouterModule, Router } from '@angular/router';
 
 @Component({
@@ -17,12 +18,12 @@ export class HeaderComponent implements OnInit {
     user = [];
     friendRequests = [];
     requestStatus = 'Request';
-    friendStatus: any 
-
+    friendStatus: any
+    notifications: Notification
     constructor(private auth: AuthenicateService, private router: Router, private friend: FriendsService) { }
 
     ngOnInit() {
-    
+        this.loadNotifications();
     }
     
   openNav() {
@@ -44,4 +45,10 @@ export class HeaderComponent implements OnInit {
       let searchedContent = { "searchedContent": username.username }
       this.auth.saveToHistory(searchedContent).subscribe(data => { console.log(data) })
   }
+    loadNotifications(){
+     this.friend.getNotifications().subscribe(data => {
+         console.log(data);
+         this.notifications = data;
+        })
+    }
 }

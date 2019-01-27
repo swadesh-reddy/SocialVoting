@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-declare function Barchart(): any;
+import { AuthenicateService } from '../../authenicate.service';
+import { FriendsService } from '../../friends.service';
+import { User } from '../../user';
+import { Product } from '../../product';
+declare function Barchart(product): any;
 @Component({
     selector: 'app-top-krating-chart',
     templateUrl: './top-krating-chart.component.html',
@@ -8,10 +12,17 @@ declare function Barchart(): any;
 
 export class TopKRatingChartComponent implements OnInit {
 
-  constructor() { }
+    product: Product;
+    constructor(private auth: AuthenicateService, private friend: FriendsService) { }
 
   ngOnInit() {
-      Barchart();
+      this.loadAllProducts();
+      Barchart(this.product);
   }
- 
+  loadAllProducts() {
+      this.friend.loadAllProducts().subscribe(data => {
+          console.log(data);
+          this.product = data;
+      })
+  }
    }

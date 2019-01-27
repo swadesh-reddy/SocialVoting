@@ -8,6 +8,7 @@ var User = require('../model/user');
 var Friend = require('../model/friends');
 var Product = require('../model/product');
 var History = require('../model/history');
+var Notification = require('../model/notification');
 var Recommend = require('../model/recommend');
 
 var multer = require('multer');
@@ -29,6 +30,7 @@ router.post('/register', upload.single('propic'), (req, res, next) => {
         password: req.body.password,
         admin: req.body.admin,
         email: req.body.email,
+        vote:req.body.vote,
         contact: req.body.contact,
         propic: req.file.path
     })
@@ -136,7 +138,8 @@ router.post('/login', (req, res, next) => {
                     username: user.username,
                     email: user.email,
                     contact: user.contact,
-                    propic: user.propic
+                    propic: user.propic,
+                    vote:user.vote
                 }
             });
         }
@@ -170,12 +173,12 @@ router.post('/getProductByName', verifyToken, (req, res, next) => {
             res.sendStatus(403);
         }
         else {
-            var username = { productname: req.body.productname }
-            Product.getUserByProductName(username, (err, user) => {
+            var productname = { productname: req.body.productname }
+            Product.getUserByProductName(productname, (err, product) => {
                 if (err) { throw err }
-                if (!user) { res.json({ "message": "user not found" }); }
+                if (!product) { res.json({ "message": "product not found" }); }
                 else {
-                    res.json(user);
+                    res.json(product);
                 }
             })
         }
@@ -352,6 +355,34 @@ router.post('/saverecommend', verifyToken, (req, res, next) => {
         }
     })
 
+});router.post('/addNotification', verifyToken, (req, res, next) => {
+    jwt.verify(req.token, config.secret, (err, data) => {
+        if (err) {
+            console.log(req.token);
+            res.sendStatus(403);
+        }
+        else {
+            var decoded = jwt_decode(req.token);
+            
+            let newNotification = new Notification({
+                username: decoded.user.username,
+                friendname: req.body.friendname,
+                productname: req.body.productname,
+            })
+            console.log(newNotification);
+            Notification.addNotification(newNotification, (err, user) => {
+
+                if (err) throw err;
+                else {
+                    res.json({
+                        "success": " Notification Added",
+                    });
+                }
+            })
+
+        }
+    })
+
 });
 
 router.post('/clearuserhistory', verifyToken, (req, res, next) => {
@@ -398,7 +429,29 @@ router.post('/getRecommendedPosts', verifyToken, (req, res, next) => {
     })
 
 })
-router.post('/getFriendRequests', verifyToken, (req, res, next) => {
+router.post('/getNotifications', verifyToken, (req, res, next) => {
+    jwt.verify(req.token, config.secret, (err, data) => {
+        if (err) {
+            console.log(req.token);
+            res.sendStatus(403);
+        }
+        else {
+            var decoded = jwt_decode(req.token);
+            let newFriend = { friendname: decoded.user.username }
+           
+            Notification.getNotificationByUsername(newFriend, (err, notifications) => {
+
+                if (err) throw err;
+                else {
+                    res.json(notifications);
+                }
+            })
+
+        }
+    })
+
+})
+router.post('/getAllFriends', verifyToken, (req, res, next) => {
     jwt.verify(req.token, config.secret, (err, data) => {
         if (err) {
 
@@ -407,9 +460,9 @@ router.post('/getFriendRequests', verifyToken, (req, res, next) => {
         }
         else {
             var decoded = jwt_decode(req.token);
-            console.log(decoded);
+           
             var friendRequests = {
-                friend: decoded.user.username,
+                friend: req.body.username,
                 status: req.body.status
             }
             Friend.getFriendByStatus(friendRequests, (err, users) => {
@@ -547,13 +600,12 @@ router.post('/onVote', verifyToken, (req, res, next) => {
         else {
             var decoded = jwt_decode(req.token);
             console.log(req.body.friend);
-            let acceptFriend = {
+            let vote = {
                 productname: req.body.productname,
             }
-            console.log(acceptFriend);
-            Product.getUserByProductName(acceptFriend, (err, product) => {
-
-                if (err) throw err;
+            let username = { username: decoded.user.username }
+            Product.getUserByProductName(vote, (err, product) => {
+            if (err) throw err;
                 else {
                     console.log(product);
                     var count = product.vote;
@@ -562,15 +614,22 @@ router.post('/onVote', verifyToken, (req, res, next) => {
                     product.save(function (err) {
                         if (err) throw err;
                         else {
-                            res.json({
-                                "success": "voted",
-                            });
+                            User.getUserByUserName(username, (err, user) => {
+                                user.vote = 'true';
+                                user.save(function (err) {
+                                    if (err) throw err;
+                                    else {
+                                        res.json({
+                                            "success": true,
+                                        });
+                                    }
+                                })
+                            })
                         }
                     })
 
                 }});
-    
-        }
+                  }
     })
 
 })

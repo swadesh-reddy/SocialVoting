@@ -5,7 +5,8 @@
             <img [src]="userdetails.propic" (click)="closeNav()" routerLink="userprofile" class="img-circle userdetail" width="70" height="70">
             <div class="userdetail"><label >{{userdetails.username}}</label></div>
         </div>
-        <a (click)="closeNav()" routerLink="searchforfriend">Friend Request<i class="fa fa-chevron-right" style="float:right;margin-top:4px"></i></a>
+        <a (click)="closeNav()" routerLink="loadfriendrequest">Friend Request<i class="fa fa-chevron-right" style="float:right;margin-top:4px"></i></a>
+        <a (click)="closeNav()" routerLink="searchforfriend">search Friend<i class="fa fa-chevron-right" style="float:right;margin-top:4px"></i></a>
         <a (click)="closeNav()" routerLink="searchforpost">Search For Post<i class="fa fa-chevron-right" style="float:right;margin-top:4px"></i></a>
         <a (click)="closeNav()" routerLink="mysearchhistory">Search History<i class="fa fa-chevron-right" style="float:right;margin-top:4px"></i></a>
         <a (click)="closeNav()" routerLink="recommend">View Recommendations<i class="fa fa-chevron-right" style="float:right;margin-top:4px"></i></a>

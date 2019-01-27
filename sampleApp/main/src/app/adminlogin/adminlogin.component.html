@@ -42,11 +42,12 @@
                     </div>
                     <div class="form-group">
                         <input class="form-control form-control-solid password" type="password" placeholder="Password" name="password" #password="ngModel" (ngModel)="user.password" minlength="4" required />
-                        <span class="fa fa-lock" (click)="changeText()"></span>
+                        <span class="fa fa-lock"></span>
                         <div *ngIf="password.invalid && (password.dirty || password.touched)" class="text text-danger">Password is required</div>
                     </div>
-                        <button type="submit" [disabled]="!adminloginForm.form.valid" class="col-md-12 col-xs-12 btn btn-primary">Login</button>
-                  
+                    <button type="submit" [disabled]="!adminloginForm.form.valid" class="col-md-12 col-xs-12 btn btn-primary">Login</button>
+                    <a routerLink="/login">Login as User</a>
+
                 </form>
             </div>
 

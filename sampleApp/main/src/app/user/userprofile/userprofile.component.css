@@ -1,20 +1,9 @@
 
-.upload-btn {
-    margin-top: 13px;
-    margin-right: 10px;
-    background-color: #428bca;
-    color: #fff;
-    padding: 7px 9px 9px 9px;
-}
-    .upload-btn:hover {
-        opacity:0.7;
-    }
-
 .panel-body {
 padding:0;
 }
 .userDiv {
-    background-image: url(http://1.bp.blogspot.com/-D7-y5ArmmaQ/VRpjj7t7m6I/AAAAAAAAIr4/xbrduFY_yRI/s1600/space-wallpaper-free-wallpaper-websites.jpg);
+    background-image: url(https://1.bp.blogspot.com/-D7-y5ArmmaQ/VRpjj7t7m6I/AAAAAAAAIr4/xbrduFY_yRI/s1600/space-wallpaper-free-wallpaper-websites.jpg);
     background-size:100% 100%;
     height:150px;   
 }

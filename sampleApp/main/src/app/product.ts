@@ -2,5 +2,6 @@
     productname: String,
     productuses: String,
     productdescription: String,
-    productimage: String
+    productimage: String,
+    vote: Number
 }

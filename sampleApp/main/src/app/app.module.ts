@@ -13,6 +13,7 @@ import { HeaderComponent } from './header/header.component';
 import { UserSideBarComponent } from './user/user-side-bar/user-side-bar.component';
 import { UserComponent } from './user/user.component';
 import { UserprofileComponent } from './user/userprofile/userprofile.component';
+import { LoadFriendRequestsComponent } from './user/load-friend-requests/load-friend-requests.component';
 import { SearchforpostComponent } from './user/searchforpost/searchforpost.component';
 import { MysearchhistoryComponent } from './user/mysearchhistory/mysearchhistory.component';
 import { RecommendationComponent } from './user/recommendation/recommendation.component';
@@ -30,10 +31,10 @@ import { ViewAllSearchHistoryComponent } from './admin/view-all-search-history/v
 import { TopKRatingChartComponent } from './admin/top-krating-chart/top-krating-chart.component';
 import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { AdminMainpageComponent } from './admin/admin-mainpage/admin-mainpage.component';
-import { ViewProductComponent } from './view-product/view-product.component';
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import { FriendProfileComponent } from './user/friend-profile/friend-profile.component';
 import { AdminheaderComponent } from './adminheader/adminheader.component';
+import { ViewproductComponent } from './viewproduct/viewproduct.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,6 +43,7 @@ import { AdminheaderComponent } from './adminheader/adminheader.component';
     RegisterComponent,
     HeaderComponent,
     UserSideBarComponent,
+LoadFriendRequestsComponent,
     UserComponent,
     UserprofileComponent,
      SearchforpostComponent,
@@ -61,9 +63,9 @@ import { AdminheaderComponent } from './adminheader/adminheader.component';
     TopKRatingChartComponent,
     AdminloginComponent,
     AdminMainpageComponent,
-    ViewProductComponent,
     FriendProfileComponent,
-    AdminheaderComponent
+    AdminheaderComponent,
+    ViewproductComponent
   ],
   imports: [
     BrowserModule,

@@ -13,17 +13,27 @@ export class SearchforpostComponent implements OnInit {
     Product: any
     recommand: any;
     product: Product;
+    user: User;
+    voteStatus: String;
     constructor(private auth: AuthenicateService, private friend: FriendsService, private flashMessages: FlashMessagesService) { }
 
     ngOnInit() {
         this.loadAllProducts();
+        this.loadProfile();
   }
     loadAllProducts() {
       this.friend.loadAllProducts().subscribe(data => {
           console.log(data);
           this.product = data;
+         
       })
-  }
+    }
+    loadProfile() {
+        var userdata = this.auth.getProfile();
+        this.user = userdata;
+        this.voteStatus = this.user.vote;
+
+    }
   onSearchPost(productname) {
       this.friend.onSearchProduct(productname).subscribe(data => {
           console.log(data)
@@ -52,6 +62,7 @@ export class SearchforpostComponent implements OnInit {
       console.log(productname);
       this.friend.onVote(productname).subscribe(data => { console.log(data) })
       this.Product.vote = Number(this.Product.vote) + 1;
+      this.voteStatus = 'true';
   }
   //onReview(data) {
   // //   this.friend.onReview(data).subscribe(data=>{console.log(data)})

@@ -1,17 +1,17 @@
-<div class="col-md-8 col-xs-12 col-sm-12" id="content" style="float:right;">
-    <h2>All Recommandations</h2>
-
-    <div *ngIf="recommends" class="panel panel-default">
-        <div *ngFor="let recommand of recommends; let i = index" class="panel-body pnl-body">
-            <div class="col-md-4" style="float:left;border-right:3px solid #f5f5f5;">
-                <div class="user-pic col-md-12">
-                    <img src="https://publicserver.localtunnel.me/{{product[i].productimage}}" class="img-thumbnail" width="300" height="350">
-                </div>
-                <div class="right col-md-3 col-xs-6"><button class="btn" routerLink="/user/searchforpost">Vote For {{recommand.productname}}</button></div>
-
+<div *ngIf="recommends" class="col-md-8 col-xs-12 col-sm-12" id="content" style="float:right;">
+   
+    <div *ngFor="let recommand of recommends; let i = index" class="panel panel-default">
+        <div class="panel-body ">
+            <div class="col-md-4">
+                <a routerLink="/user/viewproduct/{{recommand.productname}}">
+                    <img [src]="product[i].productimage" class="img-circle" width="70" height="70" style="float:left;">
+                </a>
             </div>
-            <div class="right col-md-3 col-xs-6"> RecommendedBy</div> <div class="left col-md-3 col-xs-6">{{recommand.username}}</div>
-            <div class="right col-md-3 col-xs-6"> Product Description</div> <div class="left col-md-3 col-xs-6">{{recommand.description}}</div>
+            <div class="col-md-8">
+                <div class="right col-md-6 col-xs-6"> RecommendedBy</div><div class="col-md-6 col-xs-6">{{recommand.username}}</div>
+               <div class="right col-md-6 col-xs-6"> Product Description</div><div class="left col-md-6 col-xs-6">{{recommand.description}}</div>
+            </div>
         </div>
     </div>
+
 </div>

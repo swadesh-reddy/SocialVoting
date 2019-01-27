@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { User } from './user';
 import { Product } from './product';
+import { Notification } from './notification';
 import { AuthenicateService } from './authenicate.service';
 
 
@@ -15,11 +16,11 @@ private _headers = new HttpHeaders({ "cache-control":'no-cache'});
 constructor(private http: HttpClient, private auth: AuthenicateService) {
 }
 
-getFriendRequests(status)
+    getAllFriends(status)
 {
     this.token = this.auth.loadToken();
     const headers = this._headers.append('Authorization', 'Bearer ' + this.token);
-    return this.http.post<User>("https://publicserver.localtunnel.me/users/getFriendRequests", status, { headers: headers });
+    return this.http.post<User>("https://publicserver.localtunnel.me/users/getAllFriends", status, { headers: headers });
 
 }
     checkFriend(username:any)
@@ -50,6 +51,13 @@ onAddProduct(product) {
     return this.http.post<User>("https://publicserver.localtunnel.me/users/addProduct", product, { headers: headers });
 
 }
+addNotification(product) {
+    this.token = this.auth.loadToken();
+    const headers = this._headers.append('Authorization', 'Bearer ' + this.token);
+    headers.set('Content-Type', 'multipart/form-data');
+    return this.http.post<User>("https://publicserver.localtunnel.me/users/addNotification", product, { headers: headers });
+
+}
 onRecommend(product) {
     this.token = this.auth.loadToken();
     const headers = this._headers.append('Authorization', 'Bearer ' + this.token);
@@ -62,6 +70,13 @@ onRecommend(product) {
     const headers = this._headers.append('Authorization', 'Bearer ' + this.token);
     headers.set('Content-Type', 'multipart/form-data');
     return this.http.post<User>("https://publicserver.localtunnel.me/users/getRecommendedPosts",headers, { headers: headers });
+
+}
+getNotifications() {
+    this.token = this.auth.loadToken();
+    const headers = this._headers.append('Authorization', 'Bearer ' + this.token);
+    headers.set('Content-Type', 'multipart/form-data');
+    return this.http.post<Notification>("https://publicserver.localtunnel.me/users/getNotifications",headers, { headers: headers });
 
 }
 

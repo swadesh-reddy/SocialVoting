@@ -14,8 +14,10 @@ import { SearchforfriendComponent } from '../user/searchforfriend/searchforfrien
 import { UserInterestComponent } from '../user/user-interest/user-interest.component';
 import { ViewprofileComponent } from '../user/viewprofile/viewprofile.component';
 import { FriendProfileComponent } from '../user/friend-profile/friend-profile.component';
+import { LoadFriendRequestsComponent } from '../user/load-friend-requests/load-friend-requests.component';
 import { UserComponent } from '../user/user.component';
 import { AdminComponent } from '../admin/admin.component';
+import { ViewproductComponent } from '../viewproduct/viewproduct.component';
 import { ViewallusersComponent } from '../admin/viewallusers/viewallusers.component';
 import { ViewallFriendRequestComponent } from '../admin/viewall-friend-request/viewall-friend-request.component';
 import { AddPostComponent } from '../admin/add-post/add-post.component';
@@ -37,8 +39,10 @@ const routes: Routes = [
     { path: 'friendprofile/:username', component: FriendProfileComponent,canActivate: [AuthGuard] },
     { path: 'userinterest', component: UserInterestComponent,canActivate: [AuthGuard] },
     { path: 'viewprofile/:username', component: ViewprofileComponent, canActivate: [AuthGuard] },
+    { path: 'viewproduct/:productname', component: ViewproductComponent, canActivate: [AuthGuard] },
     { path: 'recommend', component: RecommendationComponent, canActivate: [AuthGuard] },
     { path: 'searchforfriend', component: SearchforfriendComponent, canActivate: [AuthGuard] },
+    { path: 'loadfriendrequest', component: LoadFriendRequestsComponent, canActivate: [AuthGuard] },
     { path: 'tophitkrate', component: TophitkrateComponent, canActivate: [AuthGuard] },
     { path: 'mysearchhistory', component: MysearchhistoryComponent, canActivate: [AuthGuard] },
     { path: 'searchforpost', component: SearchforpostComponent, canActivate: [AuthGuard] }]

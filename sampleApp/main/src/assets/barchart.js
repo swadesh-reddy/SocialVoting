@@ -5,7 +5,7 @@
 // set the ranges
 
 
-function Barchart() {
+function Barchart(product) {
 
     var svg = d3.select("#barchart").append("svg")
         .attr("width", width)
@@ -29,12 +29,14 @@ var y = d3.scaleLinear()
 // append a 'group' element to 'svg'    
 // moves the 'group' element to the top left margin
 
-// get the data
-var data = [{ "salesperson": 'Bob', 'sales': 33 }, { "salesperson": 'jhon', 'sales': 34 }, { "salesperson": 'adam', 'sales': 53 }, { "salesperson": 'eve', 'sales': 13 }, { "salesperson": 'dev', 'sales': 92 }]
+//// get the data
+//var data = [{ "productname": 'Bob', 'vote': 33 }, { "productname": 'jhon', 'vote': 34 }, { "productname": 'adam', 'vote': 53 }, { "productname": 'eve', 'vote': 13 }, { "productname": 'dev', 'vote': 92 }]
+
+    var data = product;
 
 // Scale the range of the data in the domains
-x.domain(data.map(function (d) { return d.salesperson; }));
-y.domain([0, d3.max(data, function (d) { return d.sales; })]);
+x.domain(data.map(function (d) { return d.productname; }));
+y.domain([0, d3.max(data, function (d) { return d.vote; })]);
 
 // append the rectangles for the bar chart
 svg.selectAll(".bar")
@@ -42,9 +44,9 @@ svg.selectAll(".bar")
     .enter().append("rect")
     .attr("class", "bar")
     .style('fill', 'steelblue')
-    .attr("x", function (d) { return x(d.salesperson); })
+    .attr("x", function (d) { return x(d.productname); })
     .attr("width", x.bandwidth())
-    .attr("y", function (d) { return y(d.sales); })
+    .attr("y", function (d) { return y(d.vote); })
     .on('mouseover', function (d) {
         d3.select(this).style('fill', 'orange');
     }).on('mouseout', function (d) {
@@ -52,7 +54,7 @@ svg.selectAll(".bar")
     })
     .attr('height', 0)
     .transition().duration(500).delay(function (d, i) { return i * 200 })
-    .attr("height", function (d) { return height - y(d.sales); })
+    .attr("height", function (d) { return height - y(d.vote); })
 
 svg.selectAll(".text")
     .data(data)
@@ -62,8 +64,8 @@ svg.selectAll(".text")
     .style('font-family', 'monospace')
     .style('font-weight', 'bold')
     .transition().delay(function (d, i) { return i * 300 })
-    .text(function (d) { return d.sales; })
-    .attr("transform", function (d) { return "translate(" + Number(x(d.salesperson) + x.bandwidth() / 2) + "," + y(d.sales) + ")" })
+    .text(function (d) { return d.vote; })
+    .attr("transform", function (d) { return "translate(" + Number(x(d.productname) + x.bandwidth() / 2) + "," + y(d.vote) + ")" })
 
 // add the x Axis
 svg.append("g")

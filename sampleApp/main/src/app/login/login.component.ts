@@ -16,11 +16,13 @@ export class LoginComponent implements OnInit {
     constructor(private auth: AuthenicateService, private router: Router, private flashMessages: FlashMessagesService, private el: ElementRef) {  }
   user: User;
   data: User;
+  public loading = false;
   ngOnInit() {
   }
   onLogin(user)
   {
-    console.log(user);
+      console.log(user);
+      this.loading = true;
     this.auth.Login(user).subscribe(data => {
       this.data = data;
       console.log(data);
@@ -34,11 +36,8 @@ export class LoginComponent implements OnInit {
     })
   }
   inValidLogin() {
-     
+      this.loading = false;
       this.flashMessages.show('ivalid credentials', { cssClass: 'alert-warning', timeout: 5000})
   }
-  changeText() {
-
-      
-  }
+ 
 }

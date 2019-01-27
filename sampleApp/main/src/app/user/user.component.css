@@ -21,6 +21,7 @@
     background-color: #4184ab;
     overflow-x: hidden;
     transition: 0.5s;
+    z-index:1000;
 }
 
     .sidenav a {

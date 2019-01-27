@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenicateService } from '../../authenicate.service';
-import { FriendsService } from '../../friends.service';
 import { User } from '../../user';
 
 @Component({
@@ -10,11 +9,7 @@ import { User } from '../../user';
 })
 export class ViewallusersComponent implements OnInit {
     public users:User;
-    public userdetails: User;
-    user = [];
-    friendRequests = [];
-    requestStatus = 'Request';
-    constructor(private auth: AuthenicateService, private friend: FriendsService) { }
+    constructor(private auth: AuthenicateService) { }
 
   ngOnInit() {
       this.loadProfile()

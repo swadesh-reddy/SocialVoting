@@ -1,5 +1,9 @@
-<div class="col-md-8 col-xs-12 col-sm-12" style="float:right;">
-  <br>
-  <h2>Welcome <span class="user">Swadesh</span></h2>
-  <img src="assets/images/social-media1.jpg" width="90%" height="259px">
+<div class="col-md-8">
+    <h4 class="sideheading">All Products</h4>
+    <div *ngFor="let request of product" class="col-md-3 col-xs-5 panel panel-default" style="padding-left:0px;padding-right:0px">
+        <div class="profile">
+            <div class=""> <a routerLink="/user/viewproduct/{{request.productname}}"><img src="https://publicserver.localtunnel.me/{{request.productimage}}" class="" width="100%" height="100" style="float:left;"></a></div>
+            <label>{{request.productname}}</label>
+            </div>
+    </div>
 </div>

@@ -1,0 +1,36 @@
+
+.panel-body {
+padding:0;
+}
+.userDiv {
+    background-image: url(https://wallpaper-house.com/data/out/9/wallpaper2you_362764.jpg);
+    background-size: 100% 100%;
+    height: 150px;
+    color: #f1f1f1;
+}
+.userpic {
+padding-top:30px;
+color:#f1f1f1;
+}
+    .userpic img {
+        padding-right: 10px;
+    }
+
+
+.userdetails label {
+    font-family: sans-serif;
+    letter-spacing: 1px;
+    word-spacing: 16px;
+    font-weight: 100;
+    margin-left: -15px;
+}
+    .userdetails label:first-child {
+        font-size: 20px;
+    }
+    .userdetails label:nth-child(2) {
+        font-size: 14px;
+    }
+        .userdetails label span {
+            color: #4184ab;
+            font-size: 20px;
+        }

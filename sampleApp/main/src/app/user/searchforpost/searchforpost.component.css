@@ -3,15 +3,19 @@
     text-align: left;
 }
 
+.product {
+padding:0px;
+}
+.btn-default {
+    height: 44px;
+    background-color: #4184ab;
+    color: #fff;
+    border: 1px solid #4184ab;
+    font-size: 25px;
+    padding-top: 7px;
+}
 
-.star{
-    color:red;
-}
-.fa-thumbs-o-up{
-    font-size:23px;
-    cursor:pointer;
-    color:gray;
-}
-.fa-thumbs-o-up:hover{
-    color:#000;
+.input-group input {
+    height: 44px;
+    border: 1px solid #4184ab;
 }

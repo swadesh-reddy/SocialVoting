@@ -14,7 +14,7 @@
                     <label class="col-md-12 col-xs-12"><span class="fa fa-address-book-o"></span> {{user.contact}}</label>
                 </div>
                 <div class="col-md-8">
-                        <h4 class="col-md-12 col-xs-12">Friends</h4>
+                    <h4 class="col-md-12 col-xs-12">Friends:{{friends.length}}</h4>
                         <div *ngFor="let request of friends" class="col-md-2 col-xs-4">
                             <div class="">
                                 <a routerLink="/user/viewprofile/{{request.username}}"><img [src]="request.propic" class="img-circle" width="70" height="70"></a>

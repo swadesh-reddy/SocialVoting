@@ -17,7 +17,7 @@ export class UserprofileComponent implements OnInit {
 
     ngOnInit() {
         this.loadProfile();
-        this.loadFriendRequests();
+        this.loadFriends(this.user.username);
     }
     loadProfile() {
         var data = this.auth.getProfile();
@@ -26,9 +26,9 @@ export class UserprofileComponent implements OnInit {
           console.log(this.user);
 
     }
-    loadFriendRequests() {
-        let status = { status: true }
-        this.friend.getFriendRequests(status).subscribe(data => {
+    loadFriends(username) {
+        let status = { status: true, username:username }
+        this.friend.getAllFriends(status).subscribe(data => {
             console.log(data);
             for (var key in data) {
                 console.log(key);

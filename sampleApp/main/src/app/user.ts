@@ -6,5 +6,6 @@ export interface User{
     contact: Number,    
     success: Boolean,
     propic: String,
-    admin:String
+    admin: String,
+    vote: String
 }

@@ -9,7 +9,8 @@ var UserSchema = mongoose.Schema({
     email: String,
     admin: String,
     contact:Number,
-    propic: String 
+    propic: String,
+    vote: String
 })
 var user = mongoose.model('user', UserSchema);
 
