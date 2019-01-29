@@ -10,6 +10,12 @@ padding:0px;
 }
 img {
 padding-right:5px;}
+.errorMessage {
+    text-align: center;
+    font-size: 25px;
+    text-transform: capitalize;
+    color: #bdb9b9;
+}
 .btn-default {
     height: 44px;
     background-color: #4184ab;

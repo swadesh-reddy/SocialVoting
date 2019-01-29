@@ -28,7 +28,7 @@ export class LoadFriendRequestsComponent implements OnInit {
     loadProfile() {
         var data = this.auth.getProfile();
         this.user = data;
-        this.user.propic = 'https://publicserver.localtunnel.me/' + this.user.propic;
+        this.user.propic = 'http://localhost:3000/' + this.user.propic;
         console.log(this.user);
 
     }
@@ -44,22 +44,33 @@ export class LoadFriendRequestsComponent implements OnInit {
                 if (data[key].username !== undefined) {
                     this.auth.getProfileById({ 'username': data[key].username }).subscribe(data => {
                         console.log(data);
-                        data.propic = 'https://publicserver.localtunnel.me/' + data.propic;
+                        data.propic = 'http://localhost:3000/' + data.propic;
                         this.friendRequests.push(data);
                     })
                 }
             }
         });
     }
-
+    cleanFriendRequest(friendname) {
+        for (var index = 0; index < this.friendRequests.length; index++) {
+            console.log(this.friendRequests[index].username);
+            if (this.friendRequests[index].username == friendname) {
+                this.friendRequests.splice(index, 1)
+            }
+        }
+    }
 
 
     acceptFriendRequest(friend) {
+        this.cleanFriendRequest(friend)
         let accept = { friend: friend, status: true }
-        this.friend.handleRequest('acceptFriend', accept).subscribe(data => { })
+        this.friend.handleRequest('acceptFriend', accept).subscribe(data => { 
+        })
     }
     deleteFriendRequest(friend) {
+        this.cleanFriendRequest(friend);
         let accept = { friend: friend, status: true }
-        this.friend.handleRequest('deleteFriend', accept).subscribe(data => { })
+        this.friend.handleRequest('deleteFriend', accept).subscribe(data => {
+            console.log(data);})
     }
 }

@@ -27,7 +27,7 @@ export class RecommendationComponent implements OnInit {
               let productname = { productname: this.recommends[i].productname };
               this.friend.onSearchProduct(productname).subscribe(datas => {
                   console.log(datas);
-                  datas.productimage = 'https://publicserver.localtunnel.me/' + datas.productimage;
+                  datas.productimage = 'http://localhost:3000/' + datas.productimage;
                   this.product.push(datas);
                   
               })}

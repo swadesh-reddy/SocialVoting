@@ -14,7 +14,12 @@ padding:0px;
     font-size: 25px;
     padding-top: 7px;
 }
-
+.errorMessage {
+    text-align: center;
+    font-size: 25px;
+    text-transform: capitalize;
+    color: #bdb9b9;
+}
 .input-group input {
     height: 44px;
     border: 1px solid #4184ab;

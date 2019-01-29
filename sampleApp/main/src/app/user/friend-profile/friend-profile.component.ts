@@ -35,7 +35,7 @@ export class FriendProfileComponent implements OnInit {
       this.auth.getProfileById(data).subscribe(userdata => {
           console.log(userdata);
           this.user = userdata;
-          this.user.propic = 'https://publicserver.localtunnel.me/' + this.user.propic;
+          this.user.propic = 'http://localhost:3000/' + this.user.propic;
       })
       this.friend.checkFriend({ username: this.username }).subscribe(data => {
           console.log(data);

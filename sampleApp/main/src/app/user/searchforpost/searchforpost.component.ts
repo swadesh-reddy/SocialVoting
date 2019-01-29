@@ -15,6 +15,7 @@ export class SearchforpostComponent implements OnInit {
     product: Product;
     user: User;
     voteStatus: String;
+    productNotFound: Boolean;
     constructor(private auth: AuthenicateService, private friend: FriendsService, private flashMessages: FlashMessagesService) { }
 
     ngOnInit() {
@@ -37,11 +38,17 @@ export class SearchforpostComponent implements OnInit {
   onSearchPost(productname) {
       this.friend.onSearchProduct(productname).subscribe(data => {
           console.log(data)
+          if (data) {
+              this.productNotFound = false;
           this.Product = data;
+          let searchedContent = { "searchedContent": productname.productname }
+          this.auth.saveToHistory(searchedContent).subscribe(data => { console.log(data) })
+          }
+          else {
+              this.productNotFound = true;
+          }
       })
-      let searchedContent = { "searchedContent": productname.productname }
-      this.auth.saveToHistory(searchedContent).subscribe(data => { console.log(data) })
-
+  
   }
   onRecommend(data) {
       console.log(data);

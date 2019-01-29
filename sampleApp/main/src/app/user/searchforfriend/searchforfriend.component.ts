@@ -3,6 +3,7 @@ import { AuthenicateService } from '../../authenicate.service';
 import { FriendsService } from '../../friends.service';
 import { User } from '../../user';
 import { Friend } from '../../friend';
+import { Recommend } from '../../recommend';
 
 @Component({
     selector: 'app-searchforfriend',
@@ -11,45 +12,69 @@ import { Friend } from '../../friend';
 })
 export class SearchforfriendComponent implements OnInit {
     public userdetails: User;
-    public user:User;
-     friendStatus: any;
-    
+    public user: User;
+    public users: User;
+    friendObject: Friend;
+    friendStatus: Boolean;
+    username: String;
+    userStatus: Boolean;
+   public usernotFound: Boolean;
+
     constructor(private auth: AuthenicateService, private friend: FriendsService) {
     }
-
+    
     ngOnInit() {
         this.loadProfile();
-        }
+        this.loadAllProfiles();
+    }
+    loadAllProfiles() {
+        this.auth.getAllProfiles().subscribe(data => {
+            this.users = data;
+        })
+    }
     loadProfile() {
         var data = this.auth.getProfile();
         this.user = data;
-        this.user.propic = 'https://publicserver.localtunnel.me/' + this.user.propic;
+        this.user.propic = 'http://localhost:3000/' + this.user.propic;
         console.log(this.user);
 
     }
     onSearchFriend(username) {
         this.auth.getProfileById(username).subscribe(userdata => {
             console.log(userdata);
-            this.userdetails = userdata;
-            this.userdetails.propic = 'https://publicserver.localtunnel.me/' + this.userdetails.propic;
+            if (userdata) {
+             this.usernotFound = false;
+             this.userdetails = userdata;
+             if (this.userdetails.username == this.user.username) {
+                 this.userStatus = true;
+             } else { this.userStatus = false;}
+            this.userdetails.propic = 'http://localhost:3000/' + this.userdetails.propic;
+            this.checkFriend(username);
+            let searchedContent = { "searchedContent": username.username }
+            this.auth.saveToHistory(searchedContent).subscribe(data => { console.log(data) })
+            } else {
+                this.usernotFound = true;
+            }
         })
-        this.checkFriend(username);
-        let searchedContent = { "searchedContent": username.username }
-        this.auth.saveToHistory(searchedContent).subscribe(data => { console.log(data) })
-    }
+  }
     checkFriend(username) {
         this.friend.checkFriend(username).subscribe(data => {
-            console.log(data);
-            this.friendStatus = data;
+            if (data == null) {
+                this.friendStatus = null;
+            } else {
+            this.friendObject = data;
+           this.friendStatus = this.friendObject.status;
+            }
+                      console.log(this.friendStatus);
         })
     }
     onRequest() {
-        this.checkFriend(this.userdetails.username);
+        this.friendStatus = false;
+        console.log(this.friendStatus);
         let friend = {
             'friend': this.userdetails.username,
             'status': false
         }
-        console.log(friend);
         this.auth.sendRequest(friend).subscribe(data => {
             console.log(data);
         })

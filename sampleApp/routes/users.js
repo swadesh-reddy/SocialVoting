@@ -156,8 +156,7 @@ router.post('/profileById', verifyToken, (req, res, next) => {
             var username = { username: req.body.username}
             User.getUserByUserName(username, (err, user) => {
                 if (err) { throw err }
-                if (!user) { res.json({ "message": "user not found" }); }
-                else {
+                  else {
                         res.send(user);
                 }
             })
@@ -176,8 +175,7 @@ router.post('/getProductByName', verifyToken, (req, res, next) => {
             var productname = { productname: req.body.productname }
             Product.getUserByProductName(productname, (err, product) => {
                 if (err) { throw err }
-                if (!product) { res.json({ "message": "product not found" }); }
-                else {
+                 else {
                     res.json(product);
                 }
             })
@@ -629,7 +627,7 @@ router.post('/onVote', verifyToken, (req, res, next) => {
                     })
 
                 }});
-                  }
+             }
     })
 
 })
@@ -647,12 +645,10 @@ router.post('/deleteFriend', verifyToken, (req, res, next) => {
                 friend: decoded.user.username,
             }
             console.log(acceptFriend);
-            Friend.updateFriendRequest(acceptFriend, (err, friend) => {
-
                 if (err) throw err;
                 else {
                     console.log(acceptFriend);
-                    friend.deleteOne({ acceptFriend }, function (err) {
+                    Friend.deleteOne(acceptFriend , function (err) {
                         if (err) throw err;
                         else {
                             res.json({
@@ -660,7 +656,7 @@ router.post('/deleteFriend', verifyToken, (req, res, next) => {
                             });}
                     })
                     
-                    }});
+                    };
     
         }
     })

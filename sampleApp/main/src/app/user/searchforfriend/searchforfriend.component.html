@@ -2,10 +2,10 @@
     <div class="col-md-8">
         <form (ngSubmit)="onSearchFriend(searchForm.value)" #searchForm="ngForm">
             <div class="input-group">
-                <input list="post" placeholder="search friend" class="form-control" name="username" id="username" #username="ngModel" (ngModel)="user.username" required>
-                <datalist id="post"><option *ngFor="let u of user" [value]="u.username">{{u.email}}</option></datalist>
+                <input list="post1" placeholder="search friend" class="form-control" name="username" id="username" #username="ngModel" (ngModel)="username" required>
+                <datalist id="post1"><option *ngFor="let user of users" [value]="user.username"></option></datalist>
                 <div class="input-group-btn">
-                    <button class="btn btn-default" type="submit">
+                    <button class="btn btn-default" type="submit" [disabled]="!searchForm.form.valid">
                         <i class="glyphicon glyphicon-search"></i>
                     </button>
                 </div>
@@ -19,17 +19,17 @@
                 <div class="col-md-8">
                   <div class="col-md-6 col-xs-6">{{userdetails.username}}</div>
                     <div *ngIf="friendStatus == null" class=" col-md-6 col-xs-6">
-                        <button id="btn-info" style="color:#fff;" class="btn btn-info" (click)="onRequest();">Send Request</button>
+                        <button id="btn-info" [disabled]="userStatus" style="color:#fff;" class="btn btn-info" (click)="onRequest();">Send Request</button>
                     </div>
-                    <div *ngIf="friendStatus" class="col-md-6 col-xs-6">
-                        <button *ngIf="friendStatus.status == false" id="btn-info" style="color:#fff;" class="btn btn-info">Request Sent<i class="fa fa-check"></i></button>
-                        <button *ngIf="friendStatus.status == true" id="btn-info" style="color:#fff;" class="btn btn-info">Friends<i class="fa fa-check"></i></button>
+                    <div *ngIf="friendStatus != null"  class="col-md-6 col-xs-6">
+                        <button *ngIf="friendStatus == false" id="btn-info" style="color:#fff;" class="btn btn-primary">Request Sent<i class="fa fa-check"></i></button>
+                        <button *ngIf="friendStatus == true" id="btn-info" style="color:#fff;" class="btn btn-success">Friends<i class="fa fa-check"></i></button>
                     </div>
                   
                 </div>
             </div>
         </div>
-
+         <div *ngIf="usernotFound" class="errorMessage">user not found</div>
     </div>
       </div>
 

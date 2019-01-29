@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
   }
   inValidLogin() {
       this.loading = false;
-      this.flashMessages.show('ivalid credentials', { cssClass: 'alert-warning', timeout: 5000})
+      this.flashMessages.show('invalid credentials', { cssClass: 'alert-warning', timeout: 5000})
   }
  
 }
