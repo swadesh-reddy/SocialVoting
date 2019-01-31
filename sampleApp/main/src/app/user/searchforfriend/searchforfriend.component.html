@@ -1,35 +1,39 @@
 <div class="col-md-8 col-xs-12 col-sm-12" id="content" style="float:right;">
     <div class="col-md-8">
-        <form (ngSubmit)="onSearchFriend(searchForm.value)" #searchForm="ngForm">
+        <form (ngSubmit)="onSearchFriend(searchUserForm.value)" #searchUserForm="ngForm">
             <div class="input-group">
-                <input list="post1" placeholder="search friend" class="form-control" name="username" id="username" #username="ngModel" (ngModel)="username" required>
-                <datalist id="post1"><option *ngFor="let user of users" [value]="user.username"></option></datalist>
+                <input list="post1" placeholder="search friend" class="form-control" name="username" id="username" #username="ngModel" (ngModel)="user.username" required>
+                <datalist id="post1"><option *ngFor="let u of users" [value]="u.username"></option></datalist>
                 <div class="input-group-btn">
-                    <button class="btn btn-default" type="submit" [disabled]="!searchForm.form.valid">
+                    <button class="btn btn-default" type="submit" [disabled]="!searchUserForm.form.valid">
                         <i class="glyphicon glyphicon-search"></i>
                     </button>
                 </div>
             </div>
-        </form> <br /><br /><br />
+        </form>
+        <br /><br /><br />
         <div *ngIf="userdetails" class="panel panel-default">
             <div class="panel-body pnl-body">
                 <div class="col-md-4">
-                    <a routerLink="/user/viewprofile/{{userdetails.username}}"><img [src]="userdetails.propic" class="img-circle" width="70" height="70" style="float:left;">
-                        </a></div>
+                    <a routerLink="/user/viewprofile/{{userdetails.username}}">
+                        <img [src]="userdetails.propic" class="img-circle" width="70" height="70" style="float:left;">
+                    </a>
+                </div>
                 <div class="col-md-8">
-                  <div class="col-md-6 col-xs-6">{{userdetails.username}}</div>
+                    <div class="col-md-6 col-xs-6">{{userdetails.username}}</div>
                     <div *ngIf="friendStatus == null" class=" col-md-6 col-xs-6">
-                        <button id="btn-info" [disabled]="userStatus" style="color:#fff;" class="btn btn-info" (click)="onRequest();">Send Request</button>
+                        <button id="btn-info" style="color:#fff;" class="btn btn-info" [disabled]="userStatus" (click)="onRequest();">Send Request</button>
                     </div>
-                    <div *ngIf="friendStatus != null"  class="col-md-6 col-xs-6">
+                    <div *ngIf="friendStatus !=null" class="col-md-6 col-xs-6">
                         <button *ngIf="friendStatus == false" id="btn-info" style="color:#fff;" class="btn btn-primary">Request Sent<i class="fa fa-check"></i></button>
                         <button *ngIf="friendStatus == true" id="btn-info" style="color:#fff;" class="btn btn-success">Friends<i class="fa fa-check"></i></button>
                     </div>
-                  
+
                 </div>
             </div>
         </div>
-         <div *ngIf="usernotFound" class="errorMessage">user not found</div>
+        <div *ngIf="usernotFound" class="errorMessage">User not found</div>
+
     </div>
       </div>
 

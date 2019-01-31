@@ -47,7 +47,6 @@
     background-color: #692e422e;
 }
     .user img {
-    padding-bottom:7px;
     cursor:pointer;
     }
     .user .userdetail {
@@ -80,3 +79,18 @@
     .panelbtmline .btn {
         margin-right: 10px;
     }
+.users {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin-left: 25%;
+}
+.userimg{
+    width: 100%;
+    height: 100%;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    box-shadow: 0px 0px 8px 0px lightgrey;
+    /* background-color: white; */
+    cursor: pointer;
+}

@@ -27,9 +27,9 @@ export class ViewproductComponent implements OnInit {
         this.loadProfile();
       this.productname = this.route.snapshot.paramMap.get('productname');
       var data = { productname: this.productname }
-      this.friend.onSearchProduct(data).subscribe(userdata => {
-          console.log(userdata);
-          this.product = userdata;
+      this.friend.onSearchProduct(data).subscribe(productData => {
+          console.log(productData);
+          this.product = productData;
         })
   }
     loadProfile() {
@@ -63,6 +63,7 @@ export class ViewproductComponent implements OnInit {
         console.log(productname);
         this.friend.onVote(productname).subscribe(data => { console.log(data) })
         this.product.vote = Number(this.product.vote) + 1;
+        this.auth.uservoted();
         this.voteStatus = 'true';
     }
 }

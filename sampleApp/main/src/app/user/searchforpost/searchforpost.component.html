@@ -12,27 +12,24 @@
 
     </form>
     <br />
-    <div *ngIf="Product" class="panel panel-default">
-        <div class="panel-body">
-            <div class="col-md-4 product">
-                <div class="user-pic">
-                    <img src="http://localhost:3000/{{Product.productimage}}" width="100%" height="250">
-                </div>
-                <div class="left col-md-7 col-xs-6"><label>{{Product.productname}}</label></div>
-                <div class="left col-md-3 col-xs-6">votes:{{Product.vote}}</div>
+   <div *ngIf="Product" class="panel panel-default">
+    <div class="panel-body">
+        <div class="col-md-4 product">
+            <div class="user-pic">
+                <img src="https://publicserver.localtunnel.me/{{Product.productimage}}" width="100%" height="250">
             </div>
-            <div class="col-md-8">
-                <div class="left col-md-12 col-xs-12">
-                    Product Description:
-                </div><br /><label>{{Product.productdescription}}</label>
-
-                <button *ngIf="voteStatus=='false'" class="btn btn-success col-md-12 col-xs-12" (click)="onVote()" style="margin-bottom:8px"> Vote <i class="fa fa-thumbs-o-up"></i></button><br />
-                <label *ngIf="voteStatus=='true'" class="btn text-success col-md-12 col-xs-12"> Voted</label><br />
-                <button class="btn btn-primary col-xs-6" data-toggle="modal" data-target="#myModalHorizontal">share <span class="fa fa-share"></span></button>
-                <button class="btn btn-info col-xs-6" data-toggle="modal" data-target="#reviewModal">Review</button>
-            </div>
+            <div class="left col-md-7 col-xs-6"><label class="username">{{Product.productname}}</label></div>
+            <div class="left col-md-3 col-xs-6">votes : <label class="username">{{Product.vote}}</label></div>
+        </div>
+        <div class="col-md-8 col-xs-12">
+             <div class="right col-md-12 col-xs-12 sideHeading">Product Description:</div><div class="left col-md-12 col-xs-12">{{Product.productdescription}}</div>
+            <button *ngIf="voteStatus=='false'" class="btn btn-success col-md-12 col-xs-12" (click)="onVote()" style="margin-bottom:8px"> Vote <i class="fa fa-thumbs-o-up"></i></button><br />
+            <label *ngIf="voteStatus=='true'" class="btn text-success col-md-12 col-xs-12"> Voted</label><br />
+            <button class="btn btn-primary col-xs-6" data-toggle="modal" data-target="#myModalHorizontal">share <span class="fa fa-share"></span></button>
+            <button class="btn btn-info col-xs-6" data-toggle="modal" data-target="#reviewModal">Review</button>
         </div>
     </div>
+</div>
     <div *ngIf="productNotFound" class="errorMessage">Product not found</div>
 
 </div>

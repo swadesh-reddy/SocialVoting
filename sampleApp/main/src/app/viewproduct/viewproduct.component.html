@@ -2,16 +2,13 @@
     <div class="panel-body">
         <div class="col-md-4 product">
             <div class="user-pic">
-                <img src="http://localhost:3000/{{product.productimage}}" width="100%" height="250">
+                <img src="https://publicserver.localtunnel.me/{{product.productimage}}" width="100%" height="250">
             </div>
-            <div class="left col-md-7 col-xs-6"><label>{{product.productname}}</label></div>
+            <div class="left col-md-7 col-xs-6"><label class="username">{{product.productname}}</label></div>
             <div class="left col-md-3 col-xs-6">votes:{{product.vote}}</div>
         </div>
-        <div class="col-md-8">
-            <div class="left col-md-12 col-xs-12">
-                Product Description:
-            </div><br /><label>{{product.productdescription}}</label>
-
+        <div class="col-md-8 col-xs-12">
+             <div class="right col-md-12 col-xs-12 sideHeading">Product Description:</div><div class="left col-md-12 col-xs-12">{{product.productdescription}}</div>
             <button *ngIf="voteStatus=='false'" class="btn btn-success col-md-12 col-xs-12" (click)="onVote()" style="margin-bottom:8px"> Vote <i class="fa fa-thumbs-o-up"></i></button><br />
             <label *ngIf="voteStatus=='true'" class="btn text-success col-md-12 col-xs-12"> Voted</label><br />
             <button class="btn btn-primary col-xs-6" data-toggle="modal" data-target="#myModalHorizontal">share <span class="fa fa-share"></span></button>
@@ -102,7 +99,7 @@
                     <div class="form-group col-md-12">
                         <label class="control-label "> Product Name<i class="star">*</i></label>
                         <input class="form-control form-control-solid placeholder-no-fix" type="text" placeholder="productname" name="productname" #productname="ngModel" (ngModel)="product.productname" minlength="4" required>
-                        <div *ngIf="productname.invalid && (productname.dirty || productname.touched)" class="text text-danger">Email is required</div>
+                        <div *ngIf="productname.invalid && (productname.dirty || productname.touched)" class="text text-danger">productname is required</div>
 
                     </div>
 

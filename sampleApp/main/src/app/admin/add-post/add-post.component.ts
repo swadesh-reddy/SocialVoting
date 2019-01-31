@@ -34,7 +34,7 @@ export class AddPostComponent implements OnInit {
       var vote = '0';
       var form = new FormData();
       form.append("productname", data.productname);
-      form.append("productdescription", data.productname);
+      form.append("productdescription", data.productdescription);
       form.append('vote', vote);    
       form.append("productuses", data.productuses);
       form.append("productimage", this.image, this.image.name);

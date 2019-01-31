@@ -28,7 +28,7 @@ export class LoadFriendRequestsComponent implements OnInit {
     loadProfile() {
         var data = this.auth.getProfile();
         this.user = data;
-        this.user.propic = 'http://localhost:3000/' + this.user.propic;
+        this.user.propic = 'https://publicserver.localtunnel.me/' + this.user.propic;
         console.log(this.user);
 
     }
@@ -36,7 +36,7 @@ export class LoadFriendRequestsComponent implements OnInit {
         let status = { status: false, username: username }
         this.friend.getAllFriends(status).subscribe(data => {
             console.log(data);
-            if (this.friendRequests.length == 0) {
+            if (data.length == 0) {
                 this.nodata = 'No Friend Requests';
                 console.log(this.nodata)
             } else { this.nodata = ''; }
@@ -44,7 +44,7 @@ export class LoadFriendRequestsComponent implements OnInit {
                 if (data[key].username !== undefined) {
                     this.auth.getProfileById({ 'username': data[key].username }).subscribe(data => {
                         console.log(data);
-                        data.propic = 'http://localhost:3000/' + data.propic;
+                        data.propic = 'https://publicserver.localtunnel.me/' + data.propic;
                         this.friendRequests.push(data);
                     })
                 }

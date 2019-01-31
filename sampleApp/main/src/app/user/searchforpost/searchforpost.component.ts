@@ -33,7 +33,7 @@ export class SearchforpostComponent implements OnInit {
         var userdata = this.auth.getProfile();
         this.user = userdata;
         this.voteStatus = this.user.vote;
-
+        console.log(this.voteStatus)
     }
   onSearchPost(productname) {
       this.friend.onSearchProduct(productname).subscribe(data => {
@@ -67,7 +67,8 @@ export class SearchforpostComponent implements OnInit {
   {
       var productname = { productname: this.Product.productname };
       console.log(productname);
-      this.friend.onVote(productname).subscribe(data => { console.log(data) })
+      this.friend.onVote(productname).subscribe(data => { console.log(data) });
+      this.auth.uservoted();
       this.Product.vote = Number(this.Product.vote) + 1;
       this.voteStatus = 'true';
   }

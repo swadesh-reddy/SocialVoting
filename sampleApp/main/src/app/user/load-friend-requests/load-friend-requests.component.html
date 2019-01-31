@@ -1,6 +1,6 @@
-<div class="col-md-4">
+<div class="col-md-12">
 
-    <div *ngFor="let request of friendRequests" class="panel panel-default col-md-7 col-xs-12">
+    <div *ngFor="let request of friendRequests" class="panel panel-default col-md-12 col-xs-12">
 
         <div class="user"><img [src]="request.propic" class="img" width="70" height="70" style="float:left;"></div>
         <div class="col-md-8 col-xs-8">
@@ -10,8 +10,8 @@
         </div>
 
     </div>
-    <div *ngIf="friendRequests.length == 0" class="container-fluid">
-        <h4 style="color:#808080">{{ nodata }}</h4>
+    <div *ngIf="nodata" class="errorMessage">
+       {{ nodata }}
     </div>
 
 </div>

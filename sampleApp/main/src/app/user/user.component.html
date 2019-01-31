@@ -2,8 +2,9 @@
 <div class="container">
     <div id="mySidenav" class="sidenav" style="float:left">
         <div class="col-md-12 col-xs-12 user">
-            <img [src]="userdetails.propic" (click)="closeNav()" routerLink="userprofile" class="img-circle userdetail" width="70" height="70">
-            <div class="userdetail"><label >{{userdetails.username}}</label></div>
+            <div class="users">
+                <img [src]="userdetails.propic" (click)="closeNav()" routerLink="userprofile" alt="userimg" class="userimg userdetail" width="70" height="70">
+            </div><div class="userdetail"><label >{{userdetails.username}}</label></div>
         </div>
         <a (click)="closeNav()" routerLink="loadfriendrequest">Friend Request<i class="fa fa-chevron-right" style="float:right;margin-top:4px"></i></a>
         <a (click)="closeNav()" routerLink="searchforfriend">search Friend<i class="fa fa-chevron-right" style="float:right;margin-top:4px"></i></a>

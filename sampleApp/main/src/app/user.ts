@@ -7,5 +7,7 @@ export interface User{
     success: Boolean,
     propic: String,
     admin: String,
-    vote: String
+    vote: String,
+    status: String,
+    length:Number
 }

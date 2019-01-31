@@ -1,0 +1,18 @@
+.sideHeading {
+    color: gray;
+    font-size: 13px;
+    margin-top: 18px;
+    margin-left: -9px;
+    font-weight:bolder;
+}
+.username {
+    font-weight: 900;
+    letter-spacing: 1px;
+    color: crimson;
+}
+.errorMessage {
+    text-align: center;
+    font-size: 25px;
+    text-transform: capitalize;
+    color: #bdb9b9;
+}

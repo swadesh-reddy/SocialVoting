@@ -661,7 +661,29 @@ router.post('/deleteFriend', verifyToken, (req, res, next) => {
         }
     })
 
-   })
+})
+router.post('/cleanNotification', verifyToken, (req, res, next) => {
+    jwt.verify(req.token, config.secret, (err, data) => {
+        if (err) {
+            console.log(req.token);
+            res.sendStatus(403);
+        }
+        else {
+            var decoded = jwt_decode(req.token);
+            let newNotification = {
+                username: req.body.friendname,
+                friendname: decoded.user.username
+            }
+            Notification.deleteOne(newNotification , function (err) {
+                        if (err) throw err;
+                        else {
+                            res.json({
+                                "success": " request Deleted",
+                            });}
+                    })
+        }
+    })
+})
 
 router.post('/adminlogin', (req, res, next) => {
 

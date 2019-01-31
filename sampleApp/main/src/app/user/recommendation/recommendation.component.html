@@ -8,10 +8,12 @@
                 </a>
             </div>
             <div class="col-md-8">
-                <div class="right col-md-6 col-xs-6"> RecommendedBy</div><div class="col-md-6 col-xs-6">{{recommand.username}}</div>
-               <div class="right col-md-6 col-xs-6"> Product Description</div><div class="left col-md-6 col-xs-6">{{recommand.description}}</div>
+                <div class="right col-md-6 col-xs-6 sideHeading"> RecommendedBy:</div><div class="col-md-6 col-xs-6 username">{{recommand.username}}</div>
             </div>
+            <br>
+                 <div class="right col-md-12 col-xs-12 sideHeading">Product Description:</div><div class="left col-md-12 col-xs-12">{{recommand.description}}</div>
         </div>
     </div>
 
 </div>
+<div *ngIf="nodata" class="errorMessage">No Data to Display</div>

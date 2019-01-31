@@ -35,7 +35,7 @@ export class SearchforfriendComponent implements OnInit {
     loadProfile() {
         var data = this.auth.getProfile();
         this.user = data;
-        this.user.propic = 'http://localhost:3000/' + this.user.propic;
+        this.user.propic = 'https://publicserver.localtunnel.me/' + this.user.propic;
         console.log(this.user);
 
     }
@@ -48,7 +48,7 @@ export class SearchforfriendComponent implements OnInit {
              if (this.userdetails.username == this.user.username) {
                  this.userStatus = true;
              } else { this.userStatus = false;}
-            this.userdetails.propic = 'http://localhost:3000/' + this.userdetails.propic;
+            this.userdetails.propic = 'https://publicserver.localtunnel.me/' + this.userdetails.propic;
             this.checkFriend(username);
             let searchedContent = { "searchedContent": username.username }
             this.auth.saveToHistory(searchedContent).subscribe(data => { console.log(data) })

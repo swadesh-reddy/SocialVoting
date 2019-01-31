@@ -22,7 +22,7 @@ export class ViewprofileComponent implements OnInit {
           this.auth.getProfileById(data).subscribe(userdata => {
               console.log(userdata);
               this.user = userdata;
-              this.user.propic = 'http://localhost:3000/' + this.user.propic;
+              this.user.propic = 'https://publicserver.localtunnel.me/' + this.user.propic;
           })
           this.loadFriends(this.username)
     }
@@ -37,7 +37,7 @@ export class ViewprofileComponent implements OnInit {
                     console.log(data[key].username);
                     this.auth.getProfileById({ 'username': data[key].username }).subscribe(data => {
                         console.log(data);
-                        data.propic = 'http://localhost:3000/' + data.propic;
+                        data.propic = 'https://publicserver.localtunnel.me/' + data.propic;
                         this.friends.push(data);
                         console.log(this.friends);
                     })

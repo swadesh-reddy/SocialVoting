@@ -19,7 +19,8 @@ export class HeaderComponent implements OnInit {
     friendRequests = [];
     requestStatus = 'Request';
     friendStatus: any
-    notifications: Notification
+    notifications: Notification;
+    notificationCounter: any;
     constructor(private auth: AuthenicateService, private router: Router, private friend: FriendsService) { }
 
     ngOnInit() {
@@ -48,7 +49,17 @@ export class HeaderComponent implements OnInit {
     loadNotifications(){
      this.friend.getNotifications().subscribe(data => {
          console.log(data);
+         if(data){
+             this.notificationCounter = data.length;
          this.notifications = data;
+         }
         })
+  }
+    cleanNotification(notification, index) {
+        delete this.notifications[index];
+        this.notificationCounter = this.notificationCounter-1;
+        let friendObject = { friendname: notification.username, productname: notification.productname }
+        console.log(friendObject);
+        this.friend.cleanNotification(friendObject).subscribe(data => { console.log(data) })
     }
 }

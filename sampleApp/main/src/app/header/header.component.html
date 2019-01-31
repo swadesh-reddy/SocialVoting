@@ -5,12 +5,17 @@
             <span routerLink="/user/usermainpage" class="fa fa-home" style="float:right"></span>
             <div class="dropdown">
                 <span class="fa fa-globe dropdown-toggle" data-toggle="dropdown" style="float:left;margin-top:4px;margin-right:0px">
-                <span *ngIf="notifications.length" class="badge">{{notifications.length}}</span></span>
-                <ul *ngFor="let notification of notifications" class="dropdown-menu">
-                    <li><a><a routerLink="/user/viewprofile/{{notification.username}}">{{ notification.username }}</a> sent you friend Request</a></li>
-                    <li *ngIf="notification.productname"><a><a routerLink="/user/viewprofile/{{notification.username}}">{{ notification.username }}</a> shared you
-                     <a routerLink="/user/viewproduct/{{notification.productname}}">{{notification.productname}}</a></a>  </li>
-                                  </ul>
+                    <span *ngIf="notifications.length" class="badge">{{notificationCounter}}</span></span>
+                <ul *ngIf="notifications.length" class="dropdown-menu">
+                    <li *ngFor="let notification of notifications; let i=index"><a *ngIf="notification">
+                        <a routerLink="/user/viewprofile/{{notification.username}}" (click)="cleanNotification(notification, i)">{{ notification.username }}</a><span class="extentnotification"> sent you friend Request</span></a></li>
+                    <li *ngFor="let notification of notifications">
+                        <a *ngIf="notification.productname" (click)="cleanNotification(notification, i)">
+                            <a routerLink="/user/viewprofile/{{notification.username}}" >{{ notification.username }}</a> <span class="extentnotification">shared you</span>
+                            <a routerLink="/user/viewproduct/{{notification.productname}}">{{notification.productname}}</a>
+                        </a>
+                    </li>
+                </ul>
                 <ul *ngIf="!notifications.length" class="dropdown-menu">
                     <li><a>no data to dispay</a></li>
                 </ul>
