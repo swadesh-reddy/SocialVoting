@@ -4,3 +4,10 @@ margin:10px;
 .profile {
     text-align: center;
 }
+#scrollX{
+    display: inline-flex;
+    overflow-x: auto;
+}
+::-webkit-scrollbar {
+    display: none;
+}
